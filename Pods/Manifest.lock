@@ -47,6 +47,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.15)
   - IQKeyboardManagerSwift (6.0.4)
   - leveldb-library (1.20)
+  - MaterialTextField (0.2.1)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -67,6 +68,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - IQKeyboardManagerSwift
+  - MaterialTextField
   - SDWebImage
   - SVProgressHUD
   - UIColor_Hex_Swift
@@ -86,11 +88,12 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MaterialTextField: f876a39d571eeece872af6a4da421e3bd065fe0b
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: e8462ac48b7a696d12bc8c75e81a5e434e2bf1d3
+PODFILE CHECKSUM: 1133ef0ee4d94a4df6603e8aa49764b7b5a1dd42
 
 COCOAPODS: 1.4.0

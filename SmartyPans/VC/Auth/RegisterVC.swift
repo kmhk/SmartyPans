@@ -1,33 +1,27 @@
 //
-//  WelcomeVC.swift
+//  RegisterVC.swift
 //  SmartyPans
 //
-//  Created by Lucky on 2018/7/19.
+//  Created by Lucky on 2018/7/20.
 //  Copyright © 2018 Lucky. All rights reserved.
 //
 
 import UIKit
 
-class WelcomeVC: UIViewController {
-    @IBOutlet weak var btnRegister: UIButton!
-    @IBOutlet weak var btnLogin: UIButton!
-    
+class RegisterVC: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        initView()
+        addTapGesture()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func initView(){
-        setRound(toView: btnRegister, radius: 25)
-        setRound(toView: btnLogin, radius: 25)
-    }
+
     /*
     // MARK: - Navigation
 
@@ -38,14 +32,23 @@ class WelcomeVC: UIViewController {
     }
     */
 
+    @IBAction func onBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
-extension UIViewController{
-    func addTapGesture(){
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onTap)))
+extension RegisterVC:UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    @objc func onTap(){
-        view.endEditing(true)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellRegister")!
+        return cell
     }
 }
+
+extension RegisterVC:UITextFieldDelegate{
+    
+}
+
