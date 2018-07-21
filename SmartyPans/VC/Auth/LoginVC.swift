@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
+import Firebase
 
 class LoginVC: UIViewController {
 
@@ -36,6 +39,19 @@ class LoginVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func onFBLogin(_ sender: Any) {
+        let fbLoginManager = FBSDKLoginManager.init()
+        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+            print(result.debugDescription)
+            if (error != nil){
+                print("Failed to login: " + (error?.localizedDescription)!)
+            }
+            
+            if let accessToken = FBSDKAccessToken.current(){
+                let credential = FacebookAuthProvider.credential(withAccessToken: (accessToken.tokenString)!)
+            }
+        }
+    }
 }
 
 extension LoginVC:UITableViewDelegate, UITableViewDataSource{

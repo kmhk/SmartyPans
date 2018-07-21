@@ -40,6 +40,14 @@
 		0586888D210104DA00108C18 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586888C210104DA00108C18 /* MainTabBarVC.swift */; };
 		0586888F21018F8600108C18 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586888E21018F8600108C18 /* RegisterVC.swift */; };
 		0586889121018F9200108C18 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889021018F9200108C18 /* LoginVC.swift */; };
+		058688942102199A00108C18 /* NewPWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058688932102199A00108C18 /* NewPWVC.swift */; };
+		05868896210219A400108C18 /* ForgetPWVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05868895210219A400108C18 /* ForgetPWVC.swift */; };
+		0586889D21026C3700108C18 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889721026C3600108C18 /* Config.swift */; };
+		0586889E21026C3700108C18 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889821026C3700108C18 /* Post.swift */; };
+		0586889F21026C3700108C18 /* MyPostsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889921026C3700108C18 /* MyPostsApi.swift */; };
+		058688A021026C3700108C18 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889A21026C3700108C18 /* PostApi.swift */; };
+		058688A121026C3700108C18 /* SUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889B21026C3700108C18 /* SUser.swift */; };
+		058688A221026C3700108C18 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889C21026C3700108C18 /* UserApi.swift */; };
 		66AA969A2F4B7091B041E3D9 /* Pods_SmartyPans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +87,14 @@
 		0586888C210104DA00108C18 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		0586888E21018F8600108C18 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		0586889021018F9200108C18 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		058688932102199A00108C18 /* NewPWVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPWVC.swift; sourceTree = "<group>"; };
+		05868895210219A400108C18 /* ForgetPWVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPWVC.swift; sourceTree = "<group>"; };
+		0586889721026C3600108C18 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		0586889821026C3700108C18 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0586889921026C3700108C18 /* MyPostsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostsApi.swift; sourceTree = "<group>"; };
+		0586889A21026C3700108C18 /* PostApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
+		0586889B21026C3700108C18 /* SUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUser.swift; sourceTree = "<group>"; };
+		0586889C21026C3700108C18 /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		97113042F971F51B532A376F /* Pods-SmartyPans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.release.xcconfig"; sourceTree = "<group>"; };
 		A71102C5720D83EE14FF0000 /* Pods-SmartyPans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.debug.xcconfig"; sourceTree = "<group>"; };
 		D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartyPans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +135,7 @@
 			children = (
 				058688362100F25A00108C18 /* AppDelegate.swift */,
 				058688852101039300108C18 /* Global.swift */,
+				05868892210217E400108C18 /* API */,
 				05868887210103E100108C18 /* VC */,
 				058688482100F43B00108C18 /* Storyboards */,
 				0586884E2100FEFC00108C18 /* Resources */,
@@ -199,6 +216,8 @@
 				05868889210103E100108C18 /* WelcomeVC.swift */,
 				0586888E21018F8600108C18 /* RegisterVC.swift */,
 				0586889021018F9200108C18 /* LoginVC.swift */,
+				058688932102199A00108C18 /* NewPWVC.swift */,
+				05868895210219A400108C18 /* ForgetPWVC.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -209,6 +228,19 @@
 				0586888C210104DA00108C18 /* MainTabBarVC.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		05868892210217E400108C18 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0586889721026C3600108C18 /* Config.swift */,
+				0586889921026C3700108C18 /* MyPostsApi.swift */,
+				0586889821026C3700108C18 /* Post.swift */,
+				0586889A21026C3700108C18 /* PostApi.swift */,
+				0586889B21026C3700108C18 /* SUser.swift */,
+				0586889C21026C3700108C18 /* UserApi.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		6D892BF1DF5EAF06113DBE3A /* Pods */ = {
@@ -402,12 +434,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0586889F21026C3700108C18 /* MyPostsApi.swift in Sources */,
+				058688942102199A00108C18 /* NewPWVC.swift in Sources */,
 				0586888A210103E100108C18 /* WelcomeVC.swift in Sources */,
+				0586889D21026C3700108C18 /* Config.swift in Sources */,
+				058688A021026C3700108C18 /* PostApi.swift in Sources */,
+				058688A221026C3700108C18 /* UserApi.swift in Sources */,
+				05868896210219A400108C18 /* ForgetPWVC.swift in Sources */,
 				058688862101039300108C18 /* Global.swift in Sources */,
+				058688A121026C3700108C18 /* SUser.swift in Sources */,
 				0586889121018F9200108C18 /* LoginVC.swift in Sources */,
 				058688372100F25A00108C18 /* AppDelegate.swift in Sources */,
 				0586888D210104DA00108C18 /* MainTabBarVC.swift in Sources */,
 				0586888F21018F8600108C18 /* RegisterVC.swift in Sources */,
+				0586889E21026C3700108C18 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
