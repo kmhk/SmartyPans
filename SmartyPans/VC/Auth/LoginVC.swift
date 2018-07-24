@@ -38,6 +38,10 @@ class LoginVC: UIViewController {
     @IBAction func onBack(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    @IBAction func onLogin(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func onFBLogin(_ sender: Any) {
         let fbLoginManager = FBSDKLoginManager.init()

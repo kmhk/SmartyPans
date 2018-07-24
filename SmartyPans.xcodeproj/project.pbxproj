@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0554F0AF210787E600CB97AD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554F0AE210787E600CB97AD /* HomeVC.swift */; };
+		0554F0B1210790E600CB97AD /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554F0B0210790E600CB97AD /* ProfileVC.swift */; };
+		0554F0B42107913600CB97AD /* HomeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554F0B32107913600CB97AD /* HomeCVCell.swift */; };
+		0554F0B621079C7A00CB97AD /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554F0B521079C7A00CB97AD /* EditProfileVC.swift */; };
 		058688372100F25A00108C18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058688362100F25A00108C18 /* AppDelegate.swift */; };
 		0586883C2100F25A00108C18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0586883A2100F25A00108C18 /* Main.storyboard */; };
 		0586883E2100F25D00108C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0586883D2100F25D00108C18 /* Assets.xcassets */; };
@@ -52,6 +56,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0554F0AE210787E600CB97AD /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		0554F0B0210790E600CB97AD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		0554F0B32107913600CB97AD /* HomeCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCVCell.swift; sourceTree = "<group>"; };
+		0554F0B521079C7A00CB97AD /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		058688332100F25A00108C18 /* SmartyPans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartyPans.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		058688362100F25A00108C18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0586883B2100F25A00108C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +120,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0554F0B22107912400CB97AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0554F0B32107913600CB97AD /* HomeCVCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0586882A2100F25A00108C18 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +152,7 @@
 				058688362100F25A00108C18 /* AppDelegate.swift */,
 				058688852101039300108C18 /* Global.swift */,
 				05868892210217E400108C18 /* API */,
+				0554F0B22107912400CB97AD /* View */,
 				05868887210103E100108C18 /* VC */,
 				058688482100F43B00108C18 /* Storyboards */,
 				0586884E2100FEFC00108C18 /* Resources */,
@@ -226,6 +243,9 @@
 			isa = PBXGroup;
 			children = (
 				0586888C210104DA00108C18 /* MainTabBarVC.swift */,
+				0554F0AE210787E600CB97AD /* HomeVC.swift */,
+				0554F0B0210790E600CB97AD /* ProfileVC.swift */,
+				0554F0B521079C7A00CB97AD /* EditProfileVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -436,10 +456,14 @@
 			files = (
 				0586889F21026C3700108C18 /* MyPostsApi.swift in Sources */,
 				058688942102199A00108C18 /* NewPWVC.swift in Sources */,
+				0554F0B42107913600CB97AD /* HomeCVCell.swift in Sources */,
 				0586888A210103E100108C18 /* WelcomeVC.swift in Sources */,
+				0554F0B621079C7A00CB97AD /* EditProfileVC.swift in Sources */,
 				0586889D21026C3700108C18 /* Config.swift in Sources */,
+				0554F0B1210790E600CB97AD /* ProfileVC.swift in Sources */,
 				058688A021026C3700108C18 /* PostApi.swift in Sources */,
 				058688A221026C3700108C18 /* UserApi.swift in Sources */,
+				0554F0AF210787E600CB97AD /* HomeVC.swift in Sources */,
 				05868896210219A400108C18 /* ForgetPWVC.swift in Sources */,
 				058688862101039300108C18 /* Global.swift in Sources */,
 				058688A121026C3700108C18 /* SUser.swift in Sources */,

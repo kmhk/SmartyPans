@@ -14,6 +14,7 @@ class MainTabBarVC: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,5 +43,15 @@ class MainTabBarVC: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
+}
 
+extension MainTabBarVC:UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        let index = tabBarController.viewControllers?.index(of: viewController)!
+        if index == 1{
+            return false
+        }
+        
+        return true
+    }
 }
