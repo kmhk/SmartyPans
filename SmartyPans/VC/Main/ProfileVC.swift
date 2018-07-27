@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileVC: UIViewController {
     @IBOutlet weak var imgProfile: UIImageView!
@@ -15,6 +16,12 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var lblRecipeCnt: UILabel!
     
     @IBOutlet weak var btnAddRecipe: UIButton!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var viewNone: UIView!
+    
+    var user: SUser!
+    var posts: [Post] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,8 +30,52 @@ class ProfileVC: UIViewController {
         setRound(toView: imgProfile, radius: 64)
         imgProfile.layer.borderWidth = 8
         imgProfile.layer.borderColor = UIColor.white.cgColor
+        showView()
+        fetchUser()
+        fetchMyPosts()
     }
 
+    func fetchUser() {
+        Api.SUser.observeCurrentUser { (user) in
+            self.user = user
+            self.lblName.text = user.name
+            if let profileUrl = URL(string: user.profileImageUrl!) {
+                //self.imgProfile.sd_setImage(with: profileUrl)
+                self.imgProfile.sd_setImage(with: profileUrl, placeholderImage: UIImage(named: "tab_profile_g"), options: SDWebImageOptions.continueInBackground, completed: nil)
+            }
+            
+            if let bgUrl = URL(string: user.bgImageUrl!) {
+                self.imgHeader.sd_setImage(with: bgUrl)
+            }
+            //self.collectionView.reloadData()
+        }
+    }
+    
+    func fetchMyPosts() {
+        guard let currentUser = Api.SUser.CURRENT_USER else {
+            return
+        }
+        Api.MyPosts.REF_MYPOSTS.child(currentUser.uid).observe(.childAdded, with: {
+            snapshot in
+            Api.Post.observePost(withId: snapshot.key, completion: {
+                post in
+                self.posts.append(post)
+                self.lblRecipeCnt.text = String(self.posts.count)
+                self.showView()
+                self.collectionView.reloadData()
+            })
+        })
+    }
+    
+    func showView(){
+        if(posts.count == 0){
+            self.viewNone.isHidden = false
+            self.collectionView.isHidden = true
+        }else{
+            self.viewNone.isHidden = true
+            self.collectionView.isHidden = false
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,4 +92,36 @@ class ProfileVC: UIViewController {
     }
     */
 
+}
+
+extension ProfileVC:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellFeed", for: indexPath) as! HomeCVCell
+        cell.layer.cornerRadius = 4
+        cell.clipsToBounds = true
+        
+        let recipe = posts[indexPath.row]
+        cell.nameLabel.text = recipe.name
+        cell.creatorLabel.text = recipe.creator
+        cell.creatorImage.sd_setImage(with: URL(string: recipe.creatorImage!), completed: nil)
+        cell.recipeImage.sd_setImage(with: URL(string: recipe.recipeImage!), completed: nil)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(5, 5, 5, 5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.size.width
+        let width = screenWidth / 2 - 11
+        let height = CGFloat(200)
+        
+        return CGSize(width: width, height: height)
+    }
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05239573210BA1E500EB21EA /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05239572210BA1E500EB21EA /* Api.swift */; };
+		0523957B210BA72800EB21EA /* Nutrition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05239576210BA72800EB21EA /* Nutrition.swift */; };
+		0523957C210BA72800EB21EA /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05239577210BA72800EB21EA /* Recipe.swift */; };
+		0523957D210BA72800EB21EA /* RecipeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05239578210BA72800EB21EA /* RecipeStep.swift */; };
+		0523957E210BA72800EB21EA /* SPUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05239579210BA72800EB21EA /* SPUser.swift */; };
 		0554F0AF210787E600CB97AD /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554F0AE210787E600CB97AD /* HomeVC.swift */; };
 		0554F0B1210790E600CB97AD /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554F0B0210790E600CB97AD /* ProfileVC.swift */; };
 		0554F0B42107913600CB97AD /* HomeCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0554F0B32107913600CB97AD /* HomeCVCell.swift */; };
@@ -15,7 +20,6 @@
 		0586883C2100F25A00108C18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0586883A2100F25A00108C18 /* Main.storyboard */; };
 		0586883E2100F25D00108C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0586883D2100F25D00108C18 /* Assets.xcassets */; };
 		058688412100F25D00108C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0586883F2100F25D00108C18 /* LaunchScreen.storyboard */; };
-		0586884B2100FDF400108C18 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0586884A2100FDF400108C18 /* Auth.storyboard */; };
 		0586884D2100FE2C00108C18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0586884C2100FE2C00108C18 /* GoogleService-Info.plist */; };
 		058688672100FF1800108C18 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 058688502100FF1800108C18 /* Montserrat-Bold.otf */; };
 		058688682100FF1800108C18 /* NunitoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 058688522100FF1800108C18 /* NunitoSans-Black.ttf */; };
@@ -52,10 +56,17 @@
 		058688A021026C3700108C18 /* PostApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889A21026C3700108C18 /* PostApi.swift */; };
 		058688A121026C3700108C18 /* SUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889B21026C3700108C18 /* SUser.swift */; };
 		058688A221026C3700108C18 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889C21026C3700108C18 /* UserApi.swift */; };
+		0587FECA210B915E002945B7 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0587FEC8210B915D002945B7 /* Auth.storyboard */; };
+		05E40A3D210BB84E007197A3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E40A3C210BB84D007197A3 /* AuthService.swift */; };
 		66AA969A2F4B7091B041E3D9 /* Pods_SmartyPans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05239572210BA1E500EB21EA /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		05239576210BA72800EB21EA /* Nutrition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nutrition.swift; sourceTree = "<group>"; };
+		05239577210BA72800EB21EA /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		05239578210BA72800EB21EA /* RecipeStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStep.swift; sourceTree = "<group>"; };
+		05239579210BA72800EB21EA /* SPUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUser.swift; sourceTree = "<group>"; };
 		0554F0AE210787E600CB97AD /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		0554F0B0210790E600CB97AD /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		0554F0B32107913600CB97AD /* HomeCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCVCell.swift; sourceTree = "<group>"; };
@@ -66,7 +77,6 @@
 		0586883D2100F25D00108C18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058688402100F25D00108C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		058688422100F25D00108C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0586884A2100FDF400108C18 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		0586884C2100FE2C00108C18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		058688502100FF1800108C18 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
 		058688522100FF1800108C18 /* NunitoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans-Black.ttf"; sourceTree = "<group>"; };
@@ -103,6 +113,8 @@
 		0586889A21026C3700108C18 /* PostApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostApi.swift; sourceTree = "<group>"; };
 		0586889B21026C3700108C18 /* SUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUser.swift; sourceTree = "<group>"; };
 		0586889C21026C3700108C18 /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
+		0587FEC9210B915D002945B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
+		05E40A3C210BB84D007197A3 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		97113042F971F51B532A376F /* Pods-SmartyPans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.release.xcconfig"; sourceTree = "<group>"; };
 		A71102C5720D83EE14FF0000 /* Pods-SmartyPans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.debug.xcconfig"; sourceTree = "<group>"; };
 		D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartyPans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +132,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05239574210BA72800EB21EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				05239576210BA72800EB21EA /* Nutrition.swift */,
+				05239577210BA72800EB21EA /* Recipe.swift */,
+				05239578210BA72800EB21EA /* RecipeStep.swift */,
+				05239579210BA72800EB21EA /* SPUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0554F0B22107912400CB97AD /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +174,7 @@
 			children = (
 				058688362100F25A00108C18 /* AppDelegate.swift */,
 				058688852101039300108C18 /* Global.swift */,
+				05239574210BA72800EB21EA /* Model */,
 				05868892210217E400108C18 /* API */,
 				0554F0B22107912400CB97AD /* View */,
 				05868887210103E100108C18 /* VC */,
@@ -166,7 +190,7 @@
 		058688482100F43B00108C18 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				0586884A2100FDF400108C18 /* Auth.storyboard */,
+				0587FEC8210B915D002945B7 /* Auth.storyboard */,
 				0586883A2100F25A00108C18 /* Main.storyboard */,
 				0586883F2100F25D00108C18 /* LaunchScreen.storyboard */,
 			);
@@ -253,6 +277,8 @@
 		05868892210217E400108C18 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				05E40A3C210BB84D007197A3 /* AuthService.swift */,
+				05239572210BA1E500EB21EA /* Api.swift */,
 				0586889721026C3600108C18 /* Config.swift */,
 				0586889921026C3700108C18 /* MyPostsApi.swift */,
 				0586889821026C3700108C18 /* Post.swift */,
@@ -341,11 +367,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0587FECA210B915E002945B7 /* Auth.storyboard in Resources */,
 				058688762100FF1800108C18 /* OFL.txt in Resources */,
 				0586886F2100FF1800108C18 /* NunitoSans-ExtraLightItalic.ttf in Resources */,
 				058688782100FF1800108C18 /* Roboto-Bold.ttf in Resources */,
 				058688692100FF1800108C18 /* NunitoSans-BlackItalic.ttf in Resources */,
-				0586884B2100FDF400108C18 /* Auth.storyboard in Resources */,
 				0586887A2100FF1800108C18 /* Roboto-Medium.ttf in Resources */,
 				058688412100F25D00108C18 /* LaunchScreen.storyboard in Resources */,
 				058688772100FF1800108C18 /* Roboto-Black.ttf in Resources */,
@@ -388,6 +414,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialTextField/MaterialTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/UIColor_Hex_Swift/UIColor_Hex_Swift.framework",
@@ -403,6 +430,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_Hex_Swift.framework",
@@ -456,15 +484,20 @@
 			files = (
 				0586889F21026C3700108C18 /* MyPostsApi.swift in Sources */,
 				058688942102199A00108C18 /* NewPWVC.swift in Sources */,
+				0523957B210BA72800EB21EA /* Nutrition.swift in Sources */,
+				0523957D210BA72800EB21EA /* RecipeStep.swift in Sources */,
 				0554F0B42107913600CB97AD /* HomeCVCell.swift in Sources */,
+				05239573210BA1E500EB21EA /* Api.swift in Sources */,
 				0586888A210103E100108C18 /* WelcomeVC.swift in Sources */,
 				0554F0B621079C7A00CB97AD /* EditProfileVC.swift in Sources */,
 				0586889D21026C3700108C18 /* Config.swift in Sources */,
+				0523957E210BA72800EB21EA /* SPUser.swift in Sources */,
 				0554F0B1210790E600CB97AD /* ProfileVC.swift in Sources */,
 				058688A021026C3700108C18 /* PostApi.swift in Sources */,
 				058688A221026C3700108C18 /* UserApi.swift in Sources */,
 				0554F0AF210787E600CB97AD /* HomeVC.swift in Sources */,
 				05868896210219A400108C18 /* ForgetPWVC.swift in Sources */,
+				05E40A3D210BB84E007197A3 /* AuthService.swift in Sources */,
 				058688862101039300108C18 /* Global.swift in Sources */,
 				058688A121026C3700108C18 /* SUser.swift in Sources */,
 				0586889121018F9200108C18 /* LoginVC.swift in Sources */,
@@ -472,6 +505,7 @@
 				0586888D210104DA00108C18 /* MainTabBarVC.swift in Sources */,
 				0586888F21018F8600108C18 /* RegisterVC.swift in Sources */,
 				0586889E21026C3700108C18 /* Post.swift in Sources */,
+				0523957C210BA72800EB21EA /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +526,14 @@
 				058688402100F25D00108C18 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0587FEC8210B915D002945B7 /* Auth.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0587FEC9210B915D002945B7 /* Base */,
+			);
+			name = Auth.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -619,10 +661,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = W783B6Q8FR;
 				INFOPLIST_FILE = SmartyPans/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartypans.SmartyPans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "577674f1-79e7-407e-8243-fd8d87efb639";
@@ -640,10 +679,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = W783B6Q8FR;
 				INFOPLIST_FILE = SmartyPans/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartypans.SmartyPans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "577674f1-79e7-407e-8243-fd8d87efb639";

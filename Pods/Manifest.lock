@@ -53,6 +53,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - ProgressHUD (2.60)
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
@@ -69,6 +70,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - IQKeyboardManagerSwift
   - MaterialTextField
+  - ProgressHUD
   - SDWebImage
   - SVProgressHUD
   - UIColor_Hex_Swift
@@ -90,10 +92,11 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   MaterialTextField: f876a39d571eeece872af6a4da421e3bd065fe0b
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: 1133ef0ee4d94a4df6603e8aa49764b7b5a1dd42
+PODFILE CHECKSUM: 130553fa4d8237410d74a11ceb19ddb83a6bba30
 
 COCOAPODS: 1.4.0

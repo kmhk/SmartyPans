@@ -7,13 +7,24 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import SDWebImage
 class HomeVC: UIViewController {
-
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var recipes = [Recipe]()
+    var user: SPUser!
+    var firRecipesRef : DatabaseReference!
+    var firUser: User!
+    var firUserRef : DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        addHandle() 
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +32,36 @@ class HomeVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func addHandle(){
+        print("HomeViewcontroller add handle")
+        firUser = Api.SUser.CURRENT_USER
+        firRecipesRef = Database.database().reference(withPath: "recipes")
+        firRecipesRef.queryOrdered(byChild: "name").observe(.value) { (snapshot) in
+            var newItems = [Recipe]()
+            for item in snapshot.children{
+                let recipe = Recipe.init(item as! DataSnapshot)
+                newItems.append(recipe)
+            }
+            
+            if newItems.count == 0{
+                return
+            }
+            
+            self.recipes = newItems
+            self.collectionView.reloadData()
+        }
+        
+        firUserRef = Database.database().reference(withPath: "users").child(firUser.uid)
+        
+        firUserRef.observe(.value) { (snapshot) in
+            if !snapshot.hasChildren(){
+                return
+            }
+            
+            let user = SPUser.init(snapshot)
+            self.user = user
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -36,13 +76,19 @@ class HomeVC: UIViewController {
 
 extension HomeVC:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return recipes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCVCell
         cell.layer.cornerRadius = 4
         cell.clipsToBounds = true
+        
+        let recipe = recipes[indexPath.row]
+        cell.nameLabel.text = recipe.name
+        cell.creatorLabel.text = recipe.creator
+        cell.creatorImage.sd_setImage(with: URL(string: recipe.creatorImage), completed: nil)
+        cell.recipeImage.sd_setImage(with: URL(string: recipe.recipeImage), completed: nil)
         return cell
     }
     

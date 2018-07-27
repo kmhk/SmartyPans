@@ -18,4 +18,5 @@ target 'SmartyPans' do
   pod 'UIColor_Hex_Swift'
   pod 'IQKeyboardManagerSwift'
   pod 'MaterialTextField'
+  pod 'ProgressHUD'
 end
