@@ -17,7 +17,7 @@ class HomeVC: UIViewController {
     var recipes = [Recipe]()
     var user: SPUser!
     var firRecipesRef : DatabaseReference!
-    var firUser: User!
+    var firUser: User?
     var firUserRef : DatabaseReference!
     
     override func viewDidLoad() {
@@ -51,15 +51,17 @@ class HomeVC: UIViewController {
             self.collectionView.reloadData()
         }
         
-        firUserRef = Database.database().reference(withPath: "users").child(firUser.uid)
-        
-        firUserRef.observe(.value) { (snapshot) in
-            if !snapshot.hasChildren(){
-                return
-            }
+        if let firUser = firUser {
+            firUserRef = Database.database().reference(withPath: "users").child(firUser.uid)
             
-            let user = SPUser.init(snapshot)
-            self.user = user
+            firUserRef.observe(.value) { (snapshot) in
+                if !snapshot.hasChildren(){
+                    return
+                }
+                
+                let user = SPUser.init(snapshot)
+                self.user = user
+            }
         }
     }
     /*
@@ -102,5 +104,11 @@ extension HomeVC:UICollectionViewDelegate, UICollectionViewDataSource, UICollect
         let height = CGFloat(200)
         
         return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "StepByStep", bundle: nil)
+        let sbsCompletedController = storyBoard.instantiateInitialViewController()
+        self.present(sbsCompletedController!, animated: true, completion: nil)
     }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -58,6 +58,9 @@
 		058688A221026C3700108C18 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889C21026C3700108C18 /* UserApi.swift */; };
 		0587FECA210B915E002945B7 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0587FEC8210B915D002945B7 /* Auth.storyboard */; };
 		05E40A3D210BB84E007197A3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E40A3C210BB84D007197A3 /* AuthService.swift */; };
+		346A3593210BE62600FC2AD3 /* StepByStep.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346A3591210BE62600FC2AD3 /* StepByStep.storyboard */; };
+		346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */; };
+		346A359A210BF9D300FC2AD3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */; };
 		66AA969A2F4B7091B041E3D9 /* Pods_SmartyPans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +118,9 @@
 		0586889C21026C3700108C18 /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		0587FEC9210B915D002945B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		05E40A3C210BB84D007197A3 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		346A3592210BE62600FC2AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StepByStep.storyboard; sourceTree = "<group>"; };
+		346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepCompletedViewController.swift; sourceTree = "<group>"; };
+		346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		97113042F971F51B532A376F /* Pods-SmartyPans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.release.xcconfig"; sourceTree = "<group>"; };
 		A71102C5720D83EE14FF0000 /* Pods-SmartyPans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.debug.xcconfig"; sourceTree = "<group>"; };
 		D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartyPans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +180,7 @@
 			children = (
 				058688362100F25A00108C18 /* AppDelegate.swift */,
 				058688852101039300108C18 /* Global.swift */,
+				346A3598210BF9C100FC2AD3 /* Extensions */,
 				05239574210BA72800EB21EA /* Model */,
 				05868892210217E400108C18 /* API */,
 				0554F0B22107912400CB97AD /* View */,
@@ -192,6 +199,7 @@
 			children = (
 				0587FEC8210B915D002945B7 /* Auth.storyboard */,
 				0586883A2100F25A00108C18 /* Main.storyboard */,
+				346A3591210BE62600FC2AD3 /* StepByStep.storyboard */,
 				0586883F2100F25D00108C18 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -245,6 +253,7 @@
 		05868887210103E100108C18 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				346A3595210BEA3400FC2AD3 /* StepByStep */,
 				05868888210103E100108C18 /* Auth */,
 				0586888B210104A100108C18 /* Main */,
 			);
@@ -287,6 +296,22 @@
 				0586889C21026C3700108C18 /* UserApi.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		346A3595210BEA3400FC2AD3 /* StepByStep */ = {
+			isa = PBXGroup;
+			children = (
+				346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */,
+			);
+			path = StepByStep;
+			sourceTree = "<group>";
+		};
+		346A3598210BF9C100FC2AD3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		6D892BF1DF5EAF06113DBE3A /* Pods */ = {
@@ -341,11 +366,12 @@
 				TargetAttributes = {
 					058688322100F25A00108C18 = {
 						CreatedOnToolsVersion = 9.4;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 0586882E2100F25A00108C18 /* Build configuration list for PBXProject "SmartyPans" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -394,6 +420,7 @@
 				058688702100FF1800108C18 /* NunitoSans-Italic.ttf in Resources */,
 				0586886E2100FF1800108C18 /* NunitoSans-ExtraLight.ttf in Resources */,
 				058688672100FF1800108C18 /* Montserrat-Bold.otf in Resources */,
+				346A3593210BE62600FC2AD3 /* StepByStep.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,11 +523,13 @@
 				058688A021026C3700108C18 /* PostApi.swift in Sources */,
 				058688A221026C3700108C18 /* UserApi.swift in Sources */,
 				0554F0AF210787E600CB97AD /* HomeVC.swift in Sources */,
+				346A359A210BF9D300FC2AD3 /* UIView+Extension.swift in Sources */,
 				05868896210219A400108C18 /* ForgetPWVC.swift in Sources */,
 				05E40A3D210BB84E007197A3 /* AuthService.swift in Sources */,
 				058688862101039300108C18 /* Global.swift in Sources */,
 				058688A121026C3700108C18 /* SUser.swift in Sources */,
 				0586889121018F9200108C18 /* LoginVC.swift in Sources */,
+				346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */,
 				058688372100F25A00108C18 /* AppDelegate.swift in Sources */,
 				0586888D210104DA00108C18 /* MainTabBarVC.swift in Sources */,
 				0586888F21018F8600108C18 /* RegisterVC.swift in Sources */,
@@ -534,6 +563,14 @@
 				0587FEC9210B915D002945B7 /* Base */,
 			);
 			name = Auth.storyboard;
+			sourceTree = "<group>";
+		};
+		346A3591210BE62600FC2AD3 /* StepByStep.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				346A3592210BE62600FC2AD3 /* Base */,
+			);
+			name = StepByStep.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -661,6 +698,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = W783B6Q8FR;
 				INFOPLIST_FILE = SmartyPans/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartypans.SmartyPans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -679,6 +717,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = W783B6Q8FR;
 				INFOPLIST_FILE = SmartyPans/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartypans.SmartyPans;
 				PRODUCT_NAME = "$(TARGET_NAME)";

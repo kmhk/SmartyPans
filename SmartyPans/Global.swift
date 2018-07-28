@@ -42,6 +42,7 @@ func setRound(toView: UIView, radius: CGFloat){
     toView.layer.cornerRadius = radius
     toView.clipsToBounds = true
 }
+
 func setPadding(toTextField: UITextField, fLeft: CGFloat, fRight: CGFloat){
     toTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: fLeft, height: 0))
     toTextField.leftViewMode = .always
