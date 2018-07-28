@@ -18,8 +18,8 @@
         <array key="NunitoSans-ExtraBold.ttf">
             <string>NunitoSans-ExtraBold</string>
         </array>
-        <array key="SFUIText.ttf">
-            <string>.SFUIText</string>
+        <array key="NunitoSans-Light.ttf">
+            <string>NunitoSans-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -74,7 +74,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eX0-G1-sj9">
-                                <rect key="frame" x="0.0" y="140" width="375" height="387"/>
+                                <rect key="frame" x="0.0" y="134.5" width="375" height="398.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="completed-example-image" translatesAutoresizingMaskIntoConstraints="NO" id="cU8-Gc-lKp">
                                         <rect key="frame" x="95" y="10" width="184" height="184"/>
@@ -85,19 +85,19 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5o-HZ-KDH">
-                                        <rect key="frame" x="98.5" y="214" width="178.5" height="42"/>
+                                        <rect key="frame" x="96.5" y="214" width="183" height="49.5"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bon Appetit!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qqc-tf-oXd">
-                                        <rect key="frame" x="117" y="266" width="141" height="29"/>
-                                        <fontDescription key="fontDescription" name=".SFUIText" family=".SF UI Text" pointSize="24"/>
+                                        <rect key="frame" x="121.5" y="273.5" width="132.5" height="33"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans-Light" family="Nunito Sans" pointSize="24"/>
                                         <color key="textColor" red="0.9882352941176471" green="0.69803921568627447" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIT-NE-OLx">
-                                        <rect key="frame" x="125" y="325" width="124" height="42"/>
+                                        <rect key="frame" x="125" y="336.5" width="124" height="42"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FL-GC-ymQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
