@@ -79,7 +79,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hh1-hk-eOb">
                                 <rect key="frame" x="87.666666666666686" y="296" width="200" height="200"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="salmon-image" translatesAutoresizingMaskIntoConstraints="NO" id="1Le-ES-sqW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="salmon-image" translatesAutoresizingMaskIntoConstraints="NO" id="1Le-ES-sqW">
                                         <rect key="frame" x="7.3333333333333286" y="7.6666666666666856" width="184" height="184"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -243,6 +243,12 @@
                                 <color key="textColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqA-xh-SSz">
+                                <rect key="frame" x="309.33333333333331" y="53.666666666666664" width="54.666666666666686" height="30.666666666666664"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="22"/>
+                                <color key="textColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.75 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPa-A5-oFz">
                                 <rect key="frame" x="148" y="139.66666666666666" width="79" height="27.333333333333343"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="20"/>
@@ -270,6 +276,7 @@
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fy4-fm-t5X" firstAttribute="centerX" secondItem="d8T-JP-rYN" secondAttribute="centerX" id="0MT-0A-mce"/>
+                            <constraint firstItem="zqA-xh-SSz" firstAttribute="centerY" secondItem="0E1-4m-pr5" secondAttribute="centerY" id="20d-WE-G6J"/>
                             <constraint firstItem="0uX-7h-hP6" firstAttribute="trailing" secondItem="dqq-zO-at8" secondAttribute="trailing" constant="35" id="4BT-y1-890"/>
                             <constraint firstItem="BFu-vQ-PeW" firstAttribute="top" secondItem="Hh1-hk-eOb" secondAttribute="bottom" constant="10" id="7Fo-4l-mB2"/>
                             <constraint firstItem="Tbw-Uh-uig" firstAttribute="centerX" secondItem="d8T-JP-rYN" secondAttribute="centerX" id="8nD-jG-2nd"/>
@@ -281,6 +288,7 @@
                             <constraint firstItem="0E1-4m-pr5" firstAttribute="top" secondItem="fKs-IF-8Hg" secondAttribute="bottom" constant="5" id="XSX-3z-ZmL"/>
                             <constraint firstItem="P9N-A0-H0a" firstAttribute="top" secondItem="0E1-4m-pr5" secondAttribute="bottom" constant="10" id="Z6D-zn-9vI"/>
                             <constraint firstItem="ssf-ug-cfu" firstAttribute="top" secondItem="fy4-fm-t5X" secondAttribute="bottom" constant="74" id="cVn-60-JuK"/>
+                            <constraint firstItem="0uX-7h-hP6" firstAttribute="trailing" secondItem="zqA-xh-SSz" secondAttribute="trailing" constant="11" id="iAc-jI-wkE"/>
                             <constraint firstItem="Hh1-hk-eOb" firstAttribute="centerX" secondItem="d8T-JP-rYN" secondAttribute="centerX" id="nny-Ud-sXu"/>
                             <constraint firstItem="ssf-ug-cfu" firstAttribute="top" secondItem="Tbw-Uh-uig" secondAttribute="bottom" constant="10" id="rZh-cR-tpZ"/>
                             <constraint firstItem="ZPa-A5-oFz" firstAttribute="top" secondItem="P9N-A0-H0a" secondAttribute="bottom" constant="10" id="tJE-f1-ZRh"/>
