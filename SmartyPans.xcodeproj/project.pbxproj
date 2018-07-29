@@ -58,9 +58,13 @@
 		058688A221026C3700108C18 /* UserApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586889C21026C3700108C18 /* UserApi.swift */; };
 		0587FECA210B915E002945B7 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0587FEC8210B915D002945B7 /* Auth.storyboard */; };
 		05E40A3D210BB84E007197A3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E40A3C210BB84D007197A3 /* AuthService.swift */; };
+		3402986E210CB65D00000AF8 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */; };
+		34029871210CB67900000AF8 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3402986F210CB67900000AF8 /* Recipe.storyboard */; };
+		34029874210CBFAD00000AF8 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34029873210CBFAD00000AF8 /* Double+Extension.swift */; };
 		346A3593210BE62600FC2AD3 /* StepByStep.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346A3591210BE62600FC2AD3 /* StepByStep.storyboard */; };
 		346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */; };
 		346A359A210BF9D300FC2AD3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */; };
+		34D5D6C8210D7F2500C260E3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5D6C7210D7F2500C260E3 /* UIButton+Extension.swift */; };
 		66AA969A2F4B7091B041E3D9 /* Pods_SmartyPans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */; };
 /* End PBXBuildFile section */
 
@@ -118,9 +122,13 @@
 		0586889C21026C3700108C18 /* UserApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserApi.swift; sourceTree = "<group>"; };
 		0587FEC9210B915D002945B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Auth.storyboard; sourceTree = "<group>"; };
 		05E40A3C210BB84D007197A3 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
+		34029870210CB67900000AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Recipe.storyboard; sourceTree = "<group>"; };
+		34029873210CBFAD00000AF8 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		346A3592210BE62600FC2AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StepByStep.storyboard; sourceTree = "<group>"; };
 		346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepCompletedViewController.swift; sourceTree = "<group>"; };
 		346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		34D5D6C7210D7F2500C260E3 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		97113042F971F51B532A376F /* Pods-SmartyPans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.release.xcconfig"; sourceTree = "<group>"; };
 		A71102C5720D83EE14FF0000 /* Pods-SmartyPans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.debug.xcconfig"; sourceTree = "<group>"; };
 		D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartyPans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +168,7 @@
 		0586882A2100F25A00108C18 = {
 			isa = PBXGroup;
 			children = (
+				34C46317210D639C0032CA30 /* Controls */,
 				058688352100F25A00108C18 /* SmartyPans */,
 				058688342100F25A00108C18 /* Products */,
 				6D892BF1DF5EAF06113DBE3A /* Pods */,
@@ -201,6 +210,7 @@
 				0586883A2100F25A00108C18 /* Main.storyboard */,
 				346A3591210BE62600FC2AD3 /* StepByStep.storyboard */,
 				0586883F2100F25D00108C18 /* LaunchScreen.storyboard */,
+				3402986F210CB67900000AF8 /* Recipe.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -253,6 +263,7 @@
 		05868887210103E100108C18 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				3402986C210CB63300000AF8 /* Recipe */,
 				346A3595210BEA3400FC2AD3 /* StepByStep */,
 				05868888210103E100108C18 /* Auth */,
 				0586888B210104A100108C18 /* Main */,
@@ -298,6 +309,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		3402986C210CB63300000AF8 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
 		346A3595210BEA3400FC2AD3 /* StepByStep */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,8 +329,25 @@
 			isa = PBXGroup;
 			children = (
 				346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */,
+				34029873210CBFAD00000AF8 /* Double+Extension.swift */,
+				34D5D6C7210D7F2500C260E3 /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		34C46317210D639C0032CA30 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				34C46318210D63A40032CA30 /* Buttons */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		34C46318210D63A40032CA30 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		6D892BF1DF5EAF06113DBE3A /* Pods */ = {
@@ -409,6 +445,7 @@
 				058688712100FF1800108C18 /* NunitoSans-Light.ttf in Resources */,
 				058688742100FF1800108C18 /* NunitoSans-SemiBold.ttf in Resources */,
 				0586886B2100FF1800108C18 /* NunitoSans-BoldItalic.ttf in Resources */,
+				34029871210CB67900000AF8 /* Recipe.storyboard in Resources */,
 				058688792100FF1800108C18 /* Roboto-Light.ttf in Resources */,
 				0586887C2100FF1800108C18 /* Roboto-Thin.ttf in Resources */,
 				0586883C2100F25A00108C18 /* Main.storyboard in Resources */,
@@ -440,6 +477,8 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/LGButton/LGButton.framework",
+				"${BUILT_PRODUCTS_DIR}/MBCircularProgressBar/MBCircularProgressBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialTextField/MaterialTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -456,6 +495,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBCircularProgressBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -516,6 +557,7 @@
 				0554F0B42107913600CB97AD /* HomeCVCell.swift in Sources */,
 				05239573210BA1E500EB21EA /* Api.swift in Sources */,
 				0586888A210103E100108C18 /* WelcomeVC.swift in Sources */,
+				3402986E210CB65D00000AF8 /* AddIngredientViewController.swift in Sources */,
 				0554F0B621079C7A00CB97AD /* EditProfileVC.swift in Sources */,
 				0586889D21026C3700108C18 /* Config.swift in Sources */,
 				0523957E210BA72800EB21EA /* SPUser.swift in Sources */,
@@ -524,11 +566,13 @@
 				058688A221026C3700108C18 /* UserApi.swift in Sources */,
 				0554F0AF210787E600CB97AD /* HomeVC.swift in Sources */,
 				346A359A210BF9D300FC2AD3 /* UIView+Extension.swift in Sources */,
+				34029874210CBFAD00000AF8 /* Double+Extension.swift in Sources */,
 				05868896210219A400108C18 /* ForgetPWVC.swift in Sources */,
 				05E40A3D210BB84E007197A3 /* AuthService.swift in Sources */,
 				058688862101039300108C18 /* Global.swift in Sources */,
 				058688A121026C3700108C18 /* SUser.swift in Sources */,
 				0586889121018F9200108C18 /* LoginVC.swift in Sources */,
+				34D5D6C8210D7F2500C260E3 /* UIButton+Extension.swift in Sources */,
 				346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */,
 				058688372100F25A00108C18 /* AppDelegate.swift in Sources */,
 				0586888D210104DA00108C18 /* MainTabBarVC.swift in Sources */,
@@ -563,6 +607,14 @@
 				0587FEC9210B915D002945B7 /* Base */,
 			);
 			name = Auth.storyboard;
+			sourceTree = "<group>";
+		};
+		3402986F210CB67900000AF8 /* Recipe.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				34029870210CB67900000AF8 /* Base */,
+			);
+			name = Recipe.storyboard;
 			sourceTree = "<group>";
 		};
 		346A3591210BE62600FC2AD3 /* StepByStep.storyboard */ = {

@@ -47,4 +47,16 @@ extension UIView {
         self.layer.shadowColor = UIColor.black.cgColor
     }
     
+    func dropCoolShadow(){
+        self.layer.masksToBounds = false
+        //self.backgroundColor = .white
+        self.layer.cornerRadius = 14
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 1, height: 5)
+        self.layer.shadowRadius = 8
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: 14, height: 14)).cgPath
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
 }
