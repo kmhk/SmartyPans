@@ -10,10 +10,9 @@ import UIKit
 
 class HomeCVCell: UICollectionViewCell {
     @IBOutlet weak var recipeImage : UIImageView!
-    @IBOutlet weak var nameLabel : UILabel!
     @IBOutlet weak var creatorImage : UIImageView!
-    @IBOutlet weak var creatorLabel : UILabel!
-    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var creatorLabel: UILabel!
     override func layoutSubviews() {
         super.layoutSubviews()
         recipeImage.layer.cornerRadius = 4
