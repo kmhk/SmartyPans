@@ -61,6 +61,7 @@
 		3402986E210CB65D00000AF8 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */; };
 		34029871210CB67900000AF8 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3402986F210CB67900000AF8 /* Recipe.storyboard */; };
 		34029874210CBFAD00000AF8 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34029873210CBFAD00000AF8 /* Double+Extension.swift */; };
+		342F749B210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F749A210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift */; };
 		346A3593210BE62600FC2AD3 /* StepByStep.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346A3591210BE62600FC2AD3 /* StepByStep.storyboard */; };
 		346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */; };
 		346A359A210BF9D300FC2AD3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */; };
@@ -125,6 +126,7 @@
 		3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		34029870210CB67900000AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Recipe.storyboard; sourceTree = "<group>"; };
 		34029873210CBFAD00000AF8 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		342F749A210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepbyStepRecipeIngredientsViewController.swift; sourceTree = "<group>"; };
 		346A3592210BE62600FC2AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StepByStep.storyboard; sourceTree = "<group>"; };
 		346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepCompletedViewController.swift; sourceTree = "<group>"; };
 		346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */,
+				342F749A210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift */,
 			);
 			path = StepByStep;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				0523957D210BA72800EB21EA /* RecipeStep.swift in Sources */,
 				0554F0B42107913600CB97AD /* HomeCVCell.swift in Sources */,
 				05239573210BA1E500EB21EA /* Api.swift in Sources */,
+				342F749B210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift in Sources */,
 				0586888A210103E100108C18 /* WelcomeVC.swift in Sources */,
 				3402986E210CB65D00000AF8 /* AddIngredientViewController.swift in Sources */,
 				0554F0B621079C7A00CB97AD /* EditProfileVC.swift in Sources */,
