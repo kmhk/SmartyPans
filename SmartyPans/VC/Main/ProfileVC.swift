@@ -8,6 +8,9 @@
 
 import UIKit
 import SDWebImage
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class ProfileVC: UIViewController {
     @IBOutlet weak var imgProfile: UIImageView!
@@ -35,6 +38,26 @@ class ProfileVC: UIViewController {
         fetchMyPosts()
     }
 
+    @IBAction func onLogout(_ sender: Any) {
+        let alert = UIAlertController.init(title: "Confirm", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        
+        let defaultAction = UIAlertAction.init(title: "NO", style: .cancel, handler: nil)
+        alert.addAction(defaultAction)
+        
+        let logoutAction = UIAlertAction.init(title: "YES", style: .default) { (action) in
+            do{
+                try Auth.auth().signOut()
+                MainTabBarVC.shared.loadLogin(animate: true)
+
+            }catch{
+                
+            }
+        }
+        
+        alert.addAction(logoutAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     func fetchUser() {
         Api.SUser.observeCurrentUser { (user) in
             self.user = user

@@ -10,12 +10,15 @@ import UIKit
 import Firebase
 
 class MainTabBarVC: UITabBarController {
-
+    static var shared : MainTabBarVC!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.delegate = self
+        MainTabBarVC.shared = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +38,10 @@ class MainTabBarVC: UITabBarController {
         let vc = UIStoryboard(name: "Auth", bundle: nil).instantiateInitialViewController()
         vc?.modalTransitionStyle = .crossDissolve
         parent?.present(vc!, animated: animate, completion: nil)
+        loadScreen(indexOf: 0)
+    }
+    func loadScreen(indexOf: Int){
+        self.selectedIndex = indexOf
     }
     /*
     // MARK: - Navigation
