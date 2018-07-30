@@ -47,6 +47,14 @@ extension UIView {
         self.layer.shadowColor = UIColor.black.cgColor
     }
     
+    func dropBigButtonShadow() {
+        self.layer.shadowRadius = 5.0
+        self.layer.shadowOpacity = 1
+        self.layer.masksToBounds = false
+        self.layer.shadowOffset = CGSize(width: 0, height: 8)
+        self.layer.shadowColor = UIColor.black.cgColor
+    }
+    
     func dropCoolShadow(){
         self.layer.masksToBounds = false
         //self.backgroundColor = .white
