@@ -74,6 +74,21 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>LGButton.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>MBCircularProgressBar-MBCircularProgressBar.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
+		<key>MBCircularProgressBar.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
 		<key>MaterialTextField.xcscheme</key>
 		<dict>
 			<key>isShown</key>

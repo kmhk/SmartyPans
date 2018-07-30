@@ -24,9 +24,9 @@ class MainTabBarVC: UITabBarController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //if Api.SUser.CURRENT_USER != nil {
-        if !g_bStarted {
-            g_bStarted = true
+        if Api.SUser.CURRENT_USER == nil {
+        //if !g_bStarted {
+            //g_bStarted = true
             loadLogin(animate: true)
         }
     }
