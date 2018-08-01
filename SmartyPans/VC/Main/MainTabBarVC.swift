@@ -60,7 +60,7 @@ extension MainTabBarVC:UITabBarControllerDelegate{
         //Add Recipe
         if index == 1{
             let vc = storyboard?.instantiateViewController(withIdentifier: "PanPairVC")
-            present(vc!, animated: true, completion: nil)
+            navigationController?.show(vc!, sender: nil)
             return false
         }
         

@@ -26,13 +26,13 @@ PODS:
   - FirebaseAnalytics (5.0.1):
     - FirebaseCore (~> 5.0)
     - FirebaseInstanceID (~> 3.0)
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
   - FirebaseAuth (5.0.1):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (5.0.4):
-    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseDatabase (5.0.1):
     - FirebaseCore (~> 5.0)
     - leveldb-library (~> 1.18)
@@ -42,7 +42,7 @@ PODS:
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/Defines (2.1.4)
-  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
+  - GoogleToolboxForMac/NSData+zlib (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GTMSessionFetcher/Core (1.1.15)
   - IQKeyboardManagerSwift (6.0.4)
@@ -56,6 +56,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - ProgressHUD (2.60)
+  - Pulsator (0.5.1)
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
@@ -75,34 +76,10 @@ DEPENDENCIES:
   - MaterialTextField
   - MBCircularProgressBar
   - ProgressHUD
+  - Pulsator
   - SDWebImage
   - SVProgressHUD
   - UIColor_Hex_Swift
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - Bolts
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - Firebase
-    - FirebaseAnalytics
-    - FirebaseAuth
-    - FirebaseCore
-    - FirebaseDatabase
-    - FirebaseInstanceID
-    - FirebaseStorage
-    - GoogleToolboxForMac
-    - GTMSessionFetcher
-    - IQKeyboardManagerSwift
-    - leveldb-library
-    - LGButton
-    - MaterialTextField
-    - MBCircularProgressBar
-    - nanopb
-    - ProgressHUD
-    - SDWebImage
-    - SVProgressHUD
-    - UIColor_Hex_Swift
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -124,10 +101,11 @@ SPEC CHECKSUMS:
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
+  Pulsator: f465ca37212d826523fe8c79b07c1a4c1a941f5e
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: 2fbd98d3563d16c0fc8f83b2c6127fecb0aebb4f
+PODFILE CHECKSUM: 5c90d166e5d539ba37b83355ff90e36ff33fffcb
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.4.0

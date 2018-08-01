@@ -9,11 +9,13 @@
 import UIKit
 
 class PanFoundVC: UIViewController {
-
+    @IBOutlet weak var btnFind: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setRound(toView: btnFind, radius: 25)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +23,13 @@ class PanFoundVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func onClose(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @IBAction func onFindPans(_ sender: Any) {
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -33,3 +41,5 @@ class PanFoundVC: UIViewController {
     */
 
 }
+
+

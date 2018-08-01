@@ -22,4 +22,5 @@ target 'SmartyPans' do
   #pod 'KDCircularProgress', :git => 'https://github.com/kaandedeoglu/KDCircularProgress'
   pod 'MBCircularProgressBar'
   pod 'LGButton'
+  pod 'Pulsator'
 end

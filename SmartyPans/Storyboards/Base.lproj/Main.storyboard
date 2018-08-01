@@ -523,17 +523,35 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="close-icon"/>
                                 <connections>
-                                    <action selector="onBack:" destination="afY-rz-Gry" eventType="touchUpInside" id="84q-xh-jKG"/>
+                                    <action selector="onClose:" destination="afY-rz-Gry" eventType="touchUpInside" id="egg-aY-CvT"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_Iw" translatesAutoresizingMaskIntoConstraints="NO" id="Sz1-g1-PIN">
+                                <rect key="frame" x="108" y="254" width="158" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q39-mD-Wte">
+                                <rect key="frame" x="310" y="629" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" title="If found">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFound:" destination="afY-rz-Gry" eventType="touchUpInside" id="mqn-ZV-67M"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="cN2-9P-y9y"/>
                     </view>
+                    <connections>
+                        <outlet property="imgLogo" destination="Sz1-g1-PIN" id="mCa-3K-CHg"/>
+                        <segue destination="Oaw-Yd-V4V" kind="show" identifier="segueFound" id="AhE-yB-kDv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hT-o4-SfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="769" y="1145"/>
+            <point key="canvasLocation" x="613.60000000000002" y="1144.6776611694154"/>
         </scene>
         <!--Pan FoundVC-->
         <scene sceneID="GHF-Nv-oEa">
@@ -558,7 +576,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="close-icon"/>
                                 <connections>
-                                    <action selector="onBack:" destination="Oaw-Yd-V4V" eventType="touchUpInside" id="YFv-wa-5ML"/>
+                                    <action selector="onClose:" destination="Oaw-Yd-V4V" eventType="touchUpInside" id="fwR-cW-y5e"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the pan on which you want to cook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOq-hN-7xd">
@@ -639,6 +657,9 @@
                                         <state key="normal" title="FIND SMARTYPANS" backgroundImage="gr">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onFindPans:" destination="Oaw-Yd-V4V" eventType="touchUpInside" id="W7U-gh-AhF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
@@ -647,6 +668,9 @@
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="xie-5S-ebA"/>
                     </view>
+                    <connections>
+                        <outlet property="btnFind" destination="S64-Xl-Lz5" id="rZX-bv-gVe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgD-tU-Q60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -660,6 +684,7 @@
         <image name="btnEdit" width="28" height="28"/>
         <image name="close-icon" width="28" height="28"/>
         <image name="gr" width="375" height="190"/>
+        <image name="logo_Iw" width="156" height="158"/>
         <image name="nopan" width="102" height="23"/>
         <image name="nopost" width="72" height="68"/>
         <image name="tab_add" width="43" height="42"/>

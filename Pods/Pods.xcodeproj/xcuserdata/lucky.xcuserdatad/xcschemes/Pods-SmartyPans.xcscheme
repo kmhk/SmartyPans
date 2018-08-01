@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B0DD4EADE0CC40267F763524B61DC616"
+               BlueprintIdentifier = "8EC3490F98AC034D0960A9058261F00D"
                BuildableName = "Pods_SmartyPans.framework"
                BlueprintName = "Pods-SmartyPans"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B0DD4EADE0CC40267F763524B61DC616"
+            BlueprintIdentifier = "8EC3490F98AC034D0960A9058261F00D"
             BuildableName = "Pods_SmartyPans.framework"
             BlueprintName = "Pods-SmartyPans"
             ReferencedContainer = "container:Pods.xcodeproj">
