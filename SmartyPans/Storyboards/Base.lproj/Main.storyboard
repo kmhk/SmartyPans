@@ -498,7 +498,7 @@
         <!--Pan PairVC-->
         <scene sceneID="caG-TZ-P1O">
             <objects>
-                <viewController id="afY-rz-Gry" customClass="PanPairVC" customModule="SmartyPans" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PanPairVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="afY-rz-Gry" customClass="PanPairVC" customModule="SmartyPans" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rhk-EA-hjw"/>
                         <viewControllerLayoutGuide type="bottom" id="PnF-nE-EYv"/>
@@ -535,10 +535,10 @@
             </objects>
             <point key="canvasLocation" x="769" y="1145"/>
         </scene>
-        <!--Found PanVC-->
+        <!--Pan FoundVC-->
         <scene sceneID="GHF-Nv-oEa">
             <objects>
-                <viewController id="Oaw-Yd-V4V" customClass="FoundPanVC" customModule="SmartyPans" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PanFoundVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Oaw-Yd-V4V" customClass="PanFoundVC" customModule="SmartyPans" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Zw-PI-qrk"/>
                         <viewControllerLayoutGuide type="bottom" id="Yz3-Bg-3aD"/>

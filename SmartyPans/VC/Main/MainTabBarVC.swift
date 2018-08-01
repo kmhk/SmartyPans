@@ -57,7 +57,10 @@ class MainTabBarVC: UITabBarController {
 extension MainTabBarVC:UITabBarControllerDelegate{
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let index = tabBarController.viewControllers?.index(of: viewController)!
+        //Add Recipe
         if index == 1{
+            let vc = storyboard?.instantiateViewController(withIdentifier: "PanPairVC")
+            present(vc!, animated: true, completion: nil)
             return false
         }
         

@@ -1,5 +1,5 @@
 //
-//  FoundPanVC.swift
+//  PanFoundVC.swift
 //  SmartyPans
 //
 //  Created by Lucky on 2018/8/1.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FoundPanVC: UIViewController {
+class PanFoundVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
