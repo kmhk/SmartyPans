@@ -1,22 +1,19 @@
 //
-//  PanFoundVC.swift
+//  RecipeDetailsVC.swift
 //  SmartyPans
 //
-//  Created by Lucky on 2018/8/1.
+//  Created by Lucky on 2018/8/2.
 //  Copyright © 2018 Lucky. All rights reserved.
 //
 
 import UIKit
 
-class PanFoundVC: UIViewController {
-    @IBOutlet weak var btnFind: UIButton!
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+class RecipeDetailsVC: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setRound(toView: btnFind, radius: 25)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,13 +21,7 @@ class PanFoundVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onClose(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
-    @IBAction func onFindPans(_ sender: Any) {
-        
-    }
+
     /*
     // MARK: - Navigation
 
@@ -42,5 +33,3 @@ class PanFoundVC: UIViewController {
     */
 
 }
-
-
