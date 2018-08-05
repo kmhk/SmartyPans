@@ -223,7 +223,7 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
             if section == 0{
                 return 1
             }
-            return stepsArray.count + 2
+            return stepsArray.count + 1
         }
         else {
             
@@ -243,11 +243,6 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
                 
                 if indexPath.row == 0{
                     cell = tableView.dequeueReusableCell(withIdentifier: "cell3_header") as! InstructionTVCell
-                }else if indexPath.row == stepsArray.count + 1{
-                    cell = tableView.dequeueReusableCell(withIdentifier: "cell3_footer") as! InstructionTVCell
-                    let playStepbyStepButton = cell.viewWithTag(100) as! UIButton
-                    playStepbyStepButton.layer.cornerRadius = 21
-                    playStepbyStepButton.clipsToBounds = true
                 }else if stepsArray.count > 0{
                     cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! InstructionTVCell
                     let lblStep = cell.viewWithTag(100) as! UILabel
