@@ -64,6 +64,10 @@
 		3401C4132116688100D03304 /* IngredientsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C4102116688100D03304 /* IngredientsTVCell.swift */; };
 		3401C4142116688100D03304 /* IntroductionTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C4112116688100D03304 /* IntroductionTVCell.swift */; };
 		3401C4152116688100D03304 /* InstructionTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C4122116688100D03304 /* InstructionTVCell.swift */; };
+		3401C4172116971B00D03304 /* SPTabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C4162116971B00D03304 /* SPTabButton.swift */; };
+		3401C41B211697D600D03304 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C419211697D500D03304 /* Fonts.swift */; };
+		3401C41C211697D600D03304 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C41A211697D500D03304 /* Colors.swift */; };
+		3401C41E211698C100D03304 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C41D211698BE00D03304 /* UIColor+Extension.swift */; };
 		3402986E210CB65D00000AF8 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */; };
 		34029871210CB67900000AF8 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3402986F210CB67900000AF8 /* Recipe.storyboard */; };
 		34029874210CBFAD00000AF8 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34029873210CBFAD00000AF8 /* Double+Extension.swift */; };
@@ -135,6 +139,10 @@
 		3401C4102116688100D03304 /* IngredientsTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsTVCell.swift; sourceTree = "<group>"; };
 		3401C4112116688100D03304 /* IntroductionTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroductionTVCell.swift; sourceTree = "<group>"; };
 		3401C4122116688100D03304 /* InstructionTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionTVCell.swift; sourceTree = "<group>"; };
+		3401C4162116971B00D03304 /* SPTabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPTabButton.swift; sourceTree = "<group>"; };
+		3401C419211697D500D03304 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		3401C41A211697D500D03304 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3401C41D211698BE00D03304 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		34029870210CB67900000AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Recipe.storyboard; sourceTree = "<group>"; };
 		34029873210CBFAD00000AF8 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
@@ -182,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				0554F0B32107913600CB97AD /* HomeCVCell.swift */,
+				3401C4162116971B00D03304 /* SPTabButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -207,6 +216,7 @@
 		058688352100F25A00108C18 /* SmartyPans */ = {
 			isa = PBXGroup;
 			children = (
+				3401C418211697BD00D03304 /* Styling */,
 				058688362100F25A00108C18 /* AppDelegate.swift */,
 				058688852101039300108C18 /* Global.swift */,
 				052BF2CB211211D100A188B8 /* Controller */,
@@ -332,6 +342,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		3401C418211697BD00D03304 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				3401C41A211697D500D03304 /* Colors.swift */,
+				3401C419211697D500D03304 /* Fonts.swift */,
+			);
+			path = Styling;
+			sourceTree = "<group>";
+		};
 		3402986C210CB63300000AF8 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +375,7 @@
 		346A3598210BF9C100FC2AD3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3401C41D211698BE00D03304 /* UIColor+Extension.swift */,
 				346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */,
 				34029873210CBFAD00000AF8 /* Double+Extension.swift */,
 				34D5D6C7210D7F2500C260E3 /* UIButton+Extension.swift */,
@@ -568,6 +588,7 @@
 				3401C4142116688100D03304 /* IntroductionTVCell.swift in Sources */,
 				0586889F21026C3700108C18 /* MyPostsApi.swift in Sources */,
 				058688942102199A00108C18 /* NewPWVC.swift in Sources */,
+				3401C4172116971B00D03304 /* SPTabButton.swift in Sources */,
 				3401C4132116688100D03304 /* IngredientsTVCell.swift in Sources */,
 				0523957B210BA72800EB21EA /* Nutrition.swift in Sources */,
 				0523957D210BA72800EB21EA /* RecipeStep.swift in Sources */,
@@ -598,9 +619,12 @@
 				058688372100F25A00108C18 /* AppDelegate.swift in Sources */,
 				0586888D210104DA00108C18 /* MainTabBarVC.swift in Sources */,
 				0586888F21018F8600108C18 /* RegisterVC.swift in Sources */,
+				3401C41C211697D600D03304 /* Colors.swift in Sources */,
 				0586889E21026C3700108C18 /* Post.swift in Sources */,
 				0523957C210BA72800EB21EA /* Recipe.swift in Sources */,
+				3401C41B211697D600D03304 /* Fonts.swift in Sources */,
 				05D1D89D2111640C00E20B7E /* PanFoundVC.swift in Sources */,
+				3401C41E211698C100D03304 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

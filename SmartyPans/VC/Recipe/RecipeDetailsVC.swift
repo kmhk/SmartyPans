@@ -28,6 +28,11 @@ class RecipeDetailsVC: UIViewController {
     //@IBOutlet weak var labelServing: UILabel!
     //@IBOutlet weak var labelCalories: UILabel!
     @IBOutlet var gradientView: UIView!
+    @IBOutlet var instructionBtn: UIButton!
+    @IBOutlet var ingredientsBtn: UIButton!
+    @IBOutlet var tabBtnsContainerView: UIView!
+    @IBOutlet var tabBtnSelectedIndicatorView: UIView!
+    @IBOutlet var tabBtnSelectedIndicatorViewLeading: NSLayoutConstraint!
     
     var recipe: Recipe!
     var user: SPUser!
@@ -130,6 +135,8 @@ class RecipeDetailsVC: UIViewController {
         photoImage.clipsToBounds = true
         
         gradientView.applyBlackAndClearGradient()
+        tabBtnsContainerView.round(corners: [.topLeft, .topRight], radius: 10)
+        instructionBtnPressed(instructionBtn)
     }
     
     @IBAction func back(_ sender: Any) {
@@ -142,6 +149,30 @@ class RecipeDetailsVC: UIViewController {
  */
     
     // MARK: - IBActions
+    
+    @IBAction func instructionBtnPressed(_ sender: Any) {
+        if instructionBtn.isSelected { return }
+        instructionBtn.isSelected = true
+        ingredientsBtn.isSelected = false
+        
+        tabBtnSelectedIndicatorViewLeading.constant = 0
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @IBAction func ingredientsBtnPressed(_ sender: Any) {
+        if ingredientsBtn.isSelected { return }
+        ingredientsBtn.isSelected = true
+        instructionBtn.isSelected = false
+        
+        tabBtnSelectedIndicatorViewLeading.constant = ingredientsBtn.bounds.width
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    
     @objc func recalculatePressed(_ button: UIButton) {
         performSegue(withIdentifier: "RecordVoice", sender: nil)
     }

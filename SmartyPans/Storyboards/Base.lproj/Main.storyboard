@@ -771,33 +771,57 @@
                                     <constraint firstAttribute="height" constant="236" id="ufu-qe-WjS"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSz-rp-tP5">
+                                <rect key="frame" x="0.0" y="226" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDh-0A-qgV" customClass="SPTabButton" customModule="SmartyPans" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="50"/>
+                                        <state key="normal" title="INSTRUCTION">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.2156862745" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="instructionBtnPressed:" destination="lbX-yP-YAw" eventType="touchUpInside" id="PNK-rb-pBk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWd-0p-ufk" customClass="SPTabButton" customModule="SmartyPans" customModuleProvider="target">
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="50"/>
+                                        <state key="normal" title="INGREDIENTS">
+                                            <color key="titleColor" red="0.71764705882352942" green="0.71764705882352942" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ingredientsBtnPressed:" destination="lbX-yP-YAw" eventType="touchUpInside" id="bGw-km-v1L"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsK-c6-4BG">
+                                        <rect key="frame" x="0.0" y="48" width="187.66666666666666" height="2"/>
+                                        <color key="backgroundColor" red="0.94509803920000002" green="0.2156862745" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="Tkt-y9-DAC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pWd-0p-ufk" firstAttribute="top" secondItem="pSz-rp-tP5" secondAttribute="top" id="1Vn-4o-eMD"/>
+                                    <constraint firstAttribute="bottom" secondItem="YsK-c6-4BG" secondAttribute="bottom" id="2Pj-8a-16d"/>
+                                    <constraint firstItem="pWd-0p-ufk" firstAttribute="leading" secondItem="TDh-0A-qgV" secondAttribute="trailing" id="BNx-ed-PTi"/>
+                                    <constraint firstAttribute="bottom" secondItem="pWd-0p-ufk" secondAttribute="bottom" id="Dho-Lx-gSj"/>
+                                    <constraint firstItem="YsK-c6-4BG" firstAttribute="leading" secondItem="pSz-rp-tP5" secondAttribute="leading" id="KyD-DM-VEp"/>
+                                    <constraint firstAttribute="height" constant="50" id="Nua-tE-gj8"/>
+                                    <constraint firstAttribute="bottom" secondItem="TDh-0A-qgV" secondAttribute="bottom" id="bOY-m1-hJ9"/>
+                                    <constraint firstAttribute="trailing" secondItem="pWd-0p-ufk" secondAttribute="trailing" id="gYz-8k-bCW"/>
+                                    <constraint firstItem="TDh-0A-qgV" firstAttribute="top" secondItem="pSz-rp-tP5" secondAttribute="top" id="oAu-fy-ICh"/>
+                                    <constraint firstItem="TDh-0A-qgV" firstAttribute="leading" secondItem="pSz-rp-tP5" secondAttribute="leading" id="unG-iz-3mK"/>
+                                    <constraint firstItem="YsK-c6-4BG" firstAttribute="width" secondItem="TDh-0A-qgV" secondAttribute="width" id="ySv-fH-6sA"/>
+                                    <constraint firstItem="pWd-0p-ufk" firstAttribute="width" secondItem="TDh-0A-qgV" secondAttribute="width" id="zYU-AK-tSJ"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="121" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tVa-K6-ppw">
-                                <rect key="frame" x="0.0" y="236" width="375" height="576"/>
+                                <rect key="frame" x="0.0" y="276" width="375" height="536"/>
                                 <color key="backgroundColor" red="0.94893974069999998" green="0.94907253979999995" blue="0.94889777900000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="pSz-rp-tP5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INSTRUCTION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kh5-8T-OQH">
-                                            <rect key="frame" x="44" y="15" width="120" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
-                                            <color key="textColor" red="0.71764705880000002" green="0.71764705880000002" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INGREDIENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQg-XC-rj2">
-                                            <rect key="frame" x="211" y="15" width="120" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
-                                            <color key="textColor" red="0.94509803920000002" green="0.20784313730000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="160" id="4PI-p4-STk" customClass="IntroductionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="78" width="375" height="160"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4PI-p4-STk" id="Tib-j5-7ws">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
@@ -842,7 +866,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2_header" rowHeight="60" id="uDd-ac-p7x" customClass="IngredientsTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="238" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="188" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uDd-ac-p7x" id="yPl-Mj-i3o">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -878,7 +902,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="77" id="tyq-9N-AuA" customClass="IngredientsTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="298" width="375" height="77"/>
+                                        <rect key="frame" x="0.0" y="248" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tyq-9N-AuA" id="YGq-G4-2sX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
@@ -924,7 +948,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2_footer" rowHeight="80" id="KEc-Oo-vq4" customClass="IngredientsTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="375" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="325" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KEc-Oo-vq4" id="Cus-qT-dgi">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
@@ -963,7 +987,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3_header" rowHeight="52" id="wd8-Ms-djP" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="455" width="375" height="52"/>
+                                        <rect key="frame" x="0.0" y="405" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wd8-Ms-djP" id="2fW-t4-9La">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
@@ -999,7 +1023,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" rowHeight="36" id="X5V-Ia-TLV" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="507" width="375" height="36"/>
+                                        <rect key="frame" x="0.0" y="457" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X5V-Ia-TLV" id="Ptv-qz-hA0">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
@@ -1034,7 +1058,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3_footer" rowHeight="77" id="bWE-rs-9gV" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="543" width="375" height="77"/>
+                                        <rect key="frame" x="0.0" y="493" width="375" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bWE-rs-9gV" id="WDy-2C-dgT">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
@@ -1064,7 +1088,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3_rec" rowHeight="264" id="S1v-f5-aQe" userLabel="cell3_rec" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="620" width="375" height="264"/>
+                                        <rect key="frame" x="0.0" y="570" width="375" height="264"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S1v-f5-aQe" id="XK6-iF-Af1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="264"/>
@@ -1151,7 +1175,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2_rec" rowHeight="474" id="yIh-Xd-1UR" customClass="IngredientsTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="884" width="375" height="474"/>
+                                        <rect key="frame" x="0.0" y="834" width="375" height="474"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yIh-Xd-1UR" id="VIo-hs-HOk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
@@ -1365,18 +1389,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="viV-4I-qVg" firstAttribute="top" secondItem="PrS-Kh-lVx" secondAttribute="bottom" constant="-35" id="7QN-7i-JEh"/>
-                            <constraint firstItem="tVa-K6-ppw" firstAttribute="top" secondItem="Sf6-0p-IUJ" secondAttribute="bottom" id="MGx-bB-rsx"/>
+                            <constraint firstItem="pSz-rp-tP5" firstAttribute="leading" secondItem="viV-4I-qVg" secondAttribute="leading" id="7Zy-c0-J6J"/>
                             <constraint firstAttribute="bottom" secondItem="tVa-K6-ppw" secondAttribute="bottom" id="RQa-KS-mKZ"/>
                             <constraint firstItem="tVa-K6-ppw" firstAttribute="trailing" secondItem="viV-4I-qVg" secondAttribute="trailing" id="bPJ-bO-iTs"/>
                             <constraint firstItem="tVa-K6-ppw" firstAttribute="leading" secondItem="viV-4I-qVg" secondAttribute="leading" id="d6V-ur-CDV"/>
                             <constraint firstItem="Sf6-0p-IUJ" firstAttribute="top" secondItem="xRE-GK-0Ux" secondAttribute="top" id="nfb-uG-a0G"/>
+                            <constraint firstItem="pSz-rp-tP5" firstAttribute="trailing" secondItem="viV-4I-qVg" secondAttribute="trailing" id="qrR-Ga-AfN"/>
                             <constraint firstItem="Sf6-0p-IUJ" firstAttribute="trailing" secondItem="viV-4I-qVg" secondAttribute="trailing" id="tFY-DJ-x24"/>
+                            <constraint firstItem="tVa-K6-ppw" firstAttribute="top" secondItem="pSz-rp-tP5" secondAttribute="bottom" id="txj-BN-jV3"/>
+                            <constraint firstItem="pSz-rp-tP5" firstAttribute="top" secondItem="Sf6-0p-IUJ" secondAttribute="bottom" constant="-10" id="uce-on-Ee7"/>
                             <constraint firstItem="Sf6-0p-IUJ" firstAttribute="leading" secondItem="viV-4I-qVg" secondAttribute="leading" id="wEo-3Y-nES"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="viV-4I-qVg"/>
                     </view>
                     <connections>
                         <outlet property="gradientView" destination="lAN-9K-HJX" id="QUt-8l-mLf"/>
+                        <outlet property="ingredientsBtn" destination="pWd-0p-ufk" id="aAe-Io-DBV"/>
+                        <outlet property="instructionBtn" destination="TDh-0A-qgV" id="Jxs-NY-hHU"/>
                         <outlet property="nameLabel" destination="rXZ-wV-NOd" id="IWi-Ou-N3J"/>
                         <outlet property="photoImage" destination="KbM-Um-7QK" id="wW0-IO-De5"/>
                         <outlet property="playStepbyStepButton" destination="STI-Uh-Ezh" id="YDN-8k-rEH"/>
@@ -1384,6 +1413,9 @@
                         <outlet property="recipeImage" destination="nqZ-CD-xx3" id="oC7-vQ-W4y"/>
                         <outlet property="recipeNameLabel" destination="GDz-58-7W1" id="8UY-g2-yUC"/>
                         <outlet property="share" destination="cEQ-1M-Wpc" id="BrU-gs-TPV"/>
+                        <outlet property="tabBtnSelectedIndicatorView" destination="YsK-c6-4BG" id="bRK-b7-x8I"/>
+                        <outlet property="tabBtnSelectedIndicatorViewLeading" destination="KyD-DM-VEp" id="rAE-6w-8uD"/>
+                        <outlet property="tabBtnsContainerView" destination="pSz-rp-tP5" id="bTP-ek-4pX"/>
                         <outlet property="tableView" destination="tVa-K6-ppw" id="Yc1-8H-l3R"/>
                     </connections>
                 </viewController>
