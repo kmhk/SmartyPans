@@ -236,6 +236,7 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == tableViewInstructions {
             if indexPath.section == 0 {
@@ -249,6 +250,9 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
                     cell = tableView.dequeueReusableCell(withIdentifier: "cell3_header") as! InstructionTVCell
                 }else if stepsArray.count > 0{
                     cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! InstructionTVCell
+                    cell.isFirstCell = indexPath.row == 1
+                    cell.isLastCell = indexPath.row == stepsArray.count
+                    cell.drawDottedLines()
                     let lblStep = cell.viewWithTag(100) as! UILabel
                     let stepContainerView = lblStep.superview!
                     let lblDesc = cell.viewWithTag(101) as! UILabel
@@ -257,6 +261,7 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
                     lblDesc.text = step.stepDescription
                     stepContainerView.asCircle()
                     stepContainerView.dropSmallCircleButtonShadow()
+                    
                 }
                 return cell
             }
