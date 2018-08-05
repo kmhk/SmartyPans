@@ -67,4 +67,21 @@ extension UIView {
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
     }
+    
+    func applyBlackAndClearGradient() {
+        self.applyGradient(colours: [.black, .clear, .black], locations: [0.0, 0.5, 1.0], alpha: 0.5)
+    }
+    
+//    func applyGradient(colours: [UIColor]) -> Void {
+//        self.applyGradient(colours: colours, locations: nil)
+//    }
+    
+    func applyGradient(colours: [UIColor], locations: [NSNumber]?, alpha: CGFloat = 1) -> Void {
+        let gradient: CAGradientLayer = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.colors = colours.map { $0.cgColor }
+        gradient.locations = locations
+        self.layer.insertSublayer(gradient, at: 0)
+        self.alpha = alpha
+    }
 }

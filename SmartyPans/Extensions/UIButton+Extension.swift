@@ -11,7 +11,7 @@ import UIKit
 
 extension UIButton {
     func applyGradient(colours: [UIColor]) -> Void {
-        self.applyGradient(colours)
+        self.applyHorizontalGradient(colours)
     }
     
     func applyRedButtonGradient() -> Void {
@@ -25,14 +25,14 @@ extension UIButton {
         gradient.startPoint = CGPoint.init(x: 0.0, y: 0.5)
         gradient.endPoint = CGPoint.init(x: 1.0, y: 0.5)
         
-        self.applyGradient(colours)
+        self.applyHorizontalGradient(colours)
         
         if let imageView = self.imageView {
             self.bringSubview(toFront: imageView)
         }
     }
     
-    func applyGradient(_ colours: [UIColor]) -> Void {
+    func applyHorizontalGradient(_ colours: [UIColor]) -> Void {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = colours.map { $0.cgColor }
