@@ -1390,27 +1390,27 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="536"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="160" id="fsx-ho-dbU" customClass="IntroductionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="fsx-ho-dbU" customClass="IntroductionTVCell" customModule="SmartyPans" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="121"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fsx-ho-dbU" id="t87-DL-MxR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ea5-Ca-s1r">
-                                                            <rect key="frame" x="15" y="14" width="344" height="138"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ea5-Ca-s1r">
+                                                            <rect key="frame" x="10" y="10" width="355" height="101"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INTRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7y-3T-7La">
-                                                                    <rect key="frame" x="12" y="7" width="332" height="38"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7y-3T-7La">
+                                                                    <rect key="frame" x="5" y="5" width="345" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="gcV-GM-lYV"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxT-T1-nPH">
-                                                                    <rect key="frame" x="6" y="53" width="332" height="85"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxT-T1-nPH">
+                                                                    <rect key="frame" x="5" y="30" width="345" height="66"/>
                                                                     <string key="text">A pancake is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter.</string>
                                                                     <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
@@ -1418,8 +1418,23 @@
                                                                 </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="JxT-T1-nPH" firstAttribute="leading" secondItem="Ea5-Ca-s1r" secondAttribute="leading" constant="5" id="6Cl-HF-lZI"/>
+                                                                <constraint firstItem="JxT-T1-nPH" firstAttribute="top" secondItem="l7y-3T-7La" secondAttribute="bottom" constant="5" id="9Td-Eb-4UZ"/>
+                                                                <constraint firstItem="l7y-3T-7La" firstAttribute="leading" secondItem="Ea5-Ca-s1r" secondAttribute="leading" constant="5" id="PnR-at-i26"/>
+                                                                <constraint firstAttribute="trailing" secondItem="JxT-T1-nPH" secondAttribute="trailing" constant="5" id="Qrm-9g-x6Z"/>
+                                                                <constraint firstAttribute="trailing" secondItem="l7y-3T-7La" secondAttribute="trailing" constant="5" id="biI-fd-hoi"/>
+                                                                <constraint firstAttribute="bottom" secondItem="JxT-T1-nPH" secondAttribute="bottom" constant="5" id="ftI-1u-aAr"/>
+                                                                <constraint firstItem="l7y-3T-7La" firstAttribute="top" secondItem="Ea5-Ca-s1r" secondAttribute="top" constant="5" id="wJg-QR-nPa"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Ea5-Ca-s1r" firstAttribute="top" secondItem="t87-DL-MxR" secondAttribute="top" constant="10" id="0s4-zI-qZA"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ea5-Ca-s1r" secondAttribute="bottom" constant="10" id="64c-BV-EiD"/>
+                                                        <constraint firstItem="Ea5-Ca-s1r" firstAttribute="leading" secondItem="t87-DL-MxR" secondAttribute="leading" constant="10" id="ptL-Ev-j5L"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ea5-Ca-s1r" secondAttribute="trailing" constant="10" id="z4g-1s-iqq"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
@@ -1427,63 +1442,103 @@
                                                     <outlet property="view" destination="Ea5-Ca-s1r" id="D8F-oP-kbT"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3_header" rowHeight="52" id="2me-dT-Qt6" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="188" width="375" height="52"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3_header" id="2me-dT-Qt6" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="149" width="375" height="121"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2me-dT-Qt6" id="tTL-16-jyl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-OK-NCA">
-                                                            <rect key="frame" x="15" y="0.0" width="345" height="51.5"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-OK-NCA">
+                                                            <rect key="frame" x="10" y="0.0" width="355" height="30"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="INSTRUCTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-83-0s2">
-                                                                    <rect key="frame" x="12" y="7" width="333" height="38"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTRUCTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-83-0s2">
+                                                                    <rect key="frame" x="5" y="5" width="345" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="Dsg-kn-seC"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="13"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="Fqb-83-0s2" firstAttribute="leading" secondItem="mHr-OK-NCA" secondAttribute="leading" constant="5" id="WoV-e1-hF1"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Fqb-83-0s2" secondAttribute="trailing" constant="5" id="XQ7-dd-aep"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Fqb-83-0s2" secondAttribute="bottom" constant="5" id="kFw-aU-GoE"/>
+                                                                <constraint firstItem="Fqb-83-0s2" firstAttribute="top" secondItem="mHr-OK-NCA" secondAttribute="top" constant="5" id="ltS-di-Dm0"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="mHr-OK-NCA" firstAttribute="leading" secondItem="tTL-16-jyl" secondAttribute="leading" constant="10" id="5Fm-Bk-sSH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="mHr-OK-NCA" secondAttribute="bottom" id="6Dq-K1-qa0"/>
+                                                        <constraint firstItem="mHr-OK-NCA" firstAttribute="centerY" secondItem="tTL-16-jyl" secondAttribute="centerY" id="VFu-5R-UDI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mHr-OK-NCA" secondAttribute="trailing" constant="10" id="cF9-dU-18f"/>
+                                                        <constraint firstItem="mHr-OK-NCA" firstAttribute="top" secondItem="tTL-16-jyl" secondAttribute="top" id="htn-EB-o4A"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <outlet property="view" destination="mHr-OK-NCA" id="HvA-85-lYj"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" rowHeight="36" id="bvT-iw-ZV8" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="240" width="375" height="36"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3" id="bvT-iw-ZV8" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="270" width="375" height="121"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bvT-iw-ZV8" id="2Kk-Uh-g0A">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="121"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9L-Ud-KUC">
-                                                            <rect key="frame" x="15" y="0.0" width="345" height="35.5"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9L-Ud-KUC">
+                                                            <rect key="frame" x="10" y="10" width="355" height="101"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 1:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDZ-BH-sI7">
-                                                                    <rect key="frame" x="8" y="5" width="57" height="21"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add 1.053 grams  Flour and cook for 40 secs" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uo-MS-EtO">
-                                                                    <rect key="frame" x="66" y="0.0" width="267" height="33"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
-                                                                    <nil key="textColor"/>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTE-fS-DwG">
+                                                                    <rect key="frame" x="8" y="0.0" width="25" height="25"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vU-WB-8Tp">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                            <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="12"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="0vU-WB-8Tp" secondAttribute="trailing" id="5Kv-Yh-Kbw"/>
+                                                                        <constraint firstItem="0vU-WB-8Tp" firstAttribute="top" secondItem="bTE-fS-DwG" secondAttribute="top" id="Bpv-rX-NnE"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="0vU-WB-8Tp" secondAttribute="bottom" id="KbQ-g1-yMC"/>
+                                                                        <constraint firstItem="0vU-WB-8Tp" firstAttribute="leading" secondItem="bTE-fS-DwG" secondAttribute="leading" id="MsM-eP-EkL"/>
+                                                                        <constraint firstAttribute="height" constant="25" id="Uu5-7o-ojL"/>
+                                                                        <constraint firstAttribute="width" constant="25" id="cuF-9V-AwN"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add 1.053 grams  Flour and cook for 40 secs" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uo-MS-EtO">
+                                                                    <rect key="frame" x="43" y="2" width="312" height="99"/>
+                                                                    <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="15"/>
+                                                                    <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstItem="1Uo-MS-EtO" firstAttribute="leading" secondItem="bTE-fS-DwG" secondAttribute="trailing" constant="10" id="5zh-Ko-rMe"/>
+                                                                <constraint firstItem="bTE-fS-DwG" firstAttribute="leading" secondItem="Q9L-Ud-KUC" secondAttribute="leading" constant="8" id="7GY-Zu-kya"/>
+                                                                <constraint firstItem="bTE-fS-DwG" firstAttribute="top" secondItem="Q9L-Ud-KUC" secondAttribute="top" id="8mZ-wD-V3w"/>
+                                                                <constraint firstItem="1Uo-MS-EtO" firstAttribute="top" secondItem="Q9L-Ud-KUC" secondAttribute="top" constant="2" id="P0e-wp-avG"/>
+                                                                <constraint firstAttribute="trailing" secondItem="1Uo-MS-EtO" secondAttribute="trailing" id="Ztd-eb-Ybo"/>
+                                                                <constraint firstAttribute="bottom" secondItem="1Uo-MS-EtO" secondAttribute="bottom" id="wB3-fX-CLj"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Q9L-Ud-KUC" firstAttribute="leading" secondItem="2Kk-Uh-g0A" secondAttribute="leading" constant="10" id="5hg-YM-Hr4"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Q9L-Ud-KUC" secondAttribute="trailing" constant="10" id="8KX-T4-alO"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Q9L-Ud-KUC" secondAttribute="bottom" constant="10" id="NCi-gT-LJl"/>
+                                                        <constraint firstItem="Q9L-Ud-KUC" firstAttribute="top" secondItem="2Kk-Uh-g0A" secondAttribute="top" constant="10" id="kTp-u2-k0H"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <connections>
@@ -1491,7 +1546,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3_footer" rowHeight="77" id="eYo-pa-Cj8" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="276" width="375" height="77"/>
+                                                <rect key="frame" x="0.0" y="391" width="375" height="77"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eYo-pa-Cj8" id="zvh-WJ-LqZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
@@ -1521,7 +1576,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell3_rec" rowHeight="264" id="jSR-Rj-dvg" userLabel="cell3_rec" customClass="InstructionTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="353" width="375" height="264"/>
+                                                <rect key="frame" x="0.0" y="468" width="375" height="264"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jSR-Rj-dvg" id="Kja-Pe-1if">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="264"/>
@@ -1608,7 +1663,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2_rec" rowHeight="474" id="F9I-Zd-izd" customClass="IngredientsTVCell" customModule="SmartyPans" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="617" width="375" height="474"/>
+                                                <rect key="frame" x="0.0" y="732" width="375" height="474"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F9I-Zd-izd" id="gh7-qb-fBf">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>

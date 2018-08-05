@@ -47,6 +47,10 @@ class RecipeDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableViewInstructions.rowHeight = UITableViewAutomaticDimension;
+        self.tableViewInstructions.estimatedRowHeight = 44.0; // set to whatever your "average" cell height is
+        
         initModel()
         initView()
         addHandle()
@@ -247,10 +251,13 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
                 }else if stepsArray.count > 0{
                     cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! InstructionTVCell
                     let lblStep = cell.viewWithTag(100) as! UILabel
+                    let stepContainerView = lblStep.superview!
                     let lblDesc = cell.viewWithTag(101) as! UILabel
                     let step = stepsArray[indexPath.row-1]
-                    lblStep.text = "Step " + String(Int(step.stepNumber))
+                    lblStep.text = String(Int(step.stepNumber))
                     lblDesc.text = step.stepDescription
+                    stepContainerView.asCircle()
+                    stepContainerView.dropSmallCircleButtonShadow()
                 }
                 return cell
             }
@@ -291,17 +298,19 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == tableViewInstructions {
-            if(indexPath.section == 1){
-                if indexPath.row == 0{
-                    return 52
-                }else if indexPath.row == stepsArray.count + 1 {
-                    return 80
-                }else{
-                    return 36
-                }
-            }
+            return UITableViewAutomaticDimension
             
-            return 160
+//            if(indexPath.section == 1){
+//                if indexPath.row == 0{
+//                    return 52
+//                }else if indexPath.row == stepsArray.count + 1 {
+//                    return 80
+//                }else{
+//                    return 36
+//                }
+//            }
+//
+//            return 160
         }
         else {
                 if indexPath.row == 0{

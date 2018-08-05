@@ -47,6 +47,14 @@ extension UIView {
         self.layer.shadowColor = UIColor.black.cgColor
     }
     
+    func dropSmallCircleButtonShadow() {
+        self.layer.shadowRadius = 5.0
+        self.layer.shadowOpacity = 0.1
+        self.layer.masksToBounds = false
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowColor = UIColor.black.cgColor
+    }
+    
     func dropBigButtonShadow() {
         self.layer.shadowRadius = 5.0
         self.layer.shadowOpacity = 1
@@ -90,5 +98,10 @@ extension UIView {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         self.layer.mask = mask
+    }
+    
+    func asCircle(){
+        self.layer.cornerRadius = self.frame.width / 2;
+        self.layer.masksToBounds = true
     }
 }
