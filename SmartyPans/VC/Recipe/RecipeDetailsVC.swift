@@ -48,8 +48,12 @@ class RecipeDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableViewInstructions.rowHeight = UITableViewAutomaticDimension;
-        self.tableViewInstructions.estimatedRowHeight = 44.0; // set to whatever your "average" cell height is
+        self.tableViewInstructions.rowHeight = UITableViewAutomaticDimension
+        self.tableViewInstructions.estimatedRowHeight = 44.0
+        
+        self.tableViewIngredients.rowHeight = UITableViewAutomaticDimension
+        self.tableViewIngredients.estimatedRowHeight = 80.0
+        self.tableViewIngredients.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         
         initModel()
         initView()
@@ -227,7 +231,7 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
         }
         else {
             
-            return stepsArray.count + 2
+            return stepsArray.count
         }
         
     }
@@ -259,9 +263,7 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
         }
         else {
                 var cell : IngredientsTVCell!
-                if indexPath.row == 0{
-                    cell = tableView.dequeueReusableCell(withIdentifier: "cell2_header") as! IngredientsTVCell
-                }else if indexPath.row == stepsArray.count + 1{
+                if indexPath.row == stepsArray.count + 1{
                     cell = tableView.dequeueReusableCell(withIdentifier: "cell2_footer") as! IngredientsTVCell
                     let clearButton = cell.viewWithTag(100) as! UIButton
                     let recalculateButton = cell.viewWithTag(101) as! UIButton
@@ -278,10 +280,15 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
                     let lblIGTitle = cell.viewWithTag(101) as! UILabel
                     let lblWeight = cell.viewWithTag(102) as! UILabel
                     let lblTime = cell.viewWithTag(103) as! UILabel
+                    let imgContainerView = imgIG.superview!
+                    imgIG.asCircle()
+                    imgContainerView.asCircle()
+                    imgContainerView.dropSmallCircleButtonShadow()
                     
-                    let step = stepsArray[indexPath.row-1]
+                    let step = stepsArray[indexPath.row]
                     imgIG.sd_setImage(with: URL(string:step.ingredientImage), completed: nil)
-                    lblIGTitle.text = step.ingredient
+                    let ingredientTxt = step.ingredient
+                    lblIGTitle.text = ingredientTxt.capitalizingFirstLetter()
                     lblWeight.text = String(Int(step.weight)) + " " + step.unit
                     lblTime.text = String(Int((step.endTime - step.startTime)/1000)) + " mins"
                 }
@@ -308,13 +315,14 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
 //            return 160
         }
         else {
-                if indexPath.row == 0{
-                    return 60
-                }else if indexPath.row == stepsArray.count + 1 {
-                    return 80
-                }else{
-                    return 77
-                }
+            return UITableViewAutomaticDimension
+//                if indexPath.row == 0{
+//                    return 60
+//                }else if indexPath.row == stepsArray.count + 1 {
+//                    return 80
+//                }else{
+//                    return 77
+//                }
         }
     }
     
