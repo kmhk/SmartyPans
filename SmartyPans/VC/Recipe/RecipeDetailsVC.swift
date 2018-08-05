@@ -17,7 +17,8 @@ class RecipeDetailsVC: UIViewController {
     //@IBOutlet weak var navView: UIView!
     @IBOutlet weak var ratingView: UIView!
     @IBOutlet weak var playStepbyStepButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableViewIngredients: UITableView!
+    @IBOutlet weak var tableViewInstructions: UITableView!
     @IBOutlet weak var share: UIButton!
     
     @IBOutlet weak var photoImage: UIImageView!
@@ -33,6 +34,8 @@ class RecipeDetailsVC: UIViewController {
     @IBOutlet var tabBtnsContainerView: UIView!
     @IBOutlet var tabBtnSelectedIndicatorView: UIView!
     @IBOutlet var tabBtnSelectedIndicatorViewLeading: NSLayoutConstraint!
+    @IBOutlet var ingredientsDetailContainerView: UIView!
+    @IBOutlet var instructionDetailContainerView: UIView!
     
     var recipe: Recipe!
     var user: SPUser!
@@ -71,7 +74,8 @@ class RecipeDetailsVC: UIViewController {
             //self.labelTime.text = String(Int((self.recipe?.cookTime)!)) + " mins"
             //self.labelCalories.text = String(format: "%.2f cal", (self.recipe?.calories)!)
             self.recipeImage.sd_setImage(with: URL(string: (self.recipe?.recipeImage)!))
-            self.tableView.reloadData()
+            self.tableViewInstructions.reloadData()
+            self.tableViewIngredients.reloadData()
         })
         
         firRecipeStepsRef = Database.database().reference(withPath: "recipe-steps").child(recipeId)
@@ -84,7 +88,8 @@ class RecipeDetailsVC: UIViewController {
             for item in snapshot.children {
                 let step = RecipeStep(item as! DataSnapshot)
                 self.stepsArray.append(step)
-                self.tableView.reloadData()
+                self.tableViewInstructions.reloadData()
+                self.tableViewIngredients.reloadData()
             }
         })
         
@@ -159,6 +164,9 @@ class RecipeDetailsVC: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+        
+        instructionDetailContainerView.isHidden = false
+        ingredientsDetailContainerView.isHidden = true
     }
     
     @IBAction func ingredientsBtnPressed(_ sender: Any) {
@@ -170,6 +178,9 @@ class RecipeDetailsVC: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
+        
+        instructionDetailContainerView.isHidden = true
+        ingredientsDetailContainerView.isHidden = false
     }
     
     
@@ -195,95 +206,112 @@ class RecipeDetailsVC: UIViewController {
 extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
     // MARK: - TableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        if tableView == tableViewInstructions {
+            return 2
+        }
+        else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0{
-            return 1
+        if tableView == tableViewInstructions {
+            if section == 0{
+                return 1
+            }
+            return stepsArray.count + 2
         }
-        return stepsArray.count + 2
+        else {
+            
+            return stepsArray.count + 2
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! IntroductionTVCell
-            cell.descriptionLabel.text = recipe?.description
-            return cell
-        } else if indexPath.section == 1 {
-            var cell : IngredientsTVCell!
-            if indexPath.row == 0{
-                cell = tableView.dequeueReusableCell(withIdentifier: "cell2_header") as! IngredientsTVCell
-            }else if indexPath.row == stepsArray.count + 1{
-                cell = tableView.dequeueReusableCell(withIdentifier: "cell2_footer") as! IngredientsTVCell
-                let clearButton = cell.viewWithTag(100) as! UIButton
-                let recalculateButton = cell.viewWithTag(101) as! UIButton
+        if tableView == tableViewInstructions {
+            if indexPath.section == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! IntroductionTVCell
+                cell.descriptionLabel.text = recipe?.description
+                return cell
+            } else {
+                var cell = InstructionTVCell()
                 
-                clearButton.layer.cornerRadius = 21.0
-                clearButton.clipsToBounds = true
-                recalculateButton.layer.cornerRadius = 21.0
-                recalculateButton.clipsToBounds = true
-                recalculateButton.addTarget(self, action: #selector(recalculatePressed(_:)), for: .touchUpInside)
-            }else if(stepsArray.count > 0){
-                cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! IngredientsTVCell
-                
-                let imgIG = cell.viewWithTag(100) as! UIImageView
-                let lblIGTitle = cell.viewWithTag(101) as! UILabel
-                let lblWeight = cell.viewWithTag(102) as! UILabel
-                let lblTime = cell.viewWithTag(103) as! UILabel
-                
-                let step = stepsArray[indexPath.row-1]
-                imgIG.sd_setImage(with: URL(string:step.ingredientImage), completed: nil)
-                lblIGTitle.text = step.ingredient
-                lblWeight.text = String(Int(step.weight)) + " " + step.unit
-                lblTime.text = String(Int((step.endTime - step.startTime)/1000)) + " mins"
+                if indexPath.row == 0{
+                    cell = tableView.dequeueReusableCell(withIdentifier: "cell3_header") as! InstructionTVCell
+                }else if indexPath.row == stepsArray.count + 1{
+                    cell = tableView.dequeueReusableCell(withIdentifier: "cell3_footer") as! InstructionTVCell
+                    let playStepbyStepButton = cell.viewWithTag(100) as! UIButton
+                    playStepbyStepButton.layer.cornerRadius = 21
+                    playStepbyStepButton.clipsToBounds = true
+                }else if stepsArray.count > 0{
+                    cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! InstructionTVCell
+                    let lblStep = cell.viewWithTag(100) as! UILabel
+                    let lblDesc = cell.viewWithTag(101) as! UILabel
+                    let step = stepsArray[indexPath.row-1]
+                    lblStep.text = "Step " + String(Int(step.stepNumber))
+                    lblDesc.text = step.stepDescription
+                }
+                return cell
             }
-            
-            return cell
-        } else {
-            var cell = InstructionTVCell()
-            
-            if indexPath.row == 0{
-                cell = tableView.dequeueReusableCell(withIdentifier: "cell3_header") as! InstructionTVCell
-            }else if indexPath.row == stepsArray.count + 1{
-                cell = tableView.dequeueReusableCell(withIdentifier: "cell3_footer") as! InstructionTVCell
-                let playStepbyStepButton = cell.viewWithTag(100) as! UIButton
-                playStepbyStepButton.layer.cornerRadius = 21
-                playStepbyStepButton.clipsToBounds = true
-            }else if stepsArray.count > 0{
-                cell = tableView.dequeueReusableCell(withIdentifier: "cell3") as! InstructionTVCell
-                let lblStep = cell.viewWithTag(100) as! UILabel
-                let lblDesc = cell.viewWithTag(101) as! UILabel
-                let step = stepsArray[indexPath.row-1]
-                lblStep.text = "Step " + String(Int(step.stepNumber))
-                lblDesc.text = step.stepDescription
-            }
-            return cell
         }
+        else {
+                var cell : IngredientsTVCell!
+                if indexPath.row == 0{
+                    cell = tableView.dequeueReusableCell(withIdentifier: "cell2_header") as! IngredientsTVCell
+                }else if indexPath.row == stepsArray.count + 1{
+                    cell = tableView.dequeueReusableCell(withIdentifier: "cell2_footer") as! IngredientsTVCell
+                    let clearButton = cell.viewWithTag(100) as! UIButton
+                    let recalculateButton = cell.viewWithTag(101) as! UIButton
+                    
+                    clearButton.layer.cornerRadius = 21.0
+                    clearButton.clipsToBounds = true
+                    recalculateButton.layer.cornerRadius = 21.0
+                    recalculateButton.clipsToBounds = true
+                    recalculateButton.addTarget(self, action: #selector(recalculatePressed(_:)), for: .touchUpInside)
+                }else if(stepsArray.count > 0){
+                    cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! IngredientsTVCell
+                    
+                    let imgIG = cell.viewWithTag(100) as! UIImageView
+                    let lblIGTitle = cell.viewWithTag(101) as! UILabel
+                    let lblWeight = cell.viewWithTag(102) as! UILabel
+                    let lblTime = cell.viewWithTag(103) as! UILabel
+                    
+                    let step = stepsArray[indexPath.row-1]
+                    imgIG.sd_setImage(with: URL(string:step.ingredientImage), completed: nil)
+                    lblIGTitle.text = step.ingredient
+                    lblWeight.text = String(Int(step.weight)) + " " + step.unit
+                    lblTime.text = String(Int((step.endTime - step.startTime)/1000)) + " mins"
+                }
+                
+                return cell
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 1 {
-            if indexPath.row == 0{
-                return 60
-            }else if indexPath.row == stepsArray.count + 1 {
-                return 80
-            }else{
-                return 77
+        if tableView == tableViewInstructions {
+            if(indexPath.section == 1){
+                if indexPath.row == 0{
+                    return 52
+                }else if indexPath.row == stepsArray.count + 1 {
+                    return 80
+                }else{
+                    return 36
+                }
             }
+            
+            return 160
         }
-        
-        if(indexPath.section == 2){
-            if indexPath.row == 0{
-                return 52
-            }else if indexPath.row == stepsArray.count + 1 {
-                return 80
-            }else{
-                return 36
-            }
+        else {
+                if indexPath.row == 0{
+                    return 60
+                }else if indexPath.row == stepsArray.count + 1 {
+                    return 80
+                }else{
+                    return 77
+                }
         }
-        
-        return 160
     }
     
     

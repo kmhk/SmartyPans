@@ -26,10 +26,10 @@ class IngredientsTVCell: UITableViewCell {
     
     func initView(){
         // Add Radius
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 1, height: 1)
-        view.layer.shadowRadius = 4.0
-        view.layer.shadowOpacity = 0.2
-        view.clipsToBounds = false
+//        view.layer.shadowColor = UIColor.black.cgColor
+//        view.layer.shadowOffset = CGSize(width: 1, height: 1)
+//        view.layer.shadowRadius = 4.0
+//        view.layer.shadowOpacity = 0.2
+//        view.clipsToBounds = false
     }
 }
