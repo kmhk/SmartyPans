@@ -42,6 +42,7 @@ class InstructionTVCell: UITableViewCell {
     }
     
     func drawDottedLines() {
+        
             if let lblStep = self.viewWithTag(100) as? UILabel {
                 let stepContainerView = lblStep.superview!
                 if topShapeLayer != nil {

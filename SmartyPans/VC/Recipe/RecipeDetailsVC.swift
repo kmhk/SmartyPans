@@ -36,6 +36,8 @@ class RecipeDetailsVC: UIViewController {
     @IBOutlet var tabBtnSelectedIndicatorViewLeading: NSLayoutConstraint!
     @IBOutlet var ingredientsDetailContainerView: UIView!
     @IBOutlet var instructionDetailContainerView: UIView!
+    @IBOutlet var tabBtnsContainerTopToSafeArea: NSLayoutConstraint!
+    @IBOutlet var tabBtnsContainerTopToHeaderView: NSLayoutConstraint!
     
     var recipe: Recipe!
     var user: SPUser!
@@ -164,7 +166,10 @@ class RecipeDetailsVC: UIViewController {
     // MARK: - IBActions
     
     @IBAction func instructionBtnPressed(_ sender: Any) {
-        if instructionBtn.isSelected { return }
+        if instructionBtn.isSelected {
+            moveTabDetailContainerViews()
+            return
+        }
         instructionBtn.isSelected = true
         ingredientsBtn.isSelected = false
         
@@ -177,8 +182,48 @@ class RecipeDetailsVC: UIViewController {
         ingredientsDetailContainerView.isHidden = true
     }
     
+    func moveTabDetailContainerViews(){
+        if tabBtnsContainerTopToHeaderView.isActive {
+            tabBtnsContainerTopToHeaderView.isActive = false
+            tabBtnsContainerTopToSafeArea.isActive = true
+        }
+        else {
+            tabBtnsContainerTopToHeaderView.isActive = true
+            tabBtnsContainerTopToSafeArea.isActive = false
+        }
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func moveTabDetailContainerViewsUp() {
+        if tabBtnsContainerTopToHeaderView.isActive {
+            tabBtnsContainerTopToHeaderView.isActive = false
+            tabBtnsContainerTopToSafeArea.isActive = true
+            
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
+        
+    }
+    
+    func moveTabDetailContainerViewsDown() {
+        if tabBtnsContainerTopToSafeArea.isActive {
+            tabBtnsContainerTopToHeaderView.isActive = true
+            tabBtnsContainerTopToSafeArea.isActive = false
+            
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
     @IBAction func ingredientsBtnPressed(_ sender: Any) {
-        if ingredientsBtn.isSelected { return }
+        if ingredientsBtn.isSelected {
+            moveTabDetailContainerViews()
+            return
+        }
         ingredientsBtn.isSelected = true
         instructionBtn.isSelected = false
         
@@ -332,4 +377,43 @@ extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
     }
     
     
+}
+
+extension RecipeDetailsVC: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if instructionBtn.isSelected {
+            if scrollView == tableViewInstructions {
+                var currentLocation = scrollView.contentOffset.y
+                //print("current location: \(currentLocation)")
+                if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
+                    //print("up")
+                    if currentLocation <= 0 {
+                        moveTabDetailContainerViewsDown()
+                    }
+                }
+                else {
+                    //print("down")
+                    moveTabDetailContainerViewsUp()
+                }
+            }
+        }
+        
+        if ingredientsBtn.isSelected {
+            if scrollView == tableViewIngredients {
+                var currentLocation = scrollView.contentOffset.y
+                print("current location: \(currentLocation)")
+                if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
+                    print("up")
+                    if currentLocation <= -20 {
+                        moveTabDetailContainerViewsDown()
+                    }
+                }
+                else {
+                    print("down")
+                    moveTabDetailContainerViewsUp()
+                }
+            }
+        }
+    }
 }
