@@ -25,9 +25,9 @@ class RecipeDetailsVC: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
-    //@IBOutlet weak var labelTime: UILabel!
+    @IBOutlet weak var labelTime: UILabel!
     //@IBOutlet weak var labelServing: UILabel!
-    //@IBOutlet weak var labelCalories: UILabel!
+    @IBOutlet weak var labelCalories: UILabel!
     @IBOutlet var gradientView: UIView!
     @IBOutlet var instructionBtn: UIButton!
     @IBOutlet var ingredientsBtn: UIButton!
@@ -82,8 +82,11 @@ class RecipeDetailsVC: UIViewController {
             let recipe = Recipe(snapshot)
             self.recipe = recipe
             self.recipeNameLabel.text = self.recipe?.name
-            //self.labelTime.text = String(Int((self.recipe?.cookTime)!)) + " mins"
-            //self.labelCalories.text = String(format: "%.2f cal", (self.recipe?.calories)!)
+            if let cookTime = self.recipe?.cookTime{
+                let intCookTime = Int(cookTime)
+                self.labelTime.text = String(intCookTime) + (intCookTime > 1 ? " mins" : " min")
+            }
+            self.labelCalories.text = String(format: "%.0f kCal", (self.recipe?.calories)!)
             self.recipeImage.sd_setImage(with: URL(string: (self.recipe?.recipeImage)!))
             self.tableViewInstructions.reloadData()
             self.tableViewIngredients.reloadData()

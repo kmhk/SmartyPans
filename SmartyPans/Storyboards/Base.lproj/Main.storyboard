@@ -733,7 +733,7 @@
                                             <constraint firstAttribute="width" constant="40" id="1zx-dK-MbY"/>
                                             <constraint firstAttribute="height" constant="40" id="npF-zr-uNi"/>
                                         </constraints>
-                                        <state key="normal" image="btnMore"/>
+                                        <state key="normal" image="btnKcal"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PrS-Kh-lVx">
                                         <rect key="frame" x="10" y="39" width="40" height="40"/>
@@ -746,13 +746,41 @@
                                             <action selector="back:" destination="lbX-yP-YAw" eventType="touchUpInside" id="sTC-J1-rV8"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30 min | 2 servings | 450 kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-le-Bc1">
-                                        <rect key="frame" x="16" y="357" width="210" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-DL-j3k">
+                                        <rect key="frame" x="16" y="358" width="343" height="19"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 mins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-le-Bc1">
+                                                <rect key="frame" x="0.0" y="0.0" width="52" height="19"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" | 2 servings | " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgA-XK-alN">
+                                                <rect key="frame" x="52.000000000000007" y="0.0" width="91.666666666666686" height="19"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450 kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bn-ec-6DQ">
+                                                <rect key="frame" x="143.66666666666666" y="0.0" width="57.666666666666657" height="19"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="2Bn-ec-6DQ" firstAttribute="leading" secondItem="sgA-XK-alN" secondAttribute="trailing" id="JW6-rG-WcU"/>
+                                            <constraint firstItem="lLO-le-Bc1" firstAttribute="top" secondItem="OAW-DL-j3k" secondAttribute="top" id="LtB-kk-wIP"/>
+                                            <constraint firstAttribute="bottom" secondItem="2Bn-ec-6DQ" secondAttribute="bottom" id="Nka-Jk-qd8"/>
+                                            <constraint firstItem="2Bn-ec-6DQ" firstAttribute="top" secondItem="OAW-DL-j3k" secondAttribute="top" id="dA6-br-j9Q"/>
+                                            <constraint firstItem="sgA-XK-alN" firstAttribute="top" secondItem="OAW-DL-j3k" secondAttribute="top" id="gQT-nC-Vgv"/>
+                                            <constraint firstAttribute="bottom" secondItem="sgA-XK-alN" secondAttribute="bottom" id="heb-mn-iiD"/>
+                                            <constraint firstItem="lLO-le-Bc1" firstAttribute="leading" secondItem="OAW-DL-j3k" secondAttribute="leading" id="nfj-vR-DSU"/>
+                                            <constraint firstItem="sgA-XK-alN" firstAttribute="leading" secondItem="lLO-le-Bc1" secondAttribute="trailing" id="oJE-AB-JEE"/>
+                                            <constraint firstAttribute="bottom" secondItem="lLO-le-Bc1" secondAttribute="bottom" id="oYb-3G-NMe"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -760,9 +788,12 @@
                                     <constraint firstItem="PrS-Kh-lVx" firstAttribute="leading" secondItem="Sf6-0p-IUJ" secondAttribute="leading" constant="10" id="5Ml-Mq-yPI"/>
                                     <constraint firstAttribute="bottom" secondItem="lAN-9K-HJX" secondAttribute="bottom" id="8YR-GP-4Bg"/>
                                     <constraint firstItem="lAN-9K-HJX" firstAttribute="top" secondItem="Sf6-0p-IUJ" secondAttribute="top" id="LDS-wS-YWX"/>
+                                    <constraint firstAttribute="bottom" secondItem="OAW-DL-j3k" secondAttribute="bottom" constant="29" id="PRO-f2-Nbe"/>
                                     <constraint firstAttribute="trailing" secondItem="lAN-9K-HJX" secondAttribute="trailing" id="WUl-N7-EMk"/>
                                     <constraint firstItem="cEQ-1M-Wpc" firstAttribute="top" secondItem="PrS-Kh-lVx" secondAttribute="top" id="mvc-Op-KKI"/>
                                     <constraint firstItem="lAN-9K-HJX" firstAttribute="leading" secondItem="Sf6-0p-IUJ" secondAttribute="leading" id="mx8-zd-ia0"/>
+                                    <constraint firstAttribute="trailing" secondItem="OAW-DL-j3k" secondAttribute="trailing" constant="16" id="pKJ-zd-eFx"/>
+                                    <constraint firstItem="OAW-DL-j3k" firstAttribute="leading" secondItem="Sf6-0p-IUJ" secondAttribute="leading" constant="16" id="zk2-rX-adD"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSz-rp-tP5">
@@ -1216,6 +1247,8 @@
                         <outlet property="ingredientsDetailContainerView" destination="vM4-OR-8p4" id="bCq-HK-Jt3"/>
                         <outlet property="instructionBtn" destination="TDh-0A-qgV" id="Jxs-NY-hHU"/>
                         <outlet property="instructionDetailContainerView" destination="ovm-Aq-e3t" id="SXP-g9-yvW"/>
+                        <outlet property="labelCalories" destination="2Bn-ec-6DQ" id="Bm0-Zk-Xrf"/>
+                        <outlet property="labelTime" destination="lLO-le-Bc1" id="Lgs-TI-7Nv"/>
                         <outlet property="nameLabel" destination="rXZ-wV-NOd" id="IWi-Ou-N3J"/>
                         <outlet property="photoImage" destination="KbM-Um-7QK" id="wW0-IO-De5"/>
                         <outlet property="playStepbyStepButton" destination="STI-Uh-Ezh" id="YDN-8k-rEH"/>
@@ -1243,7 +1276,7 @@
         <image name="btnBackG" width="28" height="28"/>
         <image name="btnCamera" width="24" height="20"/>
         <image name="btnEdit" width="28" height="28"/>
-        <image name="btnMore" width="28" height="28"/>
+        <image name="btnKcal" width="28" height="28"/>
         <image name="btnPlay" width="31" height="36"/>
         <image name="close-icon" width="28" height="28"/>
         <image name="gr" width="375" height="190"/>
