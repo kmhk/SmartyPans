@@ -38,6 +38,7 @@ class RecipeDetailsVC: UIViewController {
     @IBOutlet var instructionDetailContainerView: UIView!
     @IBOutlet var tabBtnsContainerTopToSafeArea: NSLayoutConstraint!
     @IBOutlet var tabBtnsContainerTopToHeaderView: NSLayoutConstraint!
+    @IBOutlet var startCookingBtnWidth: NSLayoutConstraint!
     
     var recipe: Recipe!
     var user: SPUser!
@@ -130,7 +131,7 @@ class RecipeDetailsVC: UIViewController {
 //        gradient.colors = [topColor.cgColor, bottomColor.cgColor]
 //        navView.layer.insertSublayer(gradient, at: 0)
         // Play SetepbyStep button radius
-        playStepbyStepButton.layer.cornerRadius = 22.0
+        playStepbyStepButton.layer.cornerRadius = playStepbyStepButton.frame.size.height/2
         playStepbyStepButton.clipsToBounds = true
         // init Star Rating View
         
@@ -186,10 +187,12 @@ class RecipeDetailsVC: UIViewController {
         if tabBtnsContainerTopToHeaderView.isActive {
             tabBtnsContainerTopToHeaderView.isActive = false
             tabBtnsContainerTopToSafeArea.isActive = true
+            makeStartCookingBtnSmall()
         }
         else {
             tabBtnsContainerTopToHeaderView.isActive = true
             tabBtnsContainerTopToSafeArea.isActive = false
+            makeStartCookingBtnBig()
         }
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
@@ -200,7 +203,7 @@ class RecipeDetailsVC: UIViewController {
         if tabBtnsContainerTopToHeaderView.isActive {
             tabBtnsContainerTopToHeaderView.isActive = false
             tabBtnsContainerTopToSafeArea.isActive = true
-            
+            makeStartCookingBtnSmall()
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
             }
@@ -212,11 +215,33 @@ class RecipeDetailsVC: UIViewController {
         if tabBtnsContainerTopToSafeArea.isActive {
             tabBtnsContainerTopToHeaderView.isActive = true
             tabBtnsContainerTopToSafeArea.isActive = false
-            
+            makeStartCookingBtnBig()
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
             }
         }
+    }
+    
+    func makeStartCookingBtnSmall() {
+        if startCookingBtnWidth.constant > 50 {
+            startCookingBtnWidth.constant = 50
+            playStepbyStepButton.setTitle("", for: .normal)
+//            UIView.animate(withDuration: 1.5) {
+//                self.view.layoutIfNeeded()
+//            }
+        }
+        
+    }
+    
+    func makeStartCookingBtnBig() {
+        if startCookingBtnWidth.constant == 50 {
+            startCookingBtnWidth.constant = 213
+            playStepbyStepButton.setTitle("START COOKING", for: .normal)
+//            UIView.animate(withDuration: 1.5) {
+//                self.view.layoutIfNeeded()
+//            }
+        }
+        
     }
     
     @IBAction func ingredientsBtnPressed(_ sender: Any) {
