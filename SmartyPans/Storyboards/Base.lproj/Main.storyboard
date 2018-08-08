@@ -747,22 +747,22 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-DL-j3k">
-                                        <rect key="frame" x="16" y="357.5" width="343" height="19.5"/>
+                                        <rect key="frame" x="16" y="358.5" width="343" height="18.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 mins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-le-Bc1">
-                                                <rect key="frame" x="0.0" y="-0.5" width="52" height="19"/>
+                                                <rect key="frame" x="0.0" y="-1.5" width="52" height="18.5"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" | 2 servings | " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgA-XK-alN">
-                                                <rect key="frame" x="52" y="-0.5" width="91.5" height="19"/>
+                                                <rect key="frame" x="52" y="-1.5" width="91.5" height="18.5"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450 kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bn-ec-6DQ">
-                                                <rect key="frame" x="143.5" y="-0.5" width="58" height="19"/>
+                                                <rect key="frame" x="143.5" y="-2" width="58" height="19"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -1194,23 +1194,6 @@
                                     <constraint firstAttribute="trailing" secondItem="9Bv-6s-2eb" secondAttribute="trailing" id="f0Y-Ud-Qur"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STI-Uh-Ezh">
-                                <rect key="frame" x="146" y="745" width="213" height="50"/>
-                                <color key="backgroundColor" red="0.84313725490000002" green="0.1333333333" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="7Gj-nX-qDo"/>
-                                    <constraint firstAttribute="width" constant="213" id="GCc-9U-bhB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="15"/>
-                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="-5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="START COOKING" image="btnPlay" backgroundImage="gr">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onPlayStep:" destination="lbX-yP-YAw" eventType="touchUpInside" id="lex-WQ-nk8"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1219,9 +1202,7 @@
                             <constraint firstItem="pSz-rp-tP5" firstAttribute="leading" secondItem="viV-4I-qVg" secondAttribute="leading" id="7Zy-c0-J6J"/>
                             <constraint firstItem="ovm-Aq-e3t" firstAttribute="trailing" secondItem="viV-4I-qVg" secondAttribute="trailing" id="JV1-rq-Htj"/>
                             <constraint firstAttribute="bottom" secondItem="vM4-OR-8p4" secondAttribute="bottom" id="Lvw-dp-eBb"/>
-                            <constraint firstItem="viV-4I-qVg" firstAttribute="trailing" secondItem="STI-Uh-Ezh" secondAttribute="trailing" constant="16" id="MIe-Bb-AGC"/>
                             <constraint firstItem="pSz-rp-tP5" firstAttribute="top" secondItem="viV-4I-qVg" secondAttribute="top" constant="40" id="QEK-QA-DZW"/>
-                            <constraint firstAttribute="bottom" secondItem="STI-Uh-Ezh" secondAttribute="bottom" constant="17" id="TAK-e5-ZQk"/>
                             <constraint firstAttribute="bottom" secondItem="ovm-Aq-e3t" secondAttribute="bottom" id="ZRk-wc-A2U"/>
                             <constraint firstItem="viV-4I-qVg" firstAttribute="trailing" secondItem="vM4-OR-8p4" secondAttribute="trailing" id="cFZ-N8-4xE"/>
                             <constraint firstItem="vM4-OR-8p4" firstAttribute="top" secondItem="pSz-rp-tP5" secondAttribute="bottom" id="cfs-63-aSC"/>
@@ -1251,12 +1232,10 @@
                         <outlet property="labelTime" destination="lLO-le-Bc1" id="Lgs-TI-7Nv"/>
                         <outlet property="nameLabel" destination="rXZ-wV-NOd" id="IWi-Ou-N3J"/>
                         <outlet property="photoImage" destination="KbM-Um-7QK" id="wW0-IO-De5"/>
-                        <outlet property="playStepbyStepButton" destination="STI-Uh-Ezh" id="YDN-8k-rEH"/>
                         <outlet property="ratingView" destination="Ypz-Mh-bDt" id="gdC-g9-DoA"/>
                         <outlet property="recipeImage" destination="nqZ-CD-xx3" id="oC7-vQ-W4y"/>
                         <outlet property="recipeNameLabel" destination="GDz-58-7W1" id="8UY-g2-yUC"/>
                         <outlet property="share" destination="cEQ-1M-Wpc" id="BrU-gs-TPV"/>
-                        <outlet property="startCookingBtnWidth" destination="GCc-9U-bhB" id="LFA-n6-qJG"/>
                         <outlet property="tabBtnSelectedIndicatorView" destination="YsK-c6-4BG" id="bRK-b7-x8I"/>
                         <outlet property="tabBtnSelectedIndicatorViewLeading" destination="KyD-DM-VEp" id="rAE-6w-8uD"/>
                         <outlet property="tabBtnsContainerTopToHeaderView" destination="uce-on-Ee7" id="Twq-8K-bP7"/>
@@ -1277,7 +1256,6 @@
         <image name="btnCamera" width="24" height="20"/>
         <image name="btnEdit" width="28" height="28"/>
         <image name="btnKcal" width="28" height="28"/>
-        <image name="btnPlay" width="31" height="36"/>
         <image name="close-icon" width="28" height="28"/>
         <image name="gr" width="375" height="190"/>
         <image name="logo_Iw" width="156" height="158"/>

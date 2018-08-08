@@ -16,7 +16,6 @@ class RecipeDetailsVC: UIViewController {
     var stepsArray = [RecipeStep]()
     //@IBOutlet weak var navView: UIView!
     @IBOutlet weak var ratingView: UIView!
-    @IBOutlet weak var playStepbyStepButton: UIButton!
     @IBOutlet weak var tableViewIngredients: UITableView!
     @IBOutlet weak var tableViewInstructions: UITableView!
     @IBOutlet weak var share: UIButton!
@@ -38,7 +37,6 @@ class RecipeDetailsVC: UIViewController {
     @IBOutlet var instructionDetailContainerView: UIView!
     @IBOutlet var tabBtnsContainerTopToSafeArea: NSLayoutConstraint!
     @IBOutlet var tabBtnsContainerTopToHeaderView: NSLayoutConstraint!
-    @IBOutlet var startCookingBtnWidth: NSLayoutConstraint!
     
     var recipe: Recipe!
     var user: SPUser!
@@ -133,9 +131,7 @@ class RecipeDetailsVC: UIViewController {
 //        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
 //        gradient.colors = [topColor.cgColor, bottomColor.cgColor]
 //        navView.layer.insertSublayer(gradient, at: 0)
-        // Play SetepbyStep button radius
-        playStepbyStepButton.layer.cornerRadius = playStepbyStepButton.frame.size.height/2
-        playStepbyStepButton.clipsToBounds = true
+        
         // init Star Rating View
         
         /*
@@ -190,12 +186,10 @@ class RecipeDetailsVC: UIViewController {
         if tabBtnsContainerTopToHeaderView.isActive {
             tabBtnsContainerTopToHeaderView.isActive = false
             tabBtnsContainerTopToSafeArea.isActive = true
-            makeStartCookingBtnSmall()
         }
         else {
             tabBtnsContainerTopToHeaderView.isActive = true
             tabBtnsContainerTopToSafeArea.isActive = false
-            makeStartCookingBtnBig()
         }
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
@@ -206,7 +200,6 @@ class RecipeDetailsVC: UIViewController {
         if tabBtnsContainerTopToHeaderView.isActive {
             tabBtnsContainerTopToHeaderView.isActive = false
             tabBtnsContainerTopToSafeArea.isActive = true
-            makeStartCookingBtnSmall()
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
             }
@@ -218,34 +211,12 @@ class RecipeDetailsVC: UIViewController {
         if tabBtnsContainerTopToSafeArea.isActive {
             tabBtnsContainerTopToHeaderView.isActive = true
             tabBtnsContainerTopToSafeArea.isActive = false
-            makeStartCookingBtnBig()
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
             }
         }
     }
     
-    func makeStartCookingBtnSmall() {
-        if startCookingBtnWidth.constant > 50 {
-            startCookingBtnWidth.constant = 50
-            playStepbyStepButton.setTitle("", for: .normal)
-//            UIView.animate(withDuration: 1.5) {
-//                self.view.layoutIfNeeded()
-//            }
-        }
-        
-    }
-    
-    func makeStartCookingBtnBig() {
-        if startCookingBtnWidth.constant == 50 {
-            startCookingBtnWidth.constant = 213
-            playStepbyStepButton.setTitle("START COOKING", for: .normal)
-//            UIView.animate(withDuration: 1.5) {
-//                self.view.layoutIfNeeded()
-//            }
-        }
-        
-    }
     
     @IBAction func ingredientsBtnPressed(_ sender: Any) {
         if ingredientsBtn.isSelected {
@@ -277,11 +248,6 @@ class RecipeDetailsVC: UIViewController {
         }
     }
     
-    @IBAction func onPlayStep(_ sender: Any){
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RecipeBreakdownVC") as! RecipeBreakdownViewController
-//        vc.recipeId = self.recipeId
-//        navigationController?.pushViewController(vc, animated: true)
-    }
 }
 
 extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
@@ -430,15 +396,15 @@ extension RecipeDetailsVC: UIScrollViewDelegate {
         if ingredientsBtn.isSelected {
             if scrollView == tableViewIngredients {
                 var currentLocation = scrollView.contentOffset.y
-                print("current location: \(currentLocation)")
+                //print("current location: \(currentLocation)")
                 if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
-                    print("up")
+                    //print("up")
                     if currentLocation <= -20 {
                         moveTabDetailContainerViewsDown()
                     }
                 }
                 else {
-                    print("down")
+                    //print("down")
                     moveTabDetailContainerViewsUp()
                 }
             }

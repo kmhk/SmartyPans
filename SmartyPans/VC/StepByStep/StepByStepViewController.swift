@@ -428,15 +428,15 @@ extension StepByStepViewController: UIScrollViewDelegate {
         if ingredientsBtn.isSelected {
             if scrollView == tableViewIngredients {
                 var currentLocation = scrollView.contentOffset.y
-                print("current location: \(currentLocation)")
+                //print("current location: \(currentLocation)")
                 if(scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) {
-                    print("up")
+                    //print("up")
                     if currentLocation <= -20 {
                         moveTabDetailContainerViewsDown()
                     }
                 }
                 else {
-                    print("down")
+                    //print("down")
                     moveTabDetailContainerViewsUp()
                 }
             }
