@@ -38,6 +38,9 @@ class RecipeDetailsVC: UIViewController {
     @IBOutlet var tabBtnsContainerTopToSafeArea: NSLayoutConstraint!
     @IBOutlet var tabBtnsContainerTopToHeaderView: NSLayoutConstraint!
     
+    @IBOutlet var makePhotoContainerView: UIView!
+    @IBOutlet var makePhotoBtn: UIButton!
+    
     var recipe: Recipe!
     var user: SPUser!
     var firRecipeRef: DatabaseReference!
@@ -86,6 +89,9 @@ class RecipeDetailsVC: UIViewController {
             }
             self.labelCalories.text = String(format: "%.0f kCal", (self.recipe?.calories)!)
             self.recipeImage.sd_setImage(with: URL(string: (self.recipe?.recipeImage)!))
+            if let recipe = self.recipe, recipe.recipeImage.count > 0 {
+                self.makePhotoContainerView.isHidden = true
+            }
             self.tableViewInstructions.reloadData()
             self.tableViewIngredients.reloadData()
         })
@@ -148,6 +154,9 @@ class RecipeDetailsVC: UIViewController {
         // Add Radius
         photoImage.layer.cornerRadius = 17.5
         photoImage.clipsToBounds = true
+        
+        setRound(toView: makePhotoBtn, radius: makePhotoBtn.bounds.height/2)
+        makePhotoBtn.dropCircleButtonShadow()
         
         gradientView.applyBlackAndClearGradient()
         tabBtnsContainerView.round(corners: [.topLeft, .topRight], radius: 10)
@@ -248,6 +257,9 @@ class RecipeDetailsVC: UIViewController {
         }
     }
     
+    @IBAction func makePhotoBtnPressed(_ sender: Any) {
+        print("makePhotoBtnPressed")
+    }
 }
 
 extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
