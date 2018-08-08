@@ -110,9 +110,12 @@ extension HomeVC:UICollectionViewDelegate, UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "StepByStep", bundle: nil)
-//        let sbsCompletedController = storyBoard.instantiateInitialViewController()
         let recipe = recipes[indexPath.row]
+        
+//        let storyBoard: UIStoryboard = UIStoryboard(name: "StepByStep", bundle: nil)
+//        let sbsCompletedController = storyBoard.instantiateInitialViewController() as! StepByStepViewController
+//        sbsCompletedController.recipeId = recipe.recipeId
+//        self.present(sbsCompletedController, animated: true, completion: nil)
         
         let recipeVC = self.storyboard?.instantiateViewController(withIdentifier: "RecipeDetailsViewController") as! RecipeDetailsVC
         recipeVC.recipeId = recipe.recipeId
