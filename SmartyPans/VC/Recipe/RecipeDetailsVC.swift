@@ -40,6 +40,7 @@ class RecipeDetailsVC: UIViewController {
     
     @IBOutlet var makePhotoContainerView: UIView!
     @IBOutlet var makePhotoBtn: UIButton!
+    var picker:UIImagePickerController?=UIImagePickerController()
     
     var recipe: Recipe!
     var user: SPUser!
@@ -151,6 +152,7 @@ class RecipeDetailsVC: UIViewController {
         starRatingView.addTarget(self, action: #selector(didChangeValue(_:)), for: .valueChanged)
         ratingView.addSubview(starRatingView)
  */
+        picker?.delegate = self
         // Add Radius
         photoImage.layer.cornerRadius = 17.5
         photoImage.clipsToBounds = true
@@ -258,10 +260,98 @@ class RecipeDetailsVC: UIViewController {
     }
     
     @IBAction func makePhotoBtnPressed(_ sender: Any) {
-        print("makePhotoBtnPressed")
+        openSheet()
+    }
+    
+    func openSheet(){
+        let actionSheetController: UIAlertController = UIAlertController(title: "Please select", message: "Option to select", preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+        
+        let saveActionButton = UIAlertAction(title: "Camera", style: .default)
+        { _ in
+            self.openCamera()
+        }
+        actionSheetController.addAction(saveActionButton)
+        
+        let deleteActionButton = UIAlertAction(title: "Photo Gallery", style: .default)
+        { _ in
+            self.openGallary()
+        }
+        actionSheetController.addAction(deleteActionButton)
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+    func openGallary()
+    {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary)){
+            picker!.allowsEditing = true
+            picker!.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            present(picker!, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "Photo Gallery Error", message: "Can't access to Photo Gallery", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style:.default, handler: nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func openCamera()
+    {
+        if UIImagePickerController .isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            picker!.allowsEditing = true
+            picker!.sourceType = UIImagePickerControllerSourceType.camera
+            picker!.cameraCaptureMode = .photo
+            present(picker!, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "Camera Not Found", message: "This device has no Camera", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style:.default, handler: nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
+        }
     }
 }
-
+extension RecipeDetailsVC: UIImagePickerControllerDelegate,
+UINavigationControllerDelegate{
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let chosenImage = info[UIImagePickerControllerEditedImage] as! UIImage
+       
+        self.recipeImage.image = chosenImage
+        self.makePhotoContainerView.isHidden = true
+        dismiss(animated: true, completion: nil)
+        /*
+        if isProfilePhoto{
+            imgProfile.image = chosenImage
+        }else{
+            imgHeader.image = chosenImage
+        }
+        let imageData = UIImageJPEGRepresentation(chosenImage, 0.1)
+        //imageView.contentMode = .ScaleAspectFit
+        //imageView.image = chosenImage
+        dismiss(animated: true, completion: {
+            ProgressHUD.show("Uploading...")
+            AuthService.uploadProfileImage(imageData: imageData!, isProfile: self.isProfilePhoto, onSuccess: { (imageURL) in
+                if self.isProfilePhoto{
+                    self.sProfileImageUrl = imageURL
+                }else{
+                    self.sBGImageUrl = imageURL
+                }
+                ProgressHUD.showSuccess("Success")
+                
+            }, onError: { (errorMessage) in
+                ProgressHUD.showError(errorMessage)
+            })
+        })
+ */
+    }
+}
 extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
     // MARK: - TableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {
