@@ -8,6 +8,8 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseStorage
+
 class PostApi {
     var REF_POSTS = Database.database().reference().child("recipes")
     
@@ -19,5 +21,26 @@ class PostApi {
                 completion(post)
             }
         })
+    }
+    
+    static func uploadRecipeImage(imageData:Data, recipeId: String, onSuccess: @escaping (_ imageUrl: String) -> Void, onError:  @escaping (_ errorMessage: String?) -> Void){
+        
+        let storageRef = Storage.storage().reference(forURL: Config.STORAGE_ROOF_REF).child("recipes/" + recipeId + ".jpg")
+        
+        storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
+            if error != nil{
+                return
+            }
+            
+            storageRef.downloadURL(completion: { (url, error) in
+                if(error != nil){
+                    onError(error?.localizedDescription);
+                }else{
+                    onSuccess((url?.absoluteString)!)
+                }
+            })
+            
+        })
+        
     }
 }

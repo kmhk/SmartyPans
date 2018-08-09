@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import ProgressHUD
 //import HCSStarRatingView
 
 class RecipeDetailsVC: UIViewController {
@@ -325,31 +326,20 @@ UINavigationControllerDelegate{
        
         self.recipeImage.image = chosenImage
         self.makePhotoContainerView.isHidden = true
-        dismiss(animated: true, completion: nil)
-        /*
-        if isProfilePhoto{
-            imgProfile.image = chosenImage
-        }else{
-            imgHeader.image = chosenImage
-        }
         let imageData = UIImageJPEGRepresentation(chosenImage, 0.1)
-        //imageView.contentMode = .ScaleAspectFit
-        //imageView.image = chosenImage
         dismiss(animated: true, completion: {
             ProgressHUD.show("Uploading...")
-            AuthService.uploadProfileImage(imageData: imageData!, isProfile: self.isProfilePhoto, onSuccess: { (imageURL) in
-                if self.isProfilePhoto{
-                    self.sProfileImageUrl = imageURL
-                }else{
-                    self.sBGImageUrl = imageURL
-                }
+            PostApi.uploadRecipeImage(imageData: imageData!, recipeId: self.recipe.recipeId, onSuccess: { (imageURL) in
+                self.recipeImage.sd_setImage(with: URL(string: imageURL))
+                self.recipe?.recipeImage = imageURL
+                self.firRecipeRef.updateChildValues(["recipeImage": imageURL])
                 ProgressHUD.showSuccess("Success")
                 
             }, onError: { (errorMessage) in
                 ProgressHUD.showError(errorMessage)
             })
         })
- */
+ 
     }
 }
 extension RecipeDetailsVC:UITableViewDelegate, UITableViewDataSource{
