@@ -166,6 +166,13 @@ class RecipeDetailsVC: UIViewController {
         instructionBtnPressed(instructionBtn)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gradientView.layer.sublayers?.first?.frame = gradientView.bounds
+        tabBtnsContainerView.round(corners: [.topLeft, .topRight], radius: 10)
+    }
+    
+    
     @IBAction func back(_ sender: Any) {
         //navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
