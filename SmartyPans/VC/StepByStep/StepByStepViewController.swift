@@ -63,6 +63,12 @@ class StepByStepViewController: UIViewController {
         
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        gradientView.layer.sublayers?.first?.frame = gradientView.bounds
+        tabBtnsContainerView.round(corners: [.topLeft, .topRight], radius: 10)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -148,7 +154,7 @@ class StepByStepViewController: UIViewController {
          ratingView.addSubview(starRatingView)
          */
         // Add Radius
-        photoImage.layer.cornerRadius = 17.5
+        photoImage.layer.cornerRadius = photoImage.frame.size.height/2
         photoImage.clipsToBounds = true
         
         gradientView.applyBlackAndClearGradient()

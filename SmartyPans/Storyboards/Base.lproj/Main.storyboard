@@ -114,7 +114,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="cellFeed" id="xWc-Qm-erV" customClass="HomeCVCell" customModule="SmartyPans" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellFeed" id="xWc-Qm-erV" customClass="HomeCVCell" customModule="SmartyPans" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="167" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -252,7 +252,7 @@
                                     <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="cell" id="eWD-cY-gij" customClass="HomeCVCell" customModule="SmartyPans" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="eWD-cY-gij" customClass="HomeCVCell" customModule="SmartyPans" customModuleProvider="target">
                                         <rect key="frame" x="5" y="5" width="167" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -601,7 +601,7 @@
                                     <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" id="5Ph-qC-q4H">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5Ph-qC-q4H">
                                         <rect key="frame" x="5" y="5" width="167" height="182"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -758,7 +758,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEQ-1M-Wpc">
-                                        <rect key="frame" x="324.5" y="39" width="40.5" height="40"/>
+                                        <rect key="frame" x="324.66666666666669" y="39" width="40.333333333333314" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="1zx-dK-MbY"/>
                                             <constraint firstAttribute="height" constant="40" id="npF-zr-uNi"/>
@@ -777,22 +777,22 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-DL-j3k">
-                                        <rect key="frame" x="16" y="361" width="343" height="16.5"/>
+                                        <rect key="frame" x="16" y="358.33333333333331" width="343" height="19.333333333333314"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 mins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-le-Bc1">
-                                                <rect key="frame" x="0.0" y="-1" width="49.5" height="16.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="52" height="19.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" | 2 servings | " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgA-XK-alN">
-                                                <rect key="frame" x="49.5" y="0.0" width="86" height="16.5"/>
+                                                <rect key="frame" x="52.000000000000007" y="0.0" width="91.666666666666686" height="19.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="450 kCal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bn-ec-6DQ">
-                                                <rect key="frame" x="135.5" y="0.0" width="55.5" height="16.5"/>
+                                                <rect key="frame" x="143.66666666666666" y="0.0" width="57.666666666666657" height="19.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -890,7 +890,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-si-IVH">
-                                                            <rect key="frame" x="15" y="0.0" width="321" height="90"/>
+                                                            <rect key="frame" x="15" y="0.0" width="360" height="90"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uzi-0a-xcf">
                                                                     <rect key="frame" x="5" y="5" width="80" height="80"/>
@@ -915,32 +915,32 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcW-Mo-GTT">
-                                                                    <rect key="frame" x="100" y="27.666666666666671" width="294" height="33"/>
+                                                                    <rect key="frame" x="100" y="24.333333333333332" width="255" height="39.333333333333343"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blueberry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEO-Rg-k4i">
-                                                                            <rect key="frame" x="0.5" y="0.0" width="293.5" height="16"/>
+                                                                            <rect key="frame" x="0.6666666666666714" y="0.0" width="254.33333333333331" height="19.333333333333332"/>
                                                                             <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tY-oa-ZAh">
-                                                                            <rect key="frame" x="0.0" y="16" width="294" height="17"/>
+                                                                            <rect key="frame" x="0.0" y="19.333333333333336" width="255" height="20"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80 grams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M74-We-kLn">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="59" height="16.5"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="59" height="19.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="14"/>
                                                                                     <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVU-OR-V0c">
-                                                                                    <rect key="frame" x="64" y="3" width="1" height="11"/>
+                                                                                    <rect key="frame" x="64" y="3" width="1" height="14"/>
                                                                                     <color key="backgroundColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="1" id="FXR-DK-Vm9"/>
                                                                                     </constraints>
                                                                                 </view>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7C-8o-99f">
-                                                                                    <rect key="frame" x="70" y="-0.5" width="49.5" height="17.5"/>
+                                                                                    <rect key="frame" x="70" y="-0.3333333333333357" width="49.666666666666657" height="20.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="14"/>
                                                                                     <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -1066,10 +1066,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ea5-Ca-s1r">
-                                                            <rect key="frame" x="10" y="10" width="316" height="101"/>
+                                                            <rect key="frame" x="10" y="10" width="355" height="101"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTRO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7y-3T-7La">
-                                                                    <rect key="frame" x="5" y="5" width="267" height="20"/>
+                                                                    <rect key="frame" x="5" y="5" width="345" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="gcV-GM-lYV"/>
                                                                     </constraints>
@@ -1078,7 +1078,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxT-T1-nPH">
-                                                                    <rect key="frame" x="5" y="30" width="306" height="66"/>
+                                                                    <rect key="frame" x="5" y="30" width="345" height="66"/>
                                                                     <string key="text">A pancake is a flat cake, often thin and round, prepared from a starch-based batter that may contain eggs, milk and butter and cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter.</string>
                                                                     <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
@@ -1118,10 +1118,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHr-OK-NCA">
-                                                            <rect key="frame" x="10" y="0.0" width="316" height="30"/>
+                                                            <rect key="frame" x="10" y="0.0" width="355" height="30"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTRUCTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqb-83-0s2">
-                                                                    <rect key="frame" x="5" y="5" width="306" height="20"/>
+                                                                    <rect key="frame" x="5" y="5" width="345" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="Dsg-kn-seC"/>
                                                                     </constraints>
@@ -1161,7 +1161,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9L-Ud-KUC">
-                                                            <rect key="frame" x="10" y="10" width="316" height="101"/>
+                                                            <rect key="frame" x="10" y="10" width="355" height="101"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTE-fS-DwG">
                                                                     <rect key="frame" x="8" y="0.0" width="25" height="25"/>
@@ -1184,7 +1184,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add 1.053 grams  Flour and cook for 40 secs" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Uo-MS-EtO">
-                                                                    <rect key="frame" x="43" y="2" width="273" height="99"/>
+                                                                    <rect key="frame" x="43" y="2" width="312" height="99"/>
                                                                     <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="15"/>
                                                                     <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
