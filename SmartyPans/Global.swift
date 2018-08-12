@@ -95,3 +95,11 @@ func hexStringToUIColor (hex:String) -> UIColor {
     )
 }
 
+func topSafeAreaInsets() -> CGFloat {
+    if let window = UIApplication.shared.keyWindow {
+        if #available(iOS 11.0, *) {
+            return window.safeAreaInsets.top
+        }
+    }
+    return 0
+}

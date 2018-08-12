@@ -113,7 +113,6 @@ extension HomeVC:UICollectionViewDelegate, UICollectionViewDataSource, UICollect
         let recipe = recipes[indexPath.row]
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "StepByStep", bundle: nil)
-        //let sbsCompletedController = storyBoard.instantiateInitialViewController() as!
         let sbsCompletedController = storyBoard.instantiateViewController(withIdentifier: "StepByStepViewController") as! StepByStepViewController
         
         sbsCompletedController.recipeId = recipe.recipeId

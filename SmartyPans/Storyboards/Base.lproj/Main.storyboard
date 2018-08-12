@@ -915,7 +915,7 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcW-Mo-GTT">
-                                                                    <rect key="frame" x="100" y="24.333333333333332" width="255" height="39.333333333333343"/>
+                                                                    <rect key="frame" x="100" y="25.333333333333332" width="255" height="39.333333333333343"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blueberry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEO-Rg-k4i">
                                                                             <rect key="frame" x="0.6666666666666714" y="0.0" width="254.33333333333331" height="19.333333333333332"/>
@@ -1236,7 +1236,6 @@
                             <constraint firstItem="pSz-rp-tP5" firstAttribute="leading" secondItem="viV-4I-qVg" secondAttribute="leading" id="7Zy-c0-J6J"/>
                             <constraint firstItem="ovm-Aq-e3t" firstAttribute="trailing" secondItem="viV-4I-qVg" secondAttribute="trailing" id="JV1-rq-Htj"/>
                             <constraint firstAttribute="bottom" secondItem="vM4-OR-8p4" secondAttribute="bottom" id="Lvw-dp-eBb"/>
-                            <constraint firstItem="pSz-rp-tP5" firstAttribute="top" secondItem="viV-4I-qVg" secondAttribute="top" constant="40" id="QEK-QA-DZW"/>
                             <constraint firstAttribute="bottom" secondItem="ovm-Aq-e3t" secondAttribute="bottom" id="ZRk-wc-A2U"/>
                             <constraint firstItem="viV-4I-qVg" firstAttribute="trailing" secondItem="vM4-OR-8p4" secondAttribute="trailing" id="cFZ-N8-4xE"/>
                             <constraint firstItem="vM4-OR-8p4" firstAttribute="top" secondItem="pSz-rp-tP5" secondAttribute="bottom" id="cfs-63-aSC"/>
@@ -1246,15 +1245,10 @@
                             <constraint firstItem="pSz-rp-tP5" firstAttribute="trailing" secondItem="viV-4I-qVg" secondAttribute="trailing" id="qrR-Ga-AfN"/>
                             <constraint firstItem="ovm-Aq-e3t" firstAttribute="top" secondItem="pSz-rp-tP5" secondAttribute="bottom" id="rzQ-wc-dIw"/>
                             <constraint firstItem="Sf6-0p-IUJ" firstAttribute="trailing" secondItem="viV-4I-qVg" secondAttribute="trailing" id="tFY-DJ-x24"/>
-                            <constraint firstItem="pSz-rp-tP5" firstAttribute="top" secondItem="Sf6-0p-IUJ" secondAttribute="bottom" constant="-10" id="uce-on-Ee7"/>
+                            <constraint firstItem="pSz-rp-tP5" firstAttribute="top" secondItem="xRE-GK-0Ux" secondAttribute="top" constant="396" id="tNU-x9-6FB"/>
                             <constraint firstItem="Sf6-0p-IUJ" firstAttribute="leading" secondItem="viV-4I-qVg" secondAttribute="leading" id="wEo-3Y-nES"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="viV-4I-qVg"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="QEK-QA-DZW"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="gradientView" destination="lAN-9K-HJX" id="QUt-8l-mLf"/>
@@ -1274,8 +1268,7 @@
                         <outlet property="share" destination="cEQ-1M-Wpc" id="BrU-gs-TPV"/>
                         <outlet property="tabBtnSelectedIndicatorView" destination="YsK-c6-4BG" id="bRK-b7-x8I"/>
                         <outlet property="tabBtnSelectedIndicatorViewLeading" destination="KyD-DM-VEp" id="rAE-6w-8uD"/>
-                        <outlet property="tabBtnsContainerTopToHeaderView" destination="uce-on-Ee7" id="Twq-8K-bP7"/>
-                        <outlet property="tabBtnsContainerTopToSafeArea" destination="QEK-QA-DZW" id="fEd-LU-IEy"/>
+                        <outlet property="tabBtnsContainerTopSpace" destination="tNU-x9-6FB" id="PEV-cS-rlz"/>
                         <outlet property="tabBtnsContainerView" destination="pSz-rp-tP5" id="bTP-ek-4pX"/>
                         <outlet property="tableViewIngredients" destination="tVa-K6-ppw" id="Yc1-8H-l3R"/>
                         <outlet property="tableViewInstructions" destination="9Bv-6s-2eb" id="rjX-kB-jgf"/>

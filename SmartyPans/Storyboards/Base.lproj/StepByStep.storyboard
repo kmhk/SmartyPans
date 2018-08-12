@@ -999,16 +999,15 @@
                         <constraints>
                             <constraint firstItem="hMI-r4-Aay" firstAttribute="top" secondItem="iv1-k4-rvv" secondAttribute="bottom" id="2a8-3P-TiW"/>
                             <constraint firstItem="I0t-yN-NmG" firstAttribute="trailing" secondItem="hMI-r4-Aay" secondAttribute="trailing" id="4HY-kV-wlB"/>
-                            <constraint firstItem="iv1-k4-rvv" firstAttribute="top" secondItem="7Fe-s2-wNN" secondAttribute="bottom" constant="-10" id="5ka-6P-Jxk"/>
                             <constraint firstItem="7Fe-s2-wNN" firstAttribute="height" secondItem="ZAO-HP-47C" secondAttribute="height" multiplier="0.5" id="9Oa-Zv-gr0"/>
                             <constraint firstItem="iv1-k4-rvv" firstAttribute="trailing" secondItem="I0t-yN-NmG" secondAttribute="trailing" id="CeB-Xx-1LY"/>
                             <constraint firstAttribute="bottom" secondItem="cTT-MM-SPF" secondAttribute="bottom" constant="17" id="O49-tO-MuD"/>
                             <constraint firstItem="7Fe-s2-wNN" firstAttribute="trailing" secondItem="I0t-yN-NmG" secondAttribute="trailing" id="Rek-Ez-cN9"/>
                             <constraint firstItem="2YZ-bB-jSH" firstAttribute="trailing" secondItem="I0t-yN-NmG" secondAttribute="trailing" id="SvK-a4-A5c"/>
+                            <constraint firstItem="iv1-k4-rvv" firstAttribute="top" secondItem="ZAO-HP-47C" secondAttribute="top" constant="396" id="VQM-yR-w17"/>
                             <constraint firstAttribute="bottom" secondItem="hMI-r4-Aay" secondAttribute="bottom" id="a1G-ol-CX9"/>
                             <constraint firstItem="I0t-yN-NmG" firstAttribute="trailing" secondItem="cTT-MM-SPF" secondAttribute="trailing" constant="16" id="coK-Fg-qJD"/>
                             <constraint firstItem="2YZ-bB-jSH" firstAttribute="top" secondItem="iv1-k4-rvv" secondAttribute="bottom" id="fiE-xg-K9l"/>
-                            <constraint firstItem="iv1-k4-rvv" firstAttribute="top" secondItem="I0t-yN-NmG" secondAttribute="top" constant="40" id="fxb-rv-y92"/>
                             <constraint firstAttribute="bottom" secondItem="2YZ-bB-jSH" secondAttribute="bottom" id="kUM-cN-2Cs"/>
                             <constraint firstItem="7Fe-s2-wNN" firstAttribute="leading" secondItem="I0t-yN-NmG" secondAttribute="leading" id="npx-sr-gOM"/>
                             <constraint firstItem="iv1-k4-rvv" firstAttribute="leading" secondItem="I0t-yN-NmG" secondAttribute="leading" id="oyg-IQ-cvp"/>
@@ -1018,11 +1017,6 @@
                             <constraint firstItem="I0t-yN-NmG" firstAttribute="top" secondItem="bHU-Pp-Mcu" secondAttribute="bottom" constant="-35" id="vUW-MU-l3c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I0t-yN-NmG"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="fxb-rv-y92"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="bzm-Rd-1Da"/>
                     <connections>
@@ -1043,8 +1037,7 @@
                         <outlet property="startCookingBtnWidth" destination="OHe-vR-j2c" id="NW9-Eh-zaH"/>
                         <outlet property="tabBtnSelectedIndicatorView" destination="dD8-Lh-wd9" id="fxd-y3-iHa"/>
                         <outlet property="tabBtnSelectedIndicatorViewLeading" destination="znz-jt-nIy" id="lAe-XT-jqt"/>
-                        <outlet property="tabBtnsContainerTopToHeaderView" destination="5ka-6P-Jxk" id="hRj-VA-uhJ"/>
-                        <outlet property="tabBtnsContainerTopToSafeArea" destination="fxb-rv-y92" id="pCP-2U-BhO"/>
+                        <outlet property="tabBtnsContainerTopSpace" destination="VQM-yR-w17" id="50o-eW-swJ"/>
                         <outlet property="tabBtnsContainerView" destination="iv1-k4-rvv" id="j9S-gD-bCA"/>
                         <outlet property="tableViewIngredients" destination="9U6-h3-AGF" id="hRt-nX-L4R"/>
                         <outlet property="tableViewInstructions" destination="lzt-f1-Bu1" id="bEj-8k-g2B"/>

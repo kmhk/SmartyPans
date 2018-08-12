@@ -35,9 +35,10 @@ class StepByStepViewController: UIViewController {
     @IBOutlet var tabBtnSelectedIndicatorViewLeading: NSLayoutConstraint!
     @IBOutlet var ingredientsDetailContainerView: UIView!
     @IBOutlet var instructionDetailContainerView: UIView!
-    @IBOutlet var tabBtnsContainerTopToSafeArea: NSLayoutConstraint!
-    @IBOutlet var tabBtnsContainerTopToHeaderView: NSLayoutConstraint!
+   
     @IBOutlet var startCookingBtnWidth: NSLayoutConstraint!
+    
+    @IBOutlet var tabBtnsContainerTopSpace: NSLayoutConstraint!
     
     var recipe: Recipe!
     var user: SPUser!
@@ -47,8 +48,15 @@ class StepByStepViewController: UIViewController {
     var firUser: User!
     var recipeId = ""
     
+    var kTabBtnsTopSpaceUp: CGFloat = 0
+    var kTabBtnsTopSpaceDown: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        kTabBtnsTopSpaceUp = 60 + topSafeAreaInsets()
+        kTabBtnsTopSpaceDown = (self.view.bounds.height/2) - 10
+        self.tabBtnsContainerTopSpace.constant = self.kTabBtnsTopSpaceDown
         
         self.tableViewInstructions.rowHeight = UITableViewAutomaticDimension
         self.tableViewInstructions.estimatedRowHeight = 44.0
@@ -191,37 +199,34 @@ class StepByStepViewController: UIViewController {
     }
     
     func moveTabDetailContainerViews(){
-        if tabBtnsContainerTopToHeaderView.isActive {
-            tabBtnsContainerTopToHeaderView.isActive = false
-            tabBtnsContainerTopToSafeArea.isActive = true
-            makeStartCookingBtnSmall()
-        }
-        else {
-            tabBtnsContainerTopToHeaderView.isActive = true
-            tabBtnsContainerTopToSafeArea.isActive = false
-            makeStartCookingBtnBig()
-        }
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
+        DispatchQueue.main.async {
+            if self.tabBtnsContainerTopSpace.constant != self.kTabBtnsTopSpaceUp {
+                self.tabBtnsContainerTopSpace.constant = self.kTabBtnsTopSpaceUp
+                self.makeStartCookingBtnSmall()
+            }
+            else {
+                self.tabBtnsContainerTopSpace.constant = self.kTabBtnsTopSpaceDown
+                self.makeStartCookingBtnBig()
+            }
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
         }
     }
     
     func moveTabDetailContainerViewsUp() {
-        if tabBtnsContainerTopToHeaderView.isActive {
-            tabBtnsContainerTopToHeaderView.isActive = false
-            tabBtnsContainerTopToSafeArea.isActive = true
+        if tabBtnsContainerTopSpace.constant != kTabBtnsTopSpaceUp {
+            tabBtnsContainerTopSpace.constant = kTabBtnsTopSpaceUp
             makeStartCookingBtnSmall()
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
             }
         }
-        
     }
     
     func moveTabDetailContainerViewsDown() {
-        if tabBtnsContainerTopToSafeArea.isActive {
-            tabBtnsContainerTopToHeaderView.isActive = true
-            tabBtnsContainerTopToSafeArea.isActive = false
+        if tabBtnsContainerTopSpace.constant == kTabBtnsTopSpaceUp {
+            tabBtnsContainerTopSpace.constant = kTabBtnsTopSpaceDown
             makeStartCookingBtnBig()
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()

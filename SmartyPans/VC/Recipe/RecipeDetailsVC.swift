@@ -36,8 +36,8 @@ class RecipeDetailsVC: UIViewController {
     @IBOutlet var tabBtnSelectedIndicatorViewLeading: NSLayoutConstraint!
     @IBOutlet var ingredientsDetailContainerView: UIView!
     @IBOutlet var instructionDetailContainerView: UIView!
-    @IBOutlet var tabBtnsContainerTopToSafeArea: NSLayoutConstraint!
-    @IBOutlet var tabBtnsContainerTopToHeaderView: NSLayoutConstraint!
+    
+    @IBOutlet var tabBtnsContainerTopSpace: NSLayoutConstraint!
     
     @IBOutlet var makePhotoContainerView: UIView!
     @IBOutlet var makePhotoBtn: UIButton!
@@ -51,8 +51,15 @@ class RecipeDetailsVC: UIViewController {
     var firUser: User!
     var recipeId = ""
     
+    var kTabBtnsTopSpaceUp: CGFloat = 0
+    var kTabBtnsTopSpaceDown: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        kTabBtnsTopSpaceUp = 60 + topSafeAreaInsets()
+        kTabBtnsTopSpaceDown = (self.view.bounds.height/2) - 10
+        self.tabBtnsContainerTopSpace.constant = self.kTabBtnsTopSpaceDown
         
         self.tableViewInstructions.rowHeight = UITableViewAutomaticDimension
         self.tableViewInstructions.estimatedRowHeight = 44.0
@@ -155,7 +162,7 @@ class RecipeDetailsVC: UIViewController {
  */
         picker?.delegate = self
         // Add Radius
-        photoImage.layer.cornerRadius = 17.5
+        photoImage.layer.cornerRadius = photoImage.frame.size.height/2
         photoImage.clipsToBounds = true
         
         setRound(toView: makePhotoBtn, radius: makePhotoBtn.bounds.height/2)
@@ -202,34 +209,35 @@ class RecipeDetailsVC: UIViewController {
     }
     
     func moveTabDetailContainerViews(){
-        if tabBtnsContainerTopToHeaderView.isActive {
-            tabBtnsContainerTopToHeaderView.isActive = false
-            tabBtnsContainerTopToSafeArea.isActive = true
-        }
-        else {
-            tabBtnsContainerTopToHeaderView.isActive = true
-            tabBtnsContainerTopToSafeArea.isActive = false
-        }
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    func moveTabDetailContainerViewsUp() {
-        if tabBtnsContainerTopToHeaderView.isActive {
-            tabBtnsContainerTopToHeaderView.isActive = false
-            tabBtnsContainerTopToSafeArea.isActive = true
+        DispatchQueue.main.async {
+            if self.tabBtnsContainerTopSpace.constant != self.kTabBtnsTopSpaceUp {
+                self.tabBtnsContainerTopSpace.constant = self.kTabBtnsTopSpaceUp
+                //self.makeStartCookingBtnSmall()
+            }
+            else {
+                self.tabBtnsContainerTopSpace.constant = self.kTabBtnsTopSpaceDown
+                //self.makeStartCookingBtnBig()
+            }
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
             }
         }
-        
+    }
+    
+    func moveTabDetailContainerViewsUp() {
+        if tabBtnsContainerTopSpace.constant != kTabBtnsTopSpaceUp {
+            tabBtnsContainerTopSpace.constant = kTabBtnsTopSpaceUp
+            //makeStartCookingBtnSmall()
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+            }
+        }
     }
     
     func moveTabDetailContainerViewsDown() {
-        if tabBtnsContainerTopToSafeArea.isActive {
-            tabBtnsContainerTopToHeaderView.isActive = true
-            tabBtnsContainerTopToSafeArea.isActive = false
+        if tabBtnsContainerTopSpace.constant == kTabBtnsTopSpaceUp {
+            tabBtnsContainerTopSpace.constant = kTabBtnsTopSpaceDown
+            //makeStartCookingBtnBig()
             UIView.animate(withDuration: 0.5) {
                 self.view.layoutIfNeeded()
             }
