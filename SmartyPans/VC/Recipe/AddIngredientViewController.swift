@@ -484,7 +484,11 @@ class AddIngredientViewController : UIViewController, SFSpeechRecognizerDelegate
     }
     return result;
     }
- }
+    
+    @IBAction func closeBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+}
 
 protocol AddIngredientViewControllerDelegate {
     func handleAddSuccess()

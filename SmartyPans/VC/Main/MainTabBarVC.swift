@@ -59,8 +59,12 @@ extension MainTabBarVC:UITabBarControllerDelegate{
         let index = tabBarController.viewControllers?.index(of: viewController)!
         //Add Recipe
         if index == 1{
-            let vc = storyboard?.instantiateViewController(withIdentifier: "PanPairVC")
-            navigationController?.show(vc!, sender: nil)
+            //let vc = storyboard?.instantiateViewController(withIdentifier: "PanPairVC")
+            //navigationController?.show(vc, sender: nil)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Recipe", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "AddIngredientVC") as! AddIngredientViewController
+            navigationController?.present(vc, animated: true, completion: nil)
+            
             return false
         }
         
