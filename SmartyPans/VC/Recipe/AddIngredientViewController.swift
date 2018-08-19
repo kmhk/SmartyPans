@@ -490,8 +490,12 @@ class AddIngredientViewController : UIViewController, SFSpeechRecognizerDelegate
     }
     
     @IBAction func doneBtnPressed(_ sender: Any) {
+        steps[steps.count-1].endTime = NSTimeIntervalSince1970*1000
+        steps[steps.count-1].weight = 4.2
+        print("Step Number: \(self.steps[self.steps.count-1].stepNumber), step ingredient: \(self.steps[self.steps.count-1].ingredient)")
+        self.saveSteps()
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SaveRecipeViewController") as! SaveRecipeViewController
-        //vc.recipeId = self.recipeId
+        vc.recipeId = self.recipeId
         navigationController?.pushViewController(vc, animated: true)
     }
 }
