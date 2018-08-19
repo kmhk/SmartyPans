@@ -350,7 +350,7 @@
                                         <rect key="frame" x="0.0" y="10" width="335" height="20"/>
                                         <color key="tintColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" textContentType="name"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="defaultPlaceholderColor">
                                                 <color key="value" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
@@ -373,7 +373,7 @@
                                         <rect key="frame" x="0.0" y="70" width="335" height="20"/>
                                         <color key="tintColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" textContentType="name"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="defaultPlaceholderColor">
                                                 <color key="value" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
@@ -404,6 +404,16 @@
                                     <constraint firstAttribute="trailing" secondItem="X37-Kz-s5r" secondAttribute="trailing" id="x8T-N9-7Kz"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIy-dO-9uu" customClass="SPBottomButton" customModule="SmartyPans" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="O88-eA-AV7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="17"/>
+                                <state key="normal" title="SAVE RECIPE">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -411,13 +421,17 @@
                             <constraint firstItem="aUX-93-Vs3" firstAttribute="centerY" secondItem="gVg-Fr-NMK" secondAttribute="centerY" id="K7e-mh-Qhb"/>
                             <constraint firstItem="gVg-Fr-NMK" firstAttribute="leading" secondItem="bfc-ec-8Ru" secondAttribute="leading" constant="10" id="PWl-2r-XmJ"/>
                             <constraint firstItem="gVg-Fr-NMK" firstAttribute="top" secondItem="bfc-ec-8Ru" secondAttribute="top" id="Sjh-XA-C4X"/>
+                            <constraint firstItem="bfc-ec-8Ru" firstAttribute="bottom" secondItem="AIy-dO-9uu" secondAttribute="bottom" id="URS-MR-Ozy"/>
                             <constraint firstItem="bfc-ec-8Ru" firstAttribute="trailing" secondItem="U0d-l2-5m4" secondAttribute="trailing" constant="20" id="YJ0-WC-R4m"/>
+                            <constraint firstItem="AIy-dO-9uu" firstAttribute="trailing" secondItem="bfc-ec-8Ru" secondAttribute="trailing" id="ZoF-7w-qXh"/>
+                            <constraint firstItem="AIy-dO-9uu" firstAttribute="leading" secondItem="bfc-ec-8Ru" secondAttribute="leading" id="dXg-ly-nVo"/>
                             <constraint firstItem="aUX-93-Vs3" firstAttribute="centerX" secondItem="Wmr-cD-A0m" secondAttribute="centerX" id="gHE-nd-v6f"/>
                             <constraint firstItem="U0d-l2-5m4" firstAttribute="top" secondItem="bfc-ec-8Ru" secondAttribute="top" constant="133" id="kWJ-h0-1rn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bfc-ec-8Ru"/>
                     </view>
                     <connections>
+                        <outlet property="recipeDescTxt" destination="X37-Kz-s5r" id="Cqs-BF-9Zf"/>
                         <outlet property="recipeNameTxt" destination="hUZ-qc-S7W" id="FMD-um-Kbv"/>
                     </connections>
                 </viewController>

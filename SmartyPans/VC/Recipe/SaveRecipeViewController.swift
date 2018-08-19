@@ -12,6 +12,7 @@ import MaterialTextField
 class SaveRecipeViewController: UIViewController {
 
     @IBOutlet var recipeNameTxt: MFTextField!
+    @IBOutlet var recipeDescTxt: MFTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,4 +23,19 @@ class SaveRecipeViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension SaveRecipeViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == recipeNameTxt {
+            if (recipeDescTxt.text?.isEmpty)! {
+                recipeDescTxt.becomeFirstResponder()
+                return true
+            }
+        }
+        
+        textField.resignFirstResponder()
+        return true
+    }
 }
