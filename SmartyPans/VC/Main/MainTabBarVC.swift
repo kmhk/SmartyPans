@@ -63,7 +63,11 @@ extension MainTabBarVC:UITabBarControllerDelegate{
             //navigationController?.show(vc, sender: nil)
             let storyBoard: UIStoryboard = UIStoryboard(name: "Recipe", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "AddIngredientVC") as! AddIngredientViewController
-            navigationController?.present(vc, animated: true, completion: nil)
+            //navigationController?.present(vc, animated: true, completion: nil)
+            
+            let navVC: UINavigationController = UINavigationController(rootViewController: vc)
+            navVC.navigationBar.isHidden = true
+            navigationController?.present(navVC, animated: true, completion: nil)
             
             return false
         }

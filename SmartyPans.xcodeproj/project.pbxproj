@@ -70,6 +70,7 @@
 		3401C41E211698C100D03304 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C41D211698BE00D03304 /* UIColor+Extension.swift */; };
 		3401C42021179DC600D03304 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C41F21179DC600D03304 /* String+Extension.swift */; };
 		3401C440211A682D00D03304 /* StepByStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C43F211A682D00D03304 /* StepByStepViewController.swift */; };
+		3401C4422129A89700D03304 /* SaveRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C4412129A89700D03304 /* SaveRecipeViewController.swift */; };
 		3402986E210CB65D00000AF8 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */; };
 		34029871210CB67900000AF8 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3402986F210CB67900000AF8 /* Recipe.storyboard */; };
 		34029874210CBFAD00000AF8 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34029873210CBFAD00000AF8 /* Double+Extension.swift */; };
@@ -147,6 +148,7 @@
 		3401C41D211698BE00D03304 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		3401C41F21179DC600D03304 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		3401C43F211A682D00D03304 /* StepByStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepViewController.swift; sourceTree = "<group>"; };
+		3401C4412129A89700D03304 /* SaveRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecipeViewController.swift; sourceTree = "<group>"; };
 		3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		34029870210CB67900000AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Recipe.storyboard; sourceTree = "<group>"; };
 		34029873210CBFAD00000AF8 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				3401C4112116688100D03304 /* IntroductionTVCell.swift */,
 				3401C40E2116644F00D03304 /* RecipeDetailsVC.swift */,
 				3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */,
+				3401C4412129A89700D03304 /* SaveRecipeViewController.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				0523957C210BA72800EB21EA /* Recipe.swift in Sources */,
 				3401C41B211697D600D03304 /* Fonts.swift in Sources */,
 				05D1D89D2111640C00E20B7E /* PanFoundVC.swift in Sources */,
+				3401C4422129A89700D03304 /* SaveRecipeViewController.swift in Sources */,
 				3401C41E211698C100D03304 /* UIColor+Extension.swift in Sources */,
 				3401C42021179DC600D03304 /* String+Extension.swift in Sources */,
 			);

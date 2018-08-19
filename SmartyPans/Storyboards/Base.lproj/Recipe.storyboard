@@ -246,12 +246,6 @@
                                 <color key="textColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqA-xh-SSz">
-                                <rect key="frame" x="309.33333333333331" y="54.000000000000007" width="54.666666666666686" height="30.333333333333336"/>
-                                <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="22"/>
-                                <color key="textColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.75 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPa-A5-oFz">
                                 <rect key="frame" x="148" y="139.33333333333334" width="79" height="27.333333333333343"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="20"/>
@@ -270,28 +264,38 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="357 g" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFu-vQ-PeW">
-                                <rect key="frame" x="161.66666666666666" y="505.99999999999994" width="53" height="27.333333333333314"/>
+                                <rect key="frame" x="161" y="505.99999999999994" width="53" height="27.333333333333314"/>
                                 <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="20"/>
                                 <color key="textColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9y5-iz-3ze">
+                                <rect key="frame" x="310" y="48" width="55" height="43"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="22"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneBtnPressed:" destination="g9j-X0-rhH" eventType="touchUpInside" id="KYw-fQ-Ha2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fy4-fm-t5X" firstAttribute="centerX" secondItem="d8T-JP-rYN" secondAttribute="centerX" id="0MT-0A-mce"/>
-                            <constraint firstItem="zqA-xh-SSz" firstAttribute="centerY" secondItem="0E1-4m-pr5" secondAttribute="centerY" id="20d-WE-G6J"/>
                             <constraint firstItem="0uX-7h-hP6" firstAttribute="trailing" secondItem="dqq-zO-at8" secondAttribute="trailing" constant="35" id="4BT-y1-890"/>
                             <constraint firstItem="BFu-vQ-PeW" firstAttribute="top" secondItem="Hh1-hk-eOb" secondAttribute="bottom" constant="10" id="7Fo-4l-mB2"/>
                             <constraint firstItem="Tbw-Uh-uig" firstAttribute="centerX" secondItem="d8T-JP-rYN" secondAttribute="centerX" id="8nD-jG-2nd"/>
+                            <constraint firstItem="9y5-iz-3ze" firstAttribute="centerY" secondItem="0E1-4m-pr5" secondAttribute="centerY" id="9Tn-1Y-kjg"/>
                             <constraint firstItem="Hh1-hk-eOb" firstAttribute="top" secondItem="dqq-zO-at8" secondAttribute="bottom" constant="11" id="D2O-b1-UXe"/>
                             <constraint firstItem="iwk-nu-zoM" firstAttribute="centerX" secondItem="d8T-JP-rYN" secondAttribute="centerX" id="Fcu-Yw-xLN"/>
                             <constraint firstItem="BFu-vQ-PeW" firstAttribute="centerX" secondItem="d8T-JP-rYN" secondAttribute="centerX" id="J5v-vc-wij"/>
                             <constraint firstItem="Hh1-hk-eOb" firstAttribute="centerY" secondItem="d8T-JP-rYN" secondAttribute="centerY" constant="-10" id="PZS-hC-rWz"/>
+                            <constraint firstItem="0uX-7h-hP6" firstAttribute="trailing" secondItem="9y5-iz-3ze" secondAttribute="trailing" constant="10" id="PhV-T5-q4L"/>
                             <constraint firstItem="P9N-A0-H0a" firstAttribute="centerX" secondItem="d8T-JP-rYN" secondAttribute="centerX" id="Tay-yI-dwi"/>
                             <constraint firstItem="0E1-4m-pr5" firstAttribute="top" secondItem="fKs-IF-8Hg" secondAttribute="bottom" constant="5" id="XSX-3z-ZmL"/>
                             <constraint firstItem="P9N-A0-H0a" firstAttribute="top" secondItem="0E1-4m-pr5" secondAttribute="bottom" constant="10" id="Z6D-zn-9vI"/>
                             <constraint firstItem="ssf-ug-cfu" firstAttribute="top" secondItem="fy4-fm-t5X" secondAttribute="bottom" constant="74" id="cVn-60-JuK"/>
-                            <constraint firstItem="0uX-7h-hP6" firstAttribute="trailing" secondItem="zqA-xh-SSz" secondAttribute="trailing" constant="11" id="iAc-jI-wkE"/>
                             <constraint firstItem="Hh1-hk-eOb" firstAttribute="centerX" secondItem="d8T-JP-rYN" secondAttribute="centerX" id="nny-Ud-sXu"/>
                             <constraint firstItem="ssf-ug-cfu" firstAttribute="top" secondItem="Tbw-Uh-uig" secondAttribute="bottom" constant="10" id="rZh-cR-tpZ"/>
                             <constraint firstItem="ZPa-A5-oFz" firstAttribute="top" secondItem="P9N-A0-H0a" secondAttribute="bottom" constant="10" id="tJE-f1-ZRh"/>
@@ -312,7 +316,114 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDG-ZX-SYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3717.5999999999999" y="1688.0059970014993"/>
+            <point key="canvasLocation" x="3717.5999999999999" y="1687.6847290640394"/>
+        </scene>
+        <!--Save Recipe View Controller-->
+        <scene sceneID="SMI-YX-UIH">
+            <objects>
+                <viewController storyboardIdentifier="SaveRecipeViewController" id="ezl-hi-wtM" customClass="SaveRecipeViewController" customModule="SmartyPans" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wmr-cD-A0m">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save Recipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUX-93-Vs3">
+                                <rect key="frame" x="130.66666666666666" y="50.666666666666664" width="113.66666666666666" height="27.333333333333336"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="20"/>
+                                <color key="textColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVg-Fr-NMK">
+                                <rect key="frame" x="10" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="doa-Ph-9It"/>
+                                    <constraint firstAttribute="height" constant="40" id="w1l-Ck-ZVN"/>
+                                </constraints>
+                                <state key="normal" image="btnBackG"/>
+                                <connections>
+                                    <action selector="backBtnPressed:" destination="ezl-hi-wtM" eventType="touchUpInside" id="x8C-eM-0YW"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0d-l2-5m4">
+                                <rect key="frame" x="20" y="177" width="335" height="228"/>
+                                <subviews>
+                                    <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RECIPE NAME" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hUZ-qc-S7W" customClass="MFTextField">
+                                        <rect key="frame" x="0.0" y="10" width="335" height="20"/>
+                                        <color key="tintColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="defaultPlaceholderColor">
+                                                <color key="value" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.53725490196078429" green="0.53725490196078429" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
+                                                <color key="value" red="0.94509803920000002" green="0.20784313730000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
+                                                <color key="value" red="0.8666666666666667" green="0.8666666666666667" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="ezl-hi-wtM" id="9ih-VD-r8g"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="RECIPE DESCRIPTION" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X37-Kz-s5r" customClass="MFTextField">
+                                        <rect key="frame" x="0.0" y="70" width="335" height="20"/>
+                                        <color key="tintColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="defaultPlaceholderColor">
+                                                <color key="value" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
+                                                <color key="value" red="0.94509803920000002" green="0.20784313730000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="underlineColor">
+                                                <color key="value" red="0.86666666670000003" green="0.86666666670000003" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="ezl-hi-wtM" id="MyD-QS-RxV"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="228" id="Anq-D1-5gy"/>
+                                    <constraint firstAttribute="trailing" secondItem="hUZ-qc-S7W" secondAttribute="trailing" id="BNN-Xy-jrd"/>
+                                    <constraint firstItem="hUZ-qc-S7W" firstAttribute="leading" secondItem="U0d-l2-5m4" secondAttribute="leading" id="J0O-tQ-63u"/>
+                                    <constraint firstItem="hUZ-qc-S7W" firstAttribute="top" secondItem="U0d-l2-5m4" secondAttribute="top" constant="10" id="ZLV-45-CA3"/>
+                                    <constraint firstItem="X37-Kz-s5r" firstAttribute="leading" secondItem="U0d-l2-5m4" secondAttribute="leading" id="iKD-rH-1Qa"/>
+                                    <constraint firstItem="X37-Kz-s5r" firstAttribute="top" secondItem="hUZ-qc-S7W" secondAttribute="bottom" constant="40" id="wh3-0Q-3oz"/>
+                                    <constraint firstAttribute="trailing" secondItem="X37-Kz-s5r" secondAttribute="trailing" id="x8T-N9-7Kz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U0d-l2-5m4" firstAttribute="leading" secondItem="bfc-ec-8Ru" secondAttribute="leading" constant="20" id="Gx6-5H-lXr"/>
+                            <constraint firstItem="aUX-93-Vs3" firstAttribute="centerY" secondItem="gVg-Fr-NMK" secondAttribute="centerY" id="K7e-mh-Qhb"/>
+                            <constraint firstItem="gVg-Fr-NMK" firstAttribute="leading" secondItem="bfc-ec-8Ru" secondAttribute="leading" constant="10" id="PWl-2r-XmJ"/>
+                            <constraint firstItem="gVg-Fr-NMK" firstAttribute="top" secondItem="bfc-ec-8Ru" secondAttribute="top" id="Sjh-XA-C4X"/>
+                            <constraint firstItem="bfc-ec-8Ru" firstAttribute="trailing" secondItem="U0d-l2-5m4" secondAttribute="trailing" constant="20" id="YJ0-WC-R4m"/>
+                            <constraint firstItem="aUX-93-Vs3" firstAttribute="centerX" secondItem="Wmr-cD-A0m" secondAttribute="centerX" id="gHE-nd-v6f"/>
+                            <constraint firstItem="U0d-l2-5m4" firstAttribute="top" secondItem="bfc-ec-8Ru" secondAttribute="top" constant="133" id="kWJ-h0-1rn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bfc-ec-8Ru"/>
+                    </view>
+                    <connections>
+                        <outlet property="recipeNameTxt" destination="hUZ-qc-S7W" id="FMD-um-Kbv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdD-wI-u3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3748" y="2334"/>
         </scene>
         <!--Add Ingredient View Controller-->
         <scene sceneID="dIe-qD-jV4">
@@ -476,6 +587,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btnBackG" width="28" height="28"/>
         <image name="close-icon" width="28" height="28"/>
         <image name="microphone-icon" width="21" height="26"/>
         <image name="salmon-image" width="145" height="104"/>

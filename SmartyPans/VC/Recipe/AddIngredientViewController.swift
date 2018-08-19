@@ -488,6 +488,12 @@ class AddIngredientViewController : UIViewController, SFSpeechRecognizerDelegate
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func doneBtnPressed(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SaveRecipeViewController") as! SaveRecipeViewController
+        //vc.recipeId = self.recipeId
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 protocol AddIngredientViewControllerDelegate {
