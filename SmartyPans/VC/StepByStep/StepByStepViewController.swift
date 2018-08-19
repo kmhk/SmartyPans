@@ -290,6 +290,9 @@ class StepByStepViewController: UIViewController {
         //        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RecipeBreakdownVC") as! RecipeBreakdownViewController
         //        vc.recipeId = self.recipeId
         //        navigationController?.pushViewController(vc, animated: true)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StepbyStepRecipeIngredientsViewController") as! StepbyStepRecipeIngredientsViewController
+        vc.recipeId = self.recipeId
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

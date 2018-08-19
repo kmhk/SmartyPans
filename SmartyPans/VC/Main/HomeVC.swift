@@ -116,7 +116,10 @@ extension HomeVC:UICollectionViewDelegate, UICollectionViewDataSource, UICollect
         let sbsCompletedController = storyBoard.instantiateViewController(withIdentifier: "StepByStepViewController") as! StepByStepViewController
         
         sbsCompletedController.recipeId = recipe.recipeId
-        self.present(sbsCompletedController, animated: true, completion: nil)
+        
+        let navVC: UINavigationController = UINavigationController(rootViewController: sbsCompletedController)
+        navVC.navigationBar.isHidden = true
+        self.present(navVC, animated: true, completion: nil)
         
 //        let recipeVC = self.storyboard?.instantiateViewController(withIdentifier: "RecipeDetailsViewController") as! RecipeDetailsVC
 //        recipeVC.recipeId = recipe.recipeId
