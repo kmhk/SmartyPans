@@ -93,5 +93,8 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         let step = self.steps[currentStepNumber-1]
         loadStep(step: step)
         
+        //TODO grow progress bar
+        //TODO adjust title label
+        //ask: button previous? play and stop buttons? or only pause?
     }
 }
