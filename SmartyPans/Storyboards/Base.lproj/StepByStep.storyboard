@@ -211,7 +211,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHf-5i-mkz">
                                 <rect key="frame" x="87.666666666666686" y="219.33333333333337" width="200" height="200"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueberry-image" translatesAutoresizingMaskIntoConstraints="NO" id="Fhm-qu-4ul">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueberry-image" translatesAutoresizingMaskIntoConstraints="NO" id="Fhm-qu-4ul">
                                         <rect key="frame" x="7.3333333333333286" y="8" width="184" height="184"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -375,6 +375,9 @@
                                                     <constraint firstAttribute="width" constant="16" id="xIR-E8-Y1U"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="right-arrow-icon"/>
+                                                <connections>
+                                                    <action selector="nextStepBtnPressed:" destination="WCu-QA-82M" eventType="touchUpInside" id="xyq-eR-i37"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -454,10 +457,14 @@
                     <navigationItem key="navigationItem" id="9IV-tL-Cmq"/>
                     <connections>
                         <outlet property="bg_View" destination="hHf-5i-mkz" id="LRF-fS-nCu"/>
+                        <outlet property="currentStepNumberLabel" destination="jb9-Jp-1Za" id="kbw-5s-luQ"/>
                         <outlet property="ingredientImage" destination="Fhm-qu-4ul" id="0Vv-cJ-mYF"/>
                         <outlet property="labelIngredientName" destination="SRn-Fl-wih" id="ciW-p2-miu"/>
+                        <outlet property="maxStepNumberLabel" destination="V0u-2A-u2d" id="zy8-Xc-CBc"/>
                         <outlet property="pauseBtn" destination="RRT-iO-rs8" id="Y2a-os-dCe"/>
                         <outlet property="progressBar" destination="3KF-Wr-Wmf" id="yy3-zD-yuy"/>
+                        <outlet property="stepDescriptionLabel" destination="jBb-sx-vtb" id="HG9-tS-2wf"/>
+                        <outlet property="weightLabel" destination="Ifh-kf-TTM" id="b7F-ok-vEh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Pn-WE-Jk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
