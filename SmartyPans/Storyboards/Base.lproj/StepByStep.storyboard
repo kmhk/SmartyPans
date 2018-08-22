@@ -524,6 +524,9 @@
                                             <constraint firstAttribute="width" constant="40" id="cnN-3j-yXO"/>
                                         </constraints>
                                         <state key="normal" image="btnKcal"/>
+                                        <connections>
+                                            <action selector="kcalBtnPressed:" destination="dQE-Ba-2uA" eventType="touchUpInside" id="8CQ-hh-gm1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHU-Pp-Mcu">
                                         <rect key="frame" x="10" y="39" width="40" height="40"/>

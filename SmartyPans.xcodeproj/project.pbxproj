@@ -75,6 +75,8 @@
 		34029871210CB67900000AF8 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3402986F210CB67900000AF8 /* Recipe.storyboard */; };
 		34029874210CBFAD00000AF8 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34029873210CBFAD00000AF8 /* Double+Extension.swift */; };
 		341E8E1C2129B9D80031B38F /* SPBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341E8E1B2129B9D80031B38F /* SPBottomButton.swift */; };
+		341E8E1F212D09610031B38F /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341E8E1E212D09610031B38F /* NutritionViewController.swift */; };
+		341E8E21212D0B8C0031B38F /* Nutrition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341E8E20212D0B8C0031B38F /* Nutrition.storyboard */; };
 		342F749B210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342F749A210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift */; };
 		346A3593210BE62600FC2AD3 /* StepByStep.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346A3591210BE62600FC2AD3 /* StepByStep.storyboard */; };
 		346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */; };
@@ -154,6 +156,8 @@
 		34029870210CB67900000AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Recipe.storyboard; sourceTree = "<group>"; };
 		34029873210CBFAD00000AF8 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		341E8E1B2129B9D80031B38F /* SPBottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBottomButton.swift; sourceTree = "<group>"; };
+		341E8E1E212D09610031B38F /* NutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionViewController.swift; sourceTree = "<group>"; };
+		341E8E20212D0B8C0031B38F /* Nutrition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nutrition.storyboard; sourceTree = "<group>"; };
 		342F749A210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepbyStepRecipeIngredientsViewController.swift; sourceTree = "<group>"; };
 		346A3592210BE62600FC2AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StepByStep.storyboard; sourceTree = "<group>"; };
 		346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepCompletedViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 				346A3591210BE62600FC2AD3 /* StepByStep.storyboard */,
 				0586883F2100F25D00108C18 /* LaunchScreen.storyboard */,
 				3402986F210CB67900000AF8 /* Recipe.storyboard */,
+				341E8E20212D0B8C0031B38F /* Nutrition.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 		05868887210103E100108C18 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				341E8E1D212D09470031B38F /* Nutrition */,
 				3402986C210CB63300000AF8 /* Recipe */,
 				346A3595210BEA3400FC2AD3 /* StepByStep */,
 				05868888210103E100108C18 /* Auth */,
@@ -371,6 +377,14 @@
 				3401C4412129A89700D03304 /* SaveRecipeViewController.swift */,
 			);
 			path = Recipe;
+			sourceTree = "<group>";
+		};
+		341E8E1D212D09470031B38F /* Nutrition */ = {
+			isa = PBXGroup;
+			children = (
+				341E8E1E212D09610031B38F /* NutritionViewController.swift */,
+			);
+			path = Nutrition;
 			sourceTree = "<group>";
 		};
 		346A3595210BEA3400FC2AD3 /* StepByStep */ = {
@@ -491,6 +505,7 @@
 				058688742100FF1800108C18 /* NunitoSans-SemiBold.ttf in Resources */,
 				0586886B2100FF1800108C18 /* NunitoSans-BoldItalic.ttf in Resources */,
 				34029871210CB67900000AF8 /* Recipe.storyboard in Resources */,
+				341E8E21212D0B8C0031B38F /* Nutrition.storyboard in Resources */,
 				058688792100FF1800108C18 /* Roboto-Light.ttf in Resources */,
 				0586887C2100FF1800108C18 /* Roboto-Thin.ttf in Resources */,
 				0586883C2100F25A00108C18 /* Main.storyboard in Resources */,
@@ -618,6 +633,7 @@
 				0554F0B1210790E600CB97AD /* ProfileVC.swift in Sources */,
 				058688A021026C3700108C18 /* PostApi.swift in Sources */,
 				3401C40F2116645000D03304 /* RecipeDetailsVC.swift in Sources */,
+				341E8E1F212D09610031B38F /* NutritionViewController.swift in Sources */,
 				058688A221026C3700108C18 /* UserApi.swift in Sources */,
 				0554F0AF210787E600CB97AD /* HomeVC.swift in Sources */,
 				346A359A210BF9D300FC2AD3 /* UIView+Extension.swift in Sources */,
