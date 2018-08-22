@@ -296,11 +296,12 @@ class StepByStepViewController: UIViewController {
     }
     
     @IBAction func kcalBtnPressed(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Nutrition", bundle: nil)
-        let nutritionController = storyBoard.instantiateViewController(withIdentifier: "NutritionViewController") as! NutritionViewController
-        nutritionController.recipeId = self.recipe.recipeId
-        nutritionController.recipeImageURL = self.recipe.recipeImage
-        navigationController?.pushViewController(nutritionController, animated: true)
+//TODO uncomment
+        //        let storyBoard: UIStoryboard = UIStoryboard(name: "Nutrition", bundle: nil)
+//        let nutritionController = storyBoard.instantiateViewController(withIdentifier: "NutritionViewController") as! NutritionViewController
+//        nutritionController.recipeId = self.recipe.recipeId
+//        nutritionController.recipeImageURL = self.recipe.recipeImage
+//        navigationController?.pushViewController(nutritionController, animated: true)
     }
     
 }

@@ -40,14 +40,34 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
     @IBOutlet var stepDescriptionLabel: UILabel!
     
     @IBOutlet var stepsProgressBar: NSLayoutConstraint!
+    @IBOutlet var pauseBtnContainerView: UIView!
+    @IBOutlet var playAndStopBtnContainerView: UIView!
+    
+    @IBOutlet var playBtn: UIButton!
+    
+    @IBOutlet var stopBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setRound(toView: ingredientImage, radius: ingredientImage.bounds.height/2)
         setRound(toView: pauseBtn, radius: pauseBtn.bounds.height/2)
         pauseBtn.dropCircleButtonShadow()
+        
+        setRound(toView: playBtn, radius: playBtn.bounds.height/2)
+        playBtn.dropCircleButtonShadow()
+        setRound(toView: stopBtn, radius: stopBtn.bounds.height/2)
+        stopBtn.dropCircleButtonShadow()
+        
         labelIngredientName.adjustsFontSizeToFitWidth = true
         labelIngredientName.minimumScaleFactor = 0.8
+        
+        pauseBtnContainerView.alpha = 1
+        playAndStopBtnContainerView.alpha = 0
+        
+        pauseBtnContainerView.isHidden = false
+        playAndStopBtnContainerView.isHidden = true
+        
         getRecipeSteps()
     }
     
@@ -101,4 +121,30 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         let step = self.steps[currentStepNumber-1]
         loadStep(step: step)
     }
+    
+    @IBAction func playBtnPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pauseBtnContainerView.alpha = 1
+            self.playAndStopBtnContainerView.alpha = 0
+        }) { (complete) in
+            self.pauseBtnContainerView.isHidden = false
+            self.playAndStopBtnContainerView.isHidden = true
+        }
+        
+    }
+    @IBAction func stopBtnPressed(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func pauseBtnPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.pauseBtnContainerView.alpha = 0
+            self.playAndStopBtnContainerView.alpha = 1
+        }) { (complete) in
+            self.pauseBtnContainerView.isHidden = true
+            self.playAndStopBtnContainerView.isHidden = false
+        }
+    }
+    
+    
 }
