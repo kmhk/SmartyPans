@@ -45,7 +45,8 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         setRound(toView: ingredientImage, radius: ingredientImage.bounds.height/2)
         setRound(toView: pauseBtn, radius: pauseBtn.bounds.height/2)
         pauseBtn.dropCircleButtonShadow()
-        
+        labelIngredientName.adjustsFontSizeToFitWidth = true
+        labelIngredientName.minimumScaleFactor = 0.8
         getRecipeSteps()
     }
     
