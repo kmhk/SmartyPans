@@ -39,6 +39,7 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
     @IBOutlet var maxStepNumberLabel: UILabel!
     @IBOutlet var stepDescriptionLabel: UILabel!
     
+    @IBOutlet var stepsProgressBar: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,6 +76,12 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
     }
     
     func loadStep(step: RecipeStep) {
+        
+        let screenWidth = UIScreen.main.bounds.width
+        let progressPerc = (CGFloat(currentStepNumber))/(CGFloat(self.steps.count))
+        let progressAdvance = screenWidth * progressPerc
+        stepsProgressBar.constant = progressAdvance
+        
         ingredientImage.sd_setImage(with: URL(string: step.ingredientImage), completed: nil)
         labelIngredientName.text = step.ingredient.capitalizingFirstLetter() + " - " + String(step.weight) + step.unit
         weightLabel.text = String(step.weight) + step.unit
@@ -93,9 +100,5 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         
         let step = self.steps[currentStepNumber-1]
         loadStep(step: step)
-        
-        //TODO grow progress bar
-        //TODO adjust title label
-        //ask: button previous? play and stop buttons? or only pause?
     }
 }
