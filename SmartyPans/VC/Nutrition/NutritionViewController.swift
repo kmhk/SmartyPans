@@ -14,7 +14,7 @@ import FirebaseDatabase
 
 class NutritionViewController: UIViewController {
     @IBOutlet weak var nav_Vw: UIView!
-    //@IBOutlet var pieChartLeft: XYPieChart! //TODO descomentar
+    @IBOutlet var pieChartLeft: XYPieChart!
     @IBOutlet var view_circal: UIView!
     @IBOutlet weak var lbe_Dot: UILabel!
     

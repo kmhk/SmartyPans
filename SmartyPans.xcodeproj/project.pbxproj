@@ -74,6 +74,7 @@
 		3402986E210CB65D00000AF8 /* AddIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */; };
 		34029871210CB67900000AF8 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3402986F210CB67900000AF8 /* Recipe.storyboard */; };
 		34029874210CBFAD00000AF8 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34029873210CBFAD00000AF8 /* Double+Extension.swift */; };
+		34166C6D212E52F500AF0D7F /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 34166C6C212E52F500AF0D7F /* XYPieChart.m */; };
 		341E8E1C2129B9D80031B38F /* SPBottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341E8E1B2129B9D80031B38F /* SPBottomButton.swift */; };
 		341E8E1F212D09610031B38F /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341E8E1E212D09610031B38F /* NutritionViewController.swift */; };
 		341E8E21212D0B8C0031B38F /* Nutrition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 341E8E20212D0B8C0031B38F /* Nutrition.storyboard */; };
@@ -155,6 +156,9 @@
 		3402986D210CB65D00000AF8 /* AddIngredientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIngredientViewController.swift; sourceTree = "<group>"; };
 		34029870210CB67900000AF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Recipe.storyboard; sourceTree = "<group>"; };
 		34029873210CBFAD00000AF8 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		34166C6B212E52F500AF0D7F /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
+		34166C6C212E52F500AF0D7F /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
+		34166C6E212E542000AF0D7F /* SmartyPans-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartyPans-Bridging-Header.h"; sourceTree = "<group>"; };
 		341E8E1B2129B9D80031B38F /* SPBottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPBottomButton.swift; sourceTree = "<group>"; };
 		341E8E1E212D09610031B38F /* NutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionViewController.swift; sourceTree = "<group>"; };
 		341E8E20212D0B8C0031B38F /* Nutrition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nutrition.storyboard; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 		058688352100F25A00108C18 /* SmartyPans */ = {
 			isa = PBXGroup;
 			children = (
+				34166C69212E52D700AF0D7F /* External tools */,
 				3401C418211697BD00D03304 /* Styling */,
 				058688362100F25A00108C18 /* AppDelegate.swift */,
 				058688852101039300108C18 /* Global.swift */,
@@ -243,6 +248,7 @@
 				0586883D2100F25D00108C18 /* Assets.xcassets */,
 				058688422100F25D00108C18 /* Info.plist */,
 				0586884C2100FE2C00108C18 /* GoogleService-Info.plist */,
+				34166C6E212E542000AF0D7F /* SmartyPans-Bridging-Header.h */,
 			);
 			path = SmartyPans;
 			sourceTree = "<group>";
@@ -377,6 +383,23 @@
 				3401C4412129A89700D03304 /* SaveRecipeViewController.swift */,
 			);
 			path = Recipe;
+			sourceTree = "<group>";
+		};
+		34166C69212E52D700AF0D7F /* External tools */ = {
+			isa = PBXGroup;
+			children = (
+				34166C6A212E52F500AF0D7F /* XYPieChart */,
+			);
+			path = "External tools";
+			sourceTree = "<group>";
+		};
+		34166C6A212E52F500AF0D7F /* XYPieChart */ = {
+			isa = PBXGroup;
+			children = (
+				34166C6B212E52F500AF0D7F /* XYPieChart.h */,
+				34166C6C212E52F500AF0D7F /* XYPieChart.m */,
+			);
+			path = XYPieChart;
 			sourceTree = "<group>";
 		};
 		341E8E1D212D09470031B38F /* Nutrition */ = {
@@ -632,6 +655,7 @@
 				0523957E210BA72800EB21EA /* SPUser.swift in Sources */,
 				0554F0B1210790E600CB97AD /* ProfileVC.swift in Sources */,
 				058688A021026C3700108C18 /* PostApi.swift in Sources */,
+				34166C6D212E52F500AF0D7F /* XYPieChart.m in Sources */,
 				3401C40F2116645000D03304 /* RecipeDetailsVC.swift in Sources */,
 				341E8E1F212D09610031B38F /* NutritionViewController.swift in Sources */,
 				058688A221026C3700108C18 /* UserApi.swift in Sources */,
@@ -833,6 +857,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "577674f1-79e7-407e-8243-fd8d87efb639";
 				PROVISIONING_PROFILE_SPECIFIER = Wildcard;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -852,6 +877,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "577674f1-79e7-407e-8243-fd8d87efb639";
 				PROVISIONING_PROFILE_SPECIFIER = Wildcard;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_NAME)/$(SWIFT_MODULE_NAME)-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
