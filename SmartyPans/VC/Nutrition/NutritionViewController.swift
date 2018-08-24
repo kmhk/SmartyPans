@@ -13,11 +13,10 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class NutritionViewController: UIViewController {
-    @IBOutlet weak var nav_Vw: UIView!
+
     @IBOutlet var pieChartLeft: XYPieChart!
     @IBOutlet var view_circal: UIView!
     @IBOutlet weak var lbe_Dot: UILabel!
-    
     
     @IBOutlet weak var labelProteins: UILabel!
     @IBOutlet weak var labelCarbs: UILabel!
@@ -39,12 +38,9 @@ class NutritionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        initGradient()
         setRecipeImage()
         databaseReference = Database.database().reference()
         getNutritionInformation()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -156,16 +152,6 @@ class NutritionViewController: UIViewController {
         labelSodium.text = "\(nutrition.sodium.format(f: ".2")) g"
     }
     
-    func initGradient(){
-        let gradient = CAGradientLayer()
-        let topColor: UIColor? = UIColor(red: 42.0 / 255.0, green: 53.0 / 255.0, blue: 136.0 / 255.0, alpha: 1.0)
-        let bottomColor: UIColor? = UIColor(red: 226.0 / 255.0, green: 35.0 / 255.0, blue: 91.0 / 255.0, alpha: 1.0)
-        gradient.frame = CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.size.width, height: 64.0)
-        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradient.colors = [(topColor?.cgColor as? Any), (bottomColor?.cgColor as? Any)]
-        nav_Vw.layer.insertSublayer(gradient, at: 0)
-    }
     
     //MARK: Set recipe image from URL
     func setRecipeImage(){
@@ -175,12 +161,34 @@ class NutritionViewController: UIViewController {
         recipeImage.layer.cornerRadius = recipeImage.frame.height/2
         recipeImage.clipsToBounds = true
         
+        print(recipeImageURL)
+        
+        downloadImage(url: URL(string: recipeImageURL)!)
+        
         //TODO descomentar
 //        Alamofire.request(recipeImageURL).responseData { response in
 //            if let image = response.result.value {
 //                self.recipeImage.image = UIImage(data: image)
 //            }
 //        }
+    }
+    
+    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            completion(data, response, error)
+            }.resume()
+    }
+    
+    func downloadImage(url: URL) {
+        print("Download Started")
+        getDataFromUrl(url: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() {
+                self.recipeImage.image = UIImage(data: data)
+            }
+        }
     }
     
     @IBAction func onBack(_ sender: Any) {
