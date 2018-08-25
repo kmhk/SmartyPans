@@ -185,13 +185,6 @@ class NutritionViewController: UIViewController {
         print(recipeImageURL)
         
         downloadImage(url: URL(string: recipeImageURL)!)
-        
-        //TODO descomentar
-//        Alamofire.request(recipeImageURL).responseData { response in
-//            if let image = response.result.value {
-//                self.recipeImage.image = UIImage(data: image)
-//            }
-//        }
     }
     
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
