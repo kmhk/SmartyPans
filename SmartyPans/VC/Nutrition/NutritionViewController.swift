@@ -65,19 +65,12 @@ class NutritionViewController: UIViewController {
         
         //pieChartLeft.delegate = self
         pieChartLeft.dataSource = self
-        //pieChartLeft.startPieAngle = M_PI_2//optional
         pieChartLeft.animationSpeed = 1.0//optional
         pieChartLeft.showLabel = false
-        //pieChartLeft.labelFont = UIFont(name: "DBLCDTempBlack", size: 24)//optional
-        //pieChartLeft.labelColor = UIColor.black//optional, defaults to white
-        //pieChartLeft.labelShadowColor = UIColor.black        //optional, defaults to none (nil)
-        //pieChartLeft.labelRadius = 160//optional
+        
         pieChartLeft.showPercentage = false//optional
         pieChartLeft.setPieBackgroundColor(.clear)
         pieChartLeft.reloadData()
-        //pieChartLeft.pieBackgroundColor = UIColor(white: 0.95, alpha: 1)//optional
-        
-        //pieChartLeft.pieCenter = CGPoint(x: 240, y: 240)//optional
     }
     
     func getNutritionInformation(){
