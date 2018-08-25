@@ -262,6 +262,34 @@ class RecipeDetailsVC: UIViewController {
         ingredientsDetailContainerView.isHidden = false
     }
     
+    @IBAction func settingsBtnPressed(_ sender: Any) {
+        let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let nutritionActionButton = UIAlertAction(title: "Nutrition Breakdown", style: .default)
+        { _ in
+            
+        }
+        actionSheetController.addAction(nutritionActionButton)
+        
+        let changeDishActionButton = UIAlertAction(title: "Change the Dish Photo", style: .default)
+        { _ in
+            
+        }
+        actionSheetController.addAction(changeDishActionButton)
+        
+        let deleteActionButton = UIAlertAction(title: "Delete Recipe", style: .destructive) { _ in
+            print("Cancel")
+        }
+        actionSheetController.addAction(deleteActionButton)
+        
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+
+        
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
     
     @objc func recalculatePressed(_ button: UIButton) {
         performSegue(withIdentifier: "RecordVoice", sender: nil)

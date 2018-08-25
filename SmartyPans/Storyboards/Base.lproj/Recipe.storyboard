@@ -689,6 +689,9 @@
                                             <constraint firstAttribute="height" constant="40" id="pyz-3T-iDn"/>
                                         </constraints>
                                         <state key="normal" image="btnMore"/>
+                                        <connections>
+                                            <action selector="settingsBtnPressed:" destination="RW0-Y2-vNQ" eventType="touchUpInside" id="dvy-Sl-kQq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G52-cx-qgI">
                                         <rect key="frame" x="10" y="39" width="40" height="40"/>
@@ -1190,7 +1193,7 @@
                         <outlet property="ratingView" destination="RNs-ro-WZF" id="0zB-ZK-hdI"/>
                         <outlet property="recipeImage" destination="iSB-0y-bfE" id="UFU-UB-vfp"/>
                         <outlet property="recipeNameLabel" destination="MXU-dI-Ulr" id="HT3-NY-J9T"/>
-                        <outlet property="share" destination="zDi-OO-J3x" id="F8g-At-KJi"/>
+                        <outlet property="share" destination="zDi-OO-J3x" id="KBI-Bn-vr8"/>
                         <outlet property="tabBtnSelectedIndicatorView" destination="JYU-Ye-ons" id="PcF-iT-o9r"/>
                         <outlet property="tabBtnSelectedIndicatorViewLeading" destination="IHy-ck-7KA" id="9CJ-NO-X3W"/>
                         <outlet property="tabBtnsContainerTopSpace" destination="KLr-BC-Cle" id="uz2-mJ-iUB"/>
