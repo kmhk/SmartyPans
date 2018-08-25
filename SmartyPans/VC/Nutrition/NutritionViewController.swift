@@ -62,13 +62,12 @@ class NutritionViewController: UIViewController {
     func setupPieChart() {
         
         setRound(toView: view_circal, radius: view_circal.bounds.height/2)
-        
         //pieChartLeft.delegate = self
         pieChartLeft.dataSource = self
-        pieChartLeft.animationSpeed = 1.0//optional
+        pieChartLeft.animationSpeed = 1.0
         pieChartLeft.showLabel = false
         
-        pieChartLeft.showPercentage = false//optional
+        pieChartLeft.showPercentage = false
         pieChartLeft.setPieBackgroundColor(.clear)
         pieChartLeft.reloadData()
     }
