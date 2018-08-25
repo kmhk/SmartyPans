@@ -10,6 +10,8 @@ import UIKit
 
 class SPBottomButton: UIButton {
 
+    let gradient: CAGradientLayer = CAGradientLayer()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.applyStyle()
@@ -21,10 +23,15 @@ class SPBottomButton: UIButton {
     }
     
     func applyStyle() {
-        applyRedButtonGradient()
+        applyRedButtonGradient(gradient: gradient)
         self.setTitleColor(.white, for: .normal)
         //self.setTitleColor(.redSPColor, for: .highlighted)
         
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradient.frame = self.bounds
     }
 
 }
