@@ -36,11 +36,15 @@ class NutritionViewController: UIViewController {
     @objc public var recipeImageURL: String = ""
     let apiURL = "http://api-test.smartypans.io/v1/nutrition/solo_ingredient"
     
+    let pieColors: [UIColor] = [hexStringToUIColor(hex: "912B6D"), hexStringToUIColor(hex: "D7225D"), hexStringToUIColor(hex: "2C3277")]
+    var pieValues: [CGFloat] = [0, 0, 0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setRecipeImage()
         databaseReference = Database.database().reference()
         getNutritionInformation()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +58,27 @@ class NutritionViewController: UIViewController {
      If the recipe does not have a nutrition object yet, retrieves raw data from the
      SmartyPans API, creates the nutrition object and saves it to the database.
      */
+    
+    func setupPieChart() {
+        
+        setRound(toView: view_circal, radius: view_circal.bounds.height/2)
+        
+        //pieChartLeft.delegate = self
+        pieChartLeft.dataSource = self
+        //pieChartLeft.startPieAngle = M_PI_2//optional
+        pieChartLeft.animationSpeed = 1.0//optional
+        pieChartLeft.showLabel = false
+        //pieChartLeft.labelFont = UIFont(name: "DBLCDTempBlack", size: 24)//optional
+        //pieChartLeft.labelColor = UIColor.black//optional, defaults to white
+        //pieChartLeft.labelShadowColor = UIColor.black        //optional, defaults to none (nil)
+        //pieChartLeft.labelRadius = 160//optional
+        pieChartLeft.showPercentage = false//optional
+        pieChartLeft.setPieBackgroundColor(.clear)
+        pieChartLeft.reloadData()
+        //pieChartLeft.pieBackgroundColor = UIColor(white: 0.95, alpha: 1)//optional
+        
+        //pieChartLeft.pieCenter = CGPoint(x: 240, y: 240)//optional
+    }
     
     func getNutritionInformation(){
         print("Recipe Id from RecipeDetailsViewController: \(self.recipeId)")
@@ -150,6 +175,9 @@ class NutritionViewController: UIViewController {
         labelSugar.text = "\(nutrition.sugar.format(f: ".2")) g"
         labelCholestrol.text = "\(nutrition.cholestrol.format(f: ".2")) g"
         labelSodium.text = "\(nutrition.sodium.format(f: ".2")) g"
+        
+        pieValues = [CGFloat(nutrition.protein), CGFloat(nutrition.carbohydrates), CGFloat(nutrition.totalFat)]
+        setupPieChart()
     }
     
     
@@ -197,4 +225,19 @@ class NutritionViewController: UIViewController {
     
 }
 
+extension NutritionViewController: XYPieChartDataSource {
+    
+    func numberOfSlices(in pieChart: XYPieChart!) -> UInt {
+        return 3
+    }
+    
+    func pieChart(_ pieChart: XYPieChart!, valueForSliceAt index: UInt) -> CGFloat {
+        return pieValues[Int(index)]
+    }
+    
+    func pieChart(_ pieChart: XYPieChart!, colorForSliceAt index: UInt) -> UIColor! {
+        return pieColors[Int(index)]
+    }
+    
+}
 
