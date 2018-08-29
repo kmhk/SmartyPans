@@ -27,6 +27,7 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
     var recipeId = ""
     var firRecipeStepsRef: DatabaseReference!
     
+    @IBOutlet weak var timeToCook: UILabel!
     @IBOutlet weak var progressBar: MBCircularProgressBarView!
     @IBOutlet weak var bg_View: UIView!
     @IBOutlet var add_Btn: LGButton!
@@ -46,6 +47,10 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
     @IBOutlet var playBtn: UIButton!
     
     @IBOutlet var stopBtn: UIButton!
+    
+    var seconds = 5 //This variable will hold a starting value of seconds. It could be any amount above 0.
+    var timer = Timer()
+    var isTimerRunning = false //This will be used to make sure only one timer is created at a time.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +101,7 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
     }
     
     func loadStep(step: RecipeStep) {
-        
+        self.progressBar.value = 0
         let screenWidth = UIScreen.main.bounds.width
         let progressPerc = (CGFloat(currentStepNumber))/(CGFloat(self.steps.count))
         let progressAdvance = screenWidth * progressPerc
@@ -104,9 +109,29 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         
         ingredientImage.sd_setImage(with: URL(string: step.ingredientImage), completed: nil)
         labelIngredientName.text = step.ingredient.capitalizingFirstLetter() + " - " + String(step.weight) + step.unit
-        weightLabel.text = String(step.weight) + step.unit
+//        weightLabel.text = String(step.weight) + step.unit
+        timeToCook.text = timeString(time: TimeInterval(seconds))
         currentStepNumberLabel.text = String(currentStepNumber)
         stepDescriptionLabel.text = step.stepDescription
+        self.startWeightAnimation(weight: 100)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
+            self.runTimer()
+        }
+        seconds = 5
+    }
+    
+    func startWeightAnimation(weight: CGFloat){
+        UIView.animate(withDuration: 2, animations: {() -> Void in
+            self.progressBar.value = weight
+        })
+
+        
+    }
+    
+    func resetWeightAnimation(){
+        UIView.animate(withDuration: 1, animations: {() -> Void in
+            self.progressBar.value = 0
+        })
     }
 
 
@@ -120,6 +145,28 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         
         let step = self.steps[currentStepNumber-1]
         loadStep(step: step)
+    }
+    
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self,
+                                     selector: (#selector(StepbyStepRecipeIngredientsViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    func timeString(time:TimeInterval) -> String {
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        return String(format:"%02i:%02i", minutes, seconds)
+    }
+    
+    @objc func updateTimer() {
+        if seconds < 1 {
+            timer.invalidate()
+            //Send alert to indicate "time's up!"
+        } else {
+            seconds -= 1
+            timeToCook.text = timeString(time: TimeInterval(seconds))
+        }
     }
     
     @IBAction func playBtnPressed(_ sender: Any) {

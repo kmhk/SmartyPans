@@ -18,7 +18,6 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
        addTapGesture()
     }
@@ -120,6 +119,8 @@ extension LoginVC:UITableViewDelegate, UITableViewDataSource{
         return cell
     }
 }
+
+
 
 extension LoginVC:UITextFieldDelegate{
     
