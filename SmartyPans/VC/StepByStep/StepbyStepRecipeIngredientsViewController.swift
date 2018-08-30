@@ -113,7 +113,9 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         timeToCook.text = timeString(time: TimeInterval(seconds))
         currentStepNumberLabel.text = String(currentStepNumber)
         stepDescriptionLabel.text = step.stepDescription
-        self.startWeightAnimation(weight: 100)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.startWeightAnimation(weight: 100)
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
             self.runTimer()
         }
@@ -136,6 +138,8 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
 
 
     @IBAction func nextStepBtnPressed(_ sender: Any) {
+        self.progressBar.value = 0
+        
         if currentStepNumber == self.steps.count {
             currentStepNumber = 1
         }
@@ -144,7 +148,8 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         }
         
         let step = self.steps[currentStepNumber-1]
-        loadStep(step: step)
+        
+        self.loadStep(step: step)
     }
     
     func runTimer() {
