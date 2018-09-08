@@ -113,6 +113,12 @@ extension LoginVC:UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellLogin")!
         tfEmail = cell.viewWithTag(100) as! MFTextField
         tfPassword = cell.viewWithTag(101) as! MFTextField
+        tfPassword.delegate = self
+        
+        //tfEmail.text = "rb@smartypans.io"
+        //tfPassword.text = "qwertyuiop"
+        tfEmail.text = "rb@rb.com"
+        tfPassword.text = "Oscar2007"
         
         tfEmail.text = "rb@rb.com"
         tfPassword.text = "Oscar2007"
@@ -123,5 +129,10 @@ extension LoginVC:UITableViewDelegate, UITableViewDataSource{
 
 
 extension LoginVC:UITextFieldDelegate{
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }

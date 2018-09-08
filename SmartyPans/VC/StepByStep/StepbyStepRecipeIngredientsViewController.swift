@@ -140,6 +140,8 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
 
 
     @IBAction func nextStepBtnPressed(_ sender: Any) {
+        self.progressBar.value = 0
+        
         if currentStepNumber == self.steps.count {
             currentStepNumber = 1
         }
@@ -150,7 +152,8 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
             self.performSegue(withIdentifier: "showDoneScreen", sender: self)
         }
         let step = self.steps[currentStepNumber-1]
-        loadStep(step: step)
+        
+        self.loadStep(step: step)
     }
     
     func runTimer() {
