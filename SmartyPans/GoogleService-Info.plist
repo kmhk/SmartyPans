@@ -7,9 +7,9 @@
         <key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
         <string>ca-app-pub-3940256099942544/4411468910</string>
         <key>CLIENT_ID</key>
-        <string>69702874643-m40856tr51ugpg09944j16tr2f009los.apps.googleusercontent.com</string>
+        <string>69702874643-d83lh21gnde10svp1jfpbj0j7hf98plu.apps.googleusercontent.com</string>
         <key>REVERSED_CLIENT_ID</key>
-        <string>com.googleusercontent.apps.69702874643-m40856tr51ugpg09944j16tr2f009los</string>
+        <string>com.googleusercontent.apps.69702874643-d83lh21gnde10svp1jfpbj0j7hf98plu</string>
         <key>API_KEY</key>
         <string>AIzaSyCCXy-WXarIga9D0HH6PRomeo8WZr2vieY</string>
         <key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
         <key>PLIST_VERSION</key>
         <string>1</string>
         <key>BUNDLE_ID</key>
-        <string>com.smartypans.smartypansapp</string>
+        <string>com.smartypans.SmartyPans</string>
         <key>PROJECT_ID</key>
         <string>spapi-3e4f9</string>
         <key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
         <key>IS_SIGNIN_ENABLED</key>
         <true></true>
         <key>GOOGLE_APP_ID</key>
-        <string>1:69702874643:ios:76d5ddbe412b8d07</string>
+        <string>1:69702874643:ios:effcf07ab36b39a4</string>
         <key>DATABASE_URL</key>
         <string>https://spapi-3e4f9.firebaseio.com</string>
     </dict>

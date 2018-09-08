@@ -55,6 +55,7 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         setRound(toView: ingredientImage, radius: ingredientImage.bounds.height/2)
         setRound(toView: pauseBtn, radius: pauseBtn.bounds.height/2)
         pauseBtn.dropCircleButtonShadow()
@@ -108,17 +109,20 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         stepsProgressBar.constant = progressAdvance
         
         ingredientImage.sd_setImage(with: URL(string: step.ingredientImage), completed: nil)
-        labelIngredientName.text = step.ingredient.capitalizingFirstLetter() + " - " + String(step.weight) + step.unit
+        labelIngredientName.text = step.ingredient.capitalizingFirstLetter()
+            + " - " + String(format: "%.2f", step.weight) + " " + step.unit
 //        weightLabel.text = String(step.weight) + step.unit
         timeToCook.text = timeString(time: TimeInterval(seconds))
         currentStepNumberLabel.text = String(currentStepNumber)
         stepDescriptionLabel.text = step.stepDescription
         self.startWeightAnimation(weight: 100)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
-            self.runTimer()
-        }
-        seconds = 5
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
+//            self.runTimer()
+//        }
+//        seconds = 5
     }
+    
+    
     
     func startWeightAnimation(weight: CGFloat){
         UIView.animate(withDuration: 2, animations: {() -> Void in
@@ -142,7 +146,9 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         else {
             currentStepNumber = currentStepNumber + 1
         }
-        
+        if(currentStepNumber >= self.steps.count){
+            self.performSegue(withIdentifier: "showDoneScreen", sender: self)
+        }
         let step = self.steps[currentStepNumber-1]
         loadStep(step: step)
     }

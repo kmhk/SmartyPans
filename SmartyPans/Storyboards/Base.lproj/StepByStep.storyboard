@@ -61,7 +61,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7e-pl-ytu" userLabel="ViewHeader">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brown Sugar Salmon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke1-gk-8Gy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ST Recipe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke1-gk-8Gy">
                                         <rect key="frame" x="0.0" y="40" width="375" height="37"/>
                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,9 +78,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eX0-G1-sj9">
-                                <rect key="frame" x="0.0" y="207.66666666666666" width="375" height="398.33333333333337"/>
+                                <rect key="frame" x="0.0" y="206.99999999999997" width="375" height="398.33333333333326"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="completed-example-image" translatesAutoresizingMaskIntoConstraints="NO" id="cU8-Gc-lKp">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stifr" translatesAutoresizingMaskIntoConstraints="NO" id="cU8-Gc-lKp">
                                         <rect key="frame" x="95" y="10" width="184" height="184"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -89,13 +89,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o5o-HZ-KDH">
-                                        <rect key="frame" x="96" y="214.00000000000003" width="183" height="49.333333333333343"/>
+                                        <rect key="frame" x="96" y="214" width="183" height="49.333333333333314"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bon Appetit!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qqc-tf-oXd">
-                                        <rect key="frame" x="121.99999999999999" y="273.33333333333337" width="132.66666666666663" height="33"/>
+                                        <rect key="frame" x="121.99999999999999" y="273.33333333333331" width="132.66666666666663" height="33"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-Light" family="Nunito Sans" pointSize="24"/>
                                         <color key="textColor" red="0.9882352941176471" green="0.69803921568627447" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -360,7 +360,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MYP-uH-5D3">
-                                <rect key="frame" x="143.33333333333334" y="94.333333333333329" width="89" height="27.333333333333329"/>
+                                <rect key="frame" x="143.66666666666666" y="94.333333333333329" width="89" height="27.333333333333329"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89J-AW-iVY">
                                         <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="27.333333333333332"/>
@@ -369,7 +369,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEA-VC-6ZJ">
-                                        <rect key="frame" x="62.666666666666664" y="4" width="26.333333333333336" height="19.333333333333332"/>
+                                        <rect key="frame" x="62.666666666666693" y="4.3333333333333428" width="26.333333333333336" height="19.333333333333332"/>
                                         <fontDescription key="fontDescription" name="NunitoSans-Light" family="Nunito Sans" pointSize="14"/>
                                         <color key="textColor" red="0.20392156859999999" green="0.24313725489999999" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -431,7 +431,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6d-rb-UQv">
-                                                <rect key="frame" x="339" y="3" width="16" height="15"/>
+                                                <rect key="frame" x="339" y="3.3333333333333712" width="16" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="lgb-wd-lpi"/>
                                                     <constraint firstAttribute="width" constant="16" id="xIR-E8-Y1U"/>
@@ -535,6 +535,7 @@
                         <outlet property="stopBtn" destination="7G8-v7-f6A" id="hC7-2k-WMu"/>
                         <outlet property="timeToCook" destination="89J-AW-iVY" id="BGc-2R-WsC"/>
                         <outlet property="weightLabel" destination="Ifh-kf-TTM" id="b7F-ok-vEh"/>
+                        <segue destination="i31-2M-bVM" kind="show" identifier="showDoneScreen" id="WDV-Pe-5vN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Pn-WE-Jk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1135,13 +1136,13 @@
         <image name="btnKcal" width="28" height="28"/>
         <image name="btnPlay" width="31" height="36"/>
         <image name="close-icon" width="28" height="28"/>
-        <image name="completed-example-image" width="184" height="184"/>
         <image name="gr" width="375" height="190"/>
         <image name="kcal-icon" width="27" height="11"/>
         <image name="pause-icon" width="13" height="23"/>
         <image name="play-icon" width="13" height="19"/>
         <image name="right-arrow-icon" width="16" height="16"/>
         <image name="share-icon" width="24" height="24"/>
+        <image name="stifr" width="261" height="260"/>
         <image name="stop-icon" width="42" height="43"/>
     </resources>
 </document>

@@ -114,8 +114,8 @@ extension LoginVC:UITableViewDelegate, UITableViewDataSource{
         tfEmail = cell.viewWithTag(100) as! MFTextField
         tfPassword = cell.viewWithTag(101) as! MFTextField
         
-        tfEmail.text = "rb@smartypans.io"
-        tfPassword.text = "qwertyuiop"
+        tfEmail.text = "rb@rb.com"
+        tfPassword.text = "Oscar2007"
         return cell
     }
 }
