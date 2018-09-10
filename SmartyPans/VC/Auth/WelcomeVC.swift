@@ -12,6 +12,8 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
     
+    @IBOutlet weak var buttonBackground: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +29,9 @@ class WelcomeVC: UIViewController {
     func initView(){
         setRound(toView: btnRegister, radius: 25)
         setRound(toView: btnLogin, radius: 25)
+        self.buttonBackground.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0) // Set background color black using RGB values
+        self.buttonBackground.backgroundColor = UIColor.black // Set background color black using Xcode predefined values
+        
     }
     /*
     // MARK: - Navigation

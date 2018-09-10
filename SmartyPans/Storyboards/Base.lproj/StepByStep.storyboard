@@ -54,7 +54,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="wuV-Db-8tu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_app" translatesAutoresizingMaskIntoConstraints="NO" id="wuV-Db-8tu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -320,7 +320,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7G8-v7-f6A">
                                         <rect key="frame" x="99.999999999999986" y="0.0" width="50.000000000000014" height="50"/>
-                                        <color key="backgroundColor" red="0.88627450980392153" green="0.14117647058823529" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.6647395492" green="0.2197491825" blue="0.40392985939999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="MuV-0m-Ddg"/>
                                             <constraint firstAttribute="width" constant="50" id="ln5-SW-rdA"/>
@@ -1130,13 +1130,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg" width="375" height="667"/>
+        <image name="bg_app" width="187" height="333"/>
         <image name="blueberry-image" width="116" height="125"/>
         <image name="btnBackG" width="28" height="28"/>
         <image name="btnKcal" width="28" height="28"/>
         <image name="btnPlay" width="31" height="36"/>
         <image name="close-icon" width="28" height="28"/>
-        <image name="gr" width="375" height="190"/>
+        <image name="gr" width="375" height="192"/>
         <image name="kcal-icon" width="27" height="11"/>
         <image name="pause-icon" width="13" height="23"/>
         <image name="play-icon" width="13" height="19"/>
