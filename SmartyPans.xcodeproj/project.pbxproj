@@ -82,6 +82,7 @@
 		346A3593210BE62600FC2AD3 /* StepByStep.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 346A3591210BE62600FC2AD3 /* StepByStep.storyboard */; };
 		346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */; };
 		346A359A210BF9D300FC2AD3 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */; };
+		34A42C802148B13A00D04044 /* UUIDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A42C7F2148B13A00D04044 /* UUIDKey.swift */; };
 		34D5D6C8210D7F2500C260E3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5D6C7210D7F2500C260E3 /* UIButton+Extension.swift */; };
 		66AA969A2F4B7091B041E3D9 /* Pods_SmartyPans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */; };
 /* End PBXBuildFile section */
@@ -166,6 +167,7 @@
 		346A3592210BE62600FC2AD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/StepByStep.storyboard; sourceTree = "<group>"; };
 		346A3596210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepCompletedViewController.swift; sourceTree = "<group>"; };
 		346A3599210BF9D300FC2AD3 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		34A42C7F2148B13A00D04044 /* UUIDKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UUIDKey.swift; sourceTree = "<group>"; };
 		34D5D6C7210D7F2500C260E3 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		97113042F971F51B532A376F /* Pods-SmartyPans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.release.xcconfig"; sourceTree = "<group>"; };
 		A71102C5720D83EE14FF0000 /* Pods-SmartyPans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.debug.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		058688352100F25A00108C18 /* SmartyPans */ = {
 			isa = PBXGroup;
 			children = (
+				34A42C7E2148B12B00D04044 /* BLE */,
 				34166C69212E52D700AF0D7F /* External tools */,
 				3401C418211697BD00D03304 /* Styling */,
 				058688362100F25A00108C18 /* AppDelegate.swift */,
@@ -430,6 +433,14 @@
 				3401C41F21179DC600D03304 /* String+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		34A42C7E2148B12B00D04044 /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				34A42C7F2148B13A00D04044 /* UUIDKey.swift */,
+			);
+			path = BLE;
 			sourceTree = "<group>";
 		};
 		6D892BF1DF5EAF06113DBE3A /* Pods */ = {
@@ -672,6 +683,7 @@
 				346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */,
 				058688372100F25A00108C18 /* AppDelegate.swift in Sources */,
 				0586888D210104DA00108C18 /* MainTabBarVC.swift in Sources */,
+				34A42C802148B13A00D04044 /* UUIDKey.swift in Sources */,
 				0586888F21018F8600108C18 /* RegisterVC.swift in Sources */,
 				3401C41C211697D600D03304 /* Colors.swift in Sources */,
 				0586889E21026C3700108C18 /* Post.swift in Sources */,
