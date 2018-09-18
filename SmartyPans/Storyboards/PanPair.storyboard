@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vxU-AR-KTn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NunitoSans-ExtraBold.ttf">
+            <string>NunitoSans-ExtraBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Pan PairVC-->
+        <scene sceneID="ds5-5n-nwt">
+            <objects>
+                <viewController storyboardIdentifier="PanPairVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vxU-AR-KTn" customClass="PanPairVC" customModule="SmartyPans" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="blb-qg-ut8"/>
+                        <viewControllerLayoutGuide type="bottom" id="dTK-5S-7Mi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iVh-Rc-QR4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvZ-Gx-2Ae">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gr" translatesAutoresizingMaskIntoConstraints="NO" id="y8H-jO-IDp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Iw" translatesAutoresizingMaskIntoConstraints="NO" id="csK-4B-d4k">
+                                        <rect key="frame" x="137" y="117" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="9V1-cR-8vM"/>
+                                            <constraint firstAttribute="width" constant="100" id="F7M-BT-KCw"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.72156862749999995" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="y8H-jO-IDp" secondAttribute="bottom" id="9jM-6v-oJY"/>
+                                    <constraint firstItem="csK-4B-d4k" firstAttribute="centerY" secondItem="wvZ-Gx-2Ae" secondAttribute="centerY" id="IfW-Qq-nAO"/>
+                                    <constraint firstAttribute="trailing" secondItem="y8H-jO-IDp" secondAttribute="trailing" id="L3b-kd-FCs"/>
+                                    <constraint firstItem="y8H-jO-IDp" firstAttribute="leading" secondItem="wvZ-Gx-2Ae" secondAttribute="leading" id="PJn-zG-uwA"/>
+                                    <constraint firstItem="csK-4B-d4k" firstAttribute="centerX" secondItem="wvZ-Gx-2Ae" secondAttribute="centerX" id="mHu-PK-OaV"/>
+                                    <constraint firstItem="y8H-jO-IDp" firstAttribute="top" secondItem="wvZ-Gx-2Ae" secondAttribute="top" id="yYP-h0-NNd"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNN-vI-qHu">
+                                <rect key="frame" x="10" y="25" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="B66-ed-VCz"/>
+                                    <constraint firstAttribute="height" constant="40" id="gRT-5M-bX7"/>
+                                </constraints>
+                                <state key="normal" image="close-icon"/>
+                                <connections>
+                                    <action selector="onClose:" destination="vxU-AR-KTn" eventType="touchUpInside" id="tWa-uL-7y8"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qmd-xV-ckd">
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking for SmartyPans" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wPo-lU-L3A">
+                                        <rect key="frame" x="16" y="10" width="343" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="22"/>
+                                        <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="wPo-lU-L3A" firstAttribute="leading" secondItem="Qmd-xV-ckd" secondAttribute="leading" constant="16" id="RNM-7X-lv6"/>
+                                    <constraint firstAttribute="trailing" secondItem="wPo-lU-L3A" secondAttribute="trailing" constant="16" id="iil-0M-fbV"/>
+                                    <constraint firstItem="wPo-lU-L3A" firstAttribute="top" secondItem="Qmd-xV-ckd" secondAttribute="top" constant="10" id="vAb-8P-nO6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wvZ-Gx-2Ae" firstAttribute="top" secondItem="iVh-Rc-QR4" secondAttribute="top" id="2gw-M8-72B"/>
+                            <constraint firstItem="bNN-vI-qHu" firstAttribute="top" secondItem="6oi-XO-ycF" secondAttribute="top" constant="5" id="D4D-EY-gNh"/>
+                            <constraint firstItem="wvZ-Gx-2Ae" firstAttribute="leading" secondItem="6oi-XO-ycF" secondAttribute="leading" id="GrO-zf-fhg"/>
+                            <constraint firstItem="6oi-XO-ycF" firstAttribute="trailing" secondItem="wvZ-Gx-2Ae" secondAttribute="trailing" id="Jfi-ab-LlZ"/>
+                            <constraint firstItem="wvZ-Gx-2Ae" firstAttribute="height" secondItem="Qmd-xV-ckd" secondAttribute="height" id="Jiy-gm-3dx"/>
+                            <constraint firstItem="Qmd-xV-ckd" firstAttribute="top" secondItem="wvZ-Gx-2Ae" secondAttribute="bottom" id="XxD-X7-rA5"/>
+                            <constraint firstItem="Qmd-xV-ckd" firstAttribute="leading" secondItem="6oi-XO-ycF" secondAttribute="leading" id="bwt-Zo-6yb"/>
+                            <constraint firstItem="6oi-XO-ycF" firstAttribute="trailing" secondItem="Qmd-xV-ckd" secondAttribute="trailing" id="c40-y1-oQN"/>
+                            <constraint firstItem="bNN-vI-qHu" firstAttribute="leading" secondItem="6oi-XO-ycF" secondAttribute="leading" constant="10" id="gl3-ma-QyI"/>
+                            <constraint firstAttribute="bottom" secondItem="Qmd-xV-ckd" secondAttribute="bottom" id="o3c-SC-wzF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6oi-XO-ycF"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgLogo" destination="csK-4B-d4k" id="bVH-Yx-zKz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vzy-Lz-JDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="613.60000000000002" y="1144.5812807881773"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close-icon" width="28" height="28"/>
+        <image name="gr" width="375" height="192"/>
+        <image name="logo_Iw" width="156" height="158"/>
+    </resources>
+</document>

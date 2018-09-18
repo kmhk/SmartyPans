@@ -39,39 +39,54 @@ class PanPairVC: UIViewController {
 
         /*Our key player in this app will be our CBCentralManager. CBCentralManager objects are used to manage discovered or connected remote peripheral devices (represented by CBPeripheral objects), including scanning for, discovering, and connecting to advertising peripherals.
          */
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+        //centralManager = CBCentralManager(delegate: self, queue: nil)//TODO borrar
         
         imgLogo.layer.superlayer?.insertSublayer(pulsator, below: imgLogo.layer)
+        //imgLogo.superview?.layer.insertSublayer(pulsator, below: imgLogo.layer)
+        
+        //imgLogo.layer.addSublayer(pulsator)
+        
         setupInitialValues()
         pulsator.start()
-        startScan()
+        //startScan()//TODO borrar
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //setupInitialValues()
+        //pulsator.start()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("Stop Scanning")
-        centralManager?.stopScan()
+        //centralManager?.stopScan()//TODO borrar
     }
 
     private func setupInitialValues() {
         pulsator.numPulse = 5
-        pulsator.radius = 200
+        pulsator.radius = 150
         pulsator.animationDuration = 5
         pulsator.backgroundColor = UIColor.white.cgColor
-        pulsator.position = imgLogo.layer.position
+        //pulsator.backgroundColor = UIColor.yellow.cgColor
+        //pulsator.position = imgLogo.layer.position
         
     }
     override func viewDidLayoutSubviews() {
-        //
+        super.viewDidLayoutSubviews()
+        view.layer.layoutIfNeeded()
+        pulsator.position = imgLogo.layer.position
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func onClose(_ sender: Any) {
-        //navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+        //self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onFound(_ sender: Any) {
