@@ -29,6 +29,7 @@ class PanPairVC: UIViewController {
     var timer = Timer()
     var characteristics = [String : CBCharacteristic]()
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var imgLogo: UIImageView!
     //var halo : PulsingHaloLayer!
     
@@ -39,7 +40,7 @@ class PanPairVC: UIViewController {
 
         /*Our key player in this app will be our CBCentralManager. CBCentralManager objects are used to manage discovered or connected remote peripheral devices (represented by CBPeripheral objects), including scanning for, discovering, and connecting to advertising peripherals.
          */
-        //centralManager = CBCentralManager(delegate: self, queue: nil)//TODO borrar
+        centralManager = CBCentralManager(delegate: self, queue: nil)//TODO borrar
         
         imgLogo.layer.superlayer?.insertSublayer(pulsator, below: imgLogo.layer)
         //imgLogo.superview?.layer.insertSublayer(pulsator, below: imgLogo.layer)
@@ -48,7 +49,7 @@ class PanPairVC: UIViewController {
         
         setupInitialValues()
         pulsator.start()
-        //startScan()//TODO borrar
+        startScan()//TODO borrar
     }
     
     
@@ -61,7 +62,7 @@ class PanPairVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("Stop Scanning")
-        //centralManager?.stopScan()//TODO borrar
+        centralManager?.stopScan()//TODO borrar
     }
 
     private func setupInitialValues() {
@@ -94,7 +95,8 @@ class PanPairVC: UIViewController {
     }
     
     func foundNewPeripheral() {
-        performSegue(withIdentifier: "segueFound", sender: nil)
+        collectionView.reloadData()
+        //performSegue(withIdentifier: "segueFound", sender: nil)
     }
     
     func startScan() {
@@ -370,7 +372,8 @@ extension PanPairVC:  CBCentralManagerDelegate, CBPeripheralDelegate {
                 
                 let alertVC = UIAlertController(title: "Bluetooth is not enabled", message: "Make sure that your bluetooth is turned on", preferredStyle: UIAlertControllerStyle.alert)
                 let action = UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction) -> Void in
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
                 })
                 alertVC.addAction(action)
                 self.present(alertVC, animated: true, completion: nil)
@@ -380,4 +383,36 @@ extension PanPairVC:  CBCentralManagerDelegate, CBPeripheralDelegate {
         }
     }
     
+}
+
+extension PanPairVC : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return peripherals.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "panCell", for: indexPath) as! PanCVCell
+        cell.layer.cornerRadius = 4
+        cell.clipsToBounds = true
+        
+        //let peripheral = peripherals[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(5, 5, 5, 5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.size.width
+        let width = screenWidth / 2 - 30
+        let height = CGFloat(162)
+        
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //let peripheral = peripherals[indexPath.row]
+        
+    }
 }

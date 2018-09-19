@@ -70,12 +70,92 @@
                                         <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hN-nc-kZH">
+                                        <rect key="frame" x="10" y="50.5" width="355" height="278"/>
+                                        <subviews>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dZE-6n-cAw">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="278"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gdy-bA-bgZ">
+                                                    <size key="itemSize" width="180" height="162"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="panCell" id="7Og-JI-Zna" customClass="PanCVCell" customModule="SmartyPans" customModuleProvider="target">
+                                                        <rect key="frame" x="87.5" y="0.0" width="180" height="162"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="162"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pan_black" translatesAutoresizingMaskIntoConstraints="NO" id="TSd-BI-BqS">
+                                                                    <rect key="frame" x="25.5" y="10" width="129" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="129" id="4Ws-VH-2KQ"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="Uc3-eG-aQ4"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SmartyPans" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVi-we-lLa">
+                                                                    <rect key="frame" x="47" y="78" width="86.5" height="34"/>
+                                                                    <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="15"/>
+                                                                    <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iz5-Pk-gm5">
+                                                                    <rect key="frame" x="30" y="117" width="120" height="35"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="35" id="vsI-mn-Z0p"/>
+                                                                        <constraint firstAttribute="width" constant="120" id="ymG-6f-FH2"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="15"/>
+                                                                    <state key="normal" title="CONNECT" backgroundImage="gr">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                </button>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="Iz5-Pk-gm5" firstAttribute="centerX" secondItem="7Og-JI-Zna" secondAttribute="centerX" id="AR3-pY-xPQ"/>
+                                                            <constraint firstItem="nVi-we-lLa" firstAttribute="top" secondItem="TSd-BI-BqS" secondAttribute="bottom" constant="8" id="CfW-C7-X95"/>
+                                                            <constraint firstItem="TSd-BI-BqS" firstAttribute="centerX" secondItem="7Og-JI-Zna" secondAttribute="centerX" id="UJN-kO-uvC"/>
+                                                            <constraint firstItem="TSd-BI-BqS" firstAttribute="top" secondItem="7Og-JI-Zna" secondAttribute="top" constant="10" id="Zu5-aN-3x3"/>
+                                                            <constraint firstItem="Iz5-Pk-gm5" firstAttribute="top" secondItem="nVi-we-lLa" secondAttribute="bottom" constant="5" id="gnB-wM-53o"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Iz5-Pk-gm5" secondAttribute="bottom" constant="10" id="nfv-7f-5Uf"/>
+                                                            <constraint firstItem="nVi-we-lLa" firstAttribute="centerX" secondItem="7Og-JI-Zna" secondAttribute="centerX" id="vTI-Rb-fcP"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="connectButton" destination="Iz5-Pk-gm5" id="YwC-Nz-lO4"/>
+                                                            <outlet property="panImage" destination="TSd-BI-BqS" id="BH3-Oa-liI"/>
+                                                            <outlet property="panLabel" destination="nVi-we-lLa" id="Kbo-Re-asN"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="vxU-AR-KTn" id="P97-hZ-MDF"/>
+                                                    <outlet property="delegate" destination="vxU-AR-KTn" id="Z2I-mu-4he"/>
+                                                </connections>
+                                            </collectionView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="dZE-6n-cAw" firstAttribute="leading" secondItem="6hN-nc-kZH" secondAttribute="leading" id="LY6-zy-Uoq"/>
+                                            <constraint firstItem="dZE-6n-cAw" firstAttribute="top" secondItem="6hN-nc-kZH" secondAttribute="top" id="nIv-zo-hxL"/>
+                                            <constraint firstAttribute="bottom" secondItem="dZE-6n-cAw" secondAttribute="bottom" id="q3F-KF-EhY"/>
+                                            <constraint firstAttribute="trailing" secondItem="dZE-6n-cAw" secondAttribute="trailing" id="xaH-dP-fHg"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="wPo-lU-L3A" firstAttribute="leading" secondItem="Qmd-xV-ckd" secondAttribute="leading" constant="16" id="RNM-7X-lv6"/>
+                                    <constraint firstAttribute="trailing" secondItem="6hN-nc-kZH" secondAttribute="trailing" constant="10" id="Sob-Af-EPb"/>
                                     <constraint firstAttribute="trailing" secondItem="wPo-lU-L3A" secondAttribute="trailing" constant="16" id="iil-0M-fbV"/>
+                                    <constraint firstItem="6hN-nc-kZH" firstAttribute="top" secondItem="wPo-lU-L3A" secondAttribute="bottom" constant="10" id="kMF-H1-VOV"/>
+                                    <constraint firstItem="6hN-nc-kZH" firstAttribute="leading" secondItem="Qmd-xV-ckd" secondAttribute="leading" constant="10" id="lKf-xM-2K7"/>
                                     <constraint firstItem="wPo-lU-L3A" firstAttribute="top" secondItem="Qmd-xV-ckd" secondAttribute="top" constant="10" id="vAb-8P-nO6"/>
+                                    <constraint firstAttribute="bottom" secondItem="6hN-nc-kZH" secondAttribute="bottom" constant="5" id="z2y-8b-3MW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -95,17 +175,19 @@
                         <viewLayoutGuide key="safeArea" id="6oi-XO-ycF"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="dZE-6n-cAw" id="Smh-Bp-JZf"/>
                         <outlet property="imgLogo" destination="csK-4B-d4k" id="bVH-Yx-zKz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vzy-Lz-JDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="613.60000000000002" y="1144.5812807881773"/>
+            <point key="canvasLocation" x="613.60000000000002" y="1143.7781109445277"/>
         </scene>
     </scenes>
     <resources>
         <image name="close-icon" width="28" height="28"/>
         <image name="gr" width="375" height="192"/>
         <image name="logo_Iw" width="156" height="158"/>
+        <image name="pan_black" width="142" height="29"/>
     </resources>
 </document>
