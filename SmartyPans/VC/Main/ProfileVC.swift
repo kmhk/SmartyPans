@@ -130,8 +130,12 @@ extension ProfileVC:UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         let recipe = posts[indexPath.row]
         cell.nameLabel.text = recipe.name
         cell.creatorLabel.text = recipe.creator
-        cell.creatorImage.sd_setImage(with: URL(string: recipe.creatorImage!), completed: nil)
-        cell.recipeImage.sd_setImage(with: URL(string: recipe.recipeImage!), completed: nil)
+        if let creatorImage = recipe.creatorImage {
+            cell.creatorImage.sd_setImage(with: URL(string: creatorImage), completed: nil)
+        }
+        if let recipeImage = recipe.recipeImage {
+            cell.recipeImage.sd_setImage(with: URL(string: recipeImage), completed: nil)
+        }
         
         return cell
     }
