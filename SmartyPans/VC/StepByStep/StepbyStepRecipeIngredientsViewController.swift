@@ -115,10 +115,11 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         timeToCook.text = timeString(time: TimeInterval(seconds))
         currentStepNumberLabel.text = String(currentStepNumber)
         stepDescriptionLabel.text = step.stepDescription
-        self.startWeightAnimation(weight: 100)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
-//            self.runTimer()
-//        }
+        //self.startWeightAnimation(weight: 100)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { // change 2 to desired number of seconds
+            //self.runTimer()
+            self.startWeightAnimation(weight: 100)
+        }
 //        seconds = 5
     }
     
