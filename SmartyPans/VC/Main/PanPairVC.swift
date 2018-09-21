@@ -47,8 +47,10 @@ class PanPairVC: UIViewController {
         
         //imgLogo.layer.addSublayer(pulsator)
         
+        
         setupInitialValues()
         pulsator.start()
+        
         startScan()//TODO borrar
     }
     
@@ -394,6 +396,10 @@ extension PanPairVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "panCell", for: indexPath) as! PanCVCell
         cell.layer.cornerRadius = 4
         cell.clipsToBounds = true
+        cell.actionConnect = {
+            blePeripheral = self.peripherals[indexPath.row]
+            self.connectToDevice()
+        }
         
         //let peripheral = peripherals[indexPath.row]
         return cell
@@ -412,7 +418,7 @@ extension PanPairVC : UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //let peripheral = peripherals[indexPath.row]
-        
+        blePeripheral = peripherals[indexPath.row]
+        connectToDevice()
     }
 }

@@ -13,6 +13,8 @@ class PanCVCell: UICollectionViewCell {
     @IBOutlet weak var panLabel: UILabel!
     @IBOutlet weak var connectButton: UIButton!
     
+    var actionConnect: (()->())?
+    
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -21,5 +23,8 @@ class PanCVCell: UICollectionViewCell {
         setRound(toView: connectButton, radius: connectButton.frame.height/2)
     }
     
+    @IBAction func connectBtnPressed(_ sender: Any) {
+        actionConnect?()
+    }
     
 }
