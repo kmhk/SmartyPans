@@ -87,6 +87,9 @@
 		34A42CA72151F1FB00D04044 /* PanCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A42CA62151F1FB00D04044 /* PanCVCell.swift */; };
 		34D5D6C8210D7F2500C260E3 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D5D6C7210D7F2500C260E3 /* UIButton+Extension.swift */; };
 		66AA969A2F4B7091B041E3D9 /* Pods_SmartyPans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */; };
+		F3129C6222BB278900A9378C /* RecipeBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C6122BB278900A9378C /* RecipeBookVC.swift */; };
+		F3129C6422BB3C0E00A9378C /* RBCollectedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C6322BB3C0E00A9378C /* RBCollectedCVCell.swift */; };
+		F3129C6622BB3C2200A9378C /* RBSavedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C6522BB3C2200A9378C /* RBSavedCVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +179,9 @@
 		97113042F971F51B532A376F /* Pods-SmartyPans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.release.xcconfig"; sourceTree = "<group>"; };
 		A71102C5720D83EE14FF0000 /* Pods-SmartyPans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartyPans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartyPans/Pods-SmartyPans.debug.xcconfig"; sourceTree = "<group>"; };
 		D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartyPans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3129C6122BB278900A9378C /* RecipeBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookVC.swift; sourceTree = "<group>"; };
+		F3129C6322BB3C0E00A9378C /* RBCollectedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBCollectedCVCell.swift; sourceTree = "<group>"; };
+		F3129C6522BB3C2200A9378C /* RBSavedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBSavedCVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +221,8 @@
 				34A42CA62151F1FB00D04044 /* PanCVCell.swift */,
 				3401C4162116971B00D03304 /* SPTabButton.swift */,
 				341E8E1B2129B9D80031B38F /* SPBottomButton.swift */,
+				F3129C6322BB3C0E00A9378C /* RBCollectedCVCell.swift */,
+				F3129C6522BB3C2200A9378C /* RBSavedCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +331,7 @@
 		05868887210103E100108C18 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				F3129C6022BB177B00A9378C /* RecipeBook */,
 				341E8E1D212D09470031B38F /* Nutrition */,
 				3402986C210CB63300000AF8 /* Recipe */,
 				346A3595210BEA3400FC2AD3 /* StepByStep */,
@@ -472,6 +481,14 @@
 				D38C4308E247197125B2A559 /* Pods_SmartyPans.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3129C6022BB177B00A9378C /* RecipeBook */ = {
+			isa = PBXGroup;
+			children = (
+				F3129C6122BB278900A9378C /* RecipeBookVC.swift */,
+			);
+			path = RecipeBook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -662,6 +679,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3401C4142116688100D03304 /* IntroductionTVCell.swift in Sources */,
+				F3129C6622BB3C2200A9378C /* RBSavedCVCell.swift in Sources */,
 				0586889F21026C3700108C18 /* MyPostsApi.swift in Sources */,
 				34A42CA72151F1FB00D04044 /* PanCVCell.swift in Sources */,
 				058688942102199A00108C18 /* NewPWVC.swift in Sources */,
@@ -670,6 +688,7 @@
 				0523957B210BA72800EB21EA /* Nutrition.swift in Sources */,
 				0523957D210BA72800EB21EA /* RecipeStep.swift in Sources */,
 				0554F0B42107913600CB97AD /* HomeCVCell.swift in Sources */,
+				F3129C6222BB278900A9378C /* RecipeBookVC.swift in Sources */,
 				05239573210BA1E500EB21EA /* Api.swift in Sources */,
 				342F749B210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift in Sources */,
 				0586888A210103E100108C18 /* WelcomeVC.swift in Sources */,
@@ -696,6 +715,7 @@
 				0586889121018F9200108C18 /* LoginVC.swift in Sources */,
 				3401C440211A682D00D03304 /* StepByStepViewController.swift in Sources */,
 				34D5D6C8210D7F2500C260E3 /* UIButton+Extension.swift in Sources */,
+				F3129C6422BB3C0E00A9378C /* RBCollectedCVCell.swift in Sources */,
 				346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */,
 				058688372100F25A00108C18 /* AppDelegate.swift in Sources */,
 				0586888D210104DA00108C18 /* MainTabBarVC.swift in Sources */,
@@ -878,9 +898,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E3NNAUU5S6;
+				DEVELOPMENT_TEAM = PDMDRV25P3;
 				INFOPLIST_FILE = SmartyPans/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartypans.SmartyPans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -899,9 +919,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E3NNAUU5S6;
+				DEVELOPMENT_TEAM = PDMDRV25P3;
 				INFOPLIST_FILE = SmartyPans/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smartypans.SmartyPans;
 				PRODUCT_NAME = "$(TARGET_NAME)";

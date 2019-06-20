@@ -88,5 +88,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NunitoSans-Light.ttf</string>
+		<string>NunitoSans-Regular.ttf</string>
+		<string>NunitoSans-Bold.ttf</string>
+		<string>NunitoSans-Black.ttf</string>
+	</array>
 </dict>
 </plist>

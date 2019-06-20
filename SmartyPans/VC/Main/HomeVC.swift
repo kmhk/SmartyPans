@@ -38,7 +38,7 @@ class HomeVC: UIViewController {
     func addHandle(){
         print("HomeViewcontroller add handle")
         firUser = Api.SUser.CURRENT_USER
-        firRecipesRef = Database.database().reference(withPath: "recipes")
+        firRecipesRef = Database.database().reference(withPath: "home_recipes")
         firRecipesRef.queryOrdered(byChild: "name").observe(.value) { (snapshot) in
             var newItems = [Recipe]()
             for item in snapshot.children{
@@ -104,7 +104,7 @@ extension HomeVC:UICollectionViewDelegate, UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.size.width
         let width = screenWidth / 2 - 11
-        let height = CGFloat(200)
+        let height = CGFloat(225)
         
         return CGSize(width: width, height: height)
     }

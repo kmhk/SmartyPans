@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DNk-R1-0fj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DNk-R1-0fj">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +40,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7l-lU-yFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-865" y="105"/>
+            <point key="canvasLocation" x="-1410" y="605"/>
         </scene>
         <!--Add Recipe-->
         <scene sceneID="hT3-Gd-6sB">
@@ -52,13 +52,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mwt-fG-zVI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Add Recipe" image="tab_add" id="7eW-G2-FYQ">
+                    <tabBarItem key="tabBarItem" title="Add Recipe" id="7eW-G2-FYQ">
                         <inset key="imageInsets" minX="0.0" minY="-20" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6p9-Kc-4hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-103" y="1145"/>
+            <point key="canvasLocation" x="769" y="483"/>
         </scene>
         <!--Profile-->
         <scene sceneID="YLa-ij-oHV">
@@ -231,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5d-ve-rVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768.79999999999995" y="456.52173913043481"/>
+            <point key="canvasLocation" x="769" y="1176"/>
         </scene>
         <!--Home-->
         <scene sceneID="HKX-Vk-ZpO">
@@ -246,21 +246,21 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="tYP-HG-1aE">
-                                    <size key="itemSize" width="167" height="200"/>
+                                    <size key="itemSize" width="167" height="225"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="eWD-cY-gij" customClass="HomeCVCell" customModule="SmartyPans" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="5" width="167" height="200"/>
+                                        <rect key="frame" x="5" y="5" width="167" height="225"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="167" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="167" height="225"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JS3-wA-zbV">
-                                                    <rect key="frame" x="0.0" y="1" width="167" height="198"/>
+                                                    <rect key="frame" x="0.0" y="1" width="167" height="224"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMv-Ij-yFp">
@@ -285,6 +285,12 @@
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNA-c6-r67">
+                                                            <rect key="frame" x="117" y="194" width="42" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="13"/>
+                                                            <state key="normal" title="SAVE" backgroundImage="gr"/>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -323,7 +329,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="768.79999999999995" y="-248.72563718140933"/>
+            <point key="canvasLocation" x="768.79999999999995" y="-918.4729064039409"/>
         </scene>
         <!--Main Tab BarVC-->
         <scene sceneID="XjD-7N-X9Q">
@@ -339,13 +345,15 @@
                     </tabBar>
                     <connections>
                         <segue destination="9FZ-hL-Oyk" kind="relationship" relationship="viewControllers" id="ypK-Bm-xB1"/>
-                        <segue destination="4pA-lp-scZ" kind="relationship" relationship="viewControllers" id="k1Z-Ud-LBU"/>
-                        <segue destination="nFj-u5-6He" kind="relationship" relationship="viewControllers" id="qto-N3-8Aj"/>
+                        <segue destination="wBD-zY-eMr" kind="relationship" relationship="viewControllers" id="BFo-Q4-y2Q"/>
+                        <segue destination="4pA-lp-scZ" kind="relationship" relationship="viewControllers" id="v1X-fz-sYs"/>
+                        <segue destination="nFj-u5-6He" kind="relationship" relationship="viewControllers" id="FzV-vX-3cD"/>
+                        <segue destination="UAk-UA-09c" kind="relationship" relationship="viewControllers" id="p01-er-EgE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f25-bh-7ct" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-102" y="105"/>
+            <point key="canvasLocation" x="-572" y="605"/>
         </scene>
         <!--Edit ProfileVC-->
         <scene sceneID="Btq-b5-ee0">
@@ -497,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fNK-yf-ADm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464.8" y="456.52173913043481"/>
+            <point key="canvasLocation" x="1596" y="1176"/>
         </scene>
         <!--Pan PairVC-->
         <scene sceneID="caG-TZ-P1O">
@@ -518,7 +526,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Iw" translatesAutoresizingMaskIntoConstraints="NO" id="Sz1-g1-PIN">
-                                        <rect key="frame" x="137" y="153" width="100" height="100"/>
+                                        <rect key="frame" x="137.66666666666666" y="153" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="j0z-Wb-Ozd"/>
                                             <constraint firstAttribute="height" constant="100" id="w6P-FA-4ja"/>
@@ -586,7 +594,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hT-o4-SfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="613.60000000000002" y="1144.5812807881773"/>
+            <point key="canvasLocation" x="-1258" y="1543"/>
         </scene>
         <!--Pan FoundVC-->
         <scene sceneID="GHF-Nv-oEa">
@@ -710,7 +718,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NgD-tU-Q60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464.8" y="1144.6776611694154"/>
+            <point key="canvasLocation" x="-394" y="1543"/>
         </scene>
         <!--Recipe DetailsVC-->
         <scene sceneID="eEm-dl-spS">
@@ -743,10 +751,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnCamera" translatesAutoresizingMaskIntoConstraints="NO" id="7rL-kI-xwB">
-                                                <rect key="frame" x="175.66666666666666" y="138.33333333333334" width="24" height="20"/>
+                                                <rect key="frame" x="175.66666666666666" y="138" width="24" height="20"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrh-li-w7k">
-                                                <rect key="frame" x="110.33333333333331" y="178.33333333333334" width="155" height="50"/>
+                                                <rect key="frame" x="110" y="178" width="155" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="RmF-AZ-5ms"/>
@@ -789,7 +797,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEQ-1M-Wpc">
-                                        <rect key="frame" x="324.66666666666669" y="39" width="40.333333333333314" height="40"/>
+                                        <rect key="frame" x="325" y="39" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="1zx-dK-MbY"/>
                                             <constraint firstAttribute="height" constant="40" id="npF-zr-uNi"/>
@@ -808,7 +816,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAW-DL-j3k">
-                                        <rect key="frame" x="16" y="358.33333333333331" width="343" height="19.333333333333314"/>
+                                        <rect key="frame" x="16" y="357.66666666666669" width="343" height="19.333333333333314"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 mins" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLO-le-Bc1">
                                                 <rect key="frame" x="0.0" y="0.0" width="52" height="19.333333333333332"/>
@@ -946,16 +954,16 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcW-Mo-GTT">
-                                                                    <rect key="frame" x="100" y="25.333333333333332" width="255" height="39.333333333333343"/>
+                                                                    <rect key="frame" x="100" y="25.666666666666668" width="255" height="38.666666666666657"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blueberry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEO-Rg-k4i">
-                                                                            <rect key="frame" x="0.6666666666666714" y="0.0" width="254.33333333333331" height="19.333333333333332"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="255" height="19.333333333333332"/>
                                                                             <fontDescription key="fontDescription" name="NunitoSans-ExtraBold" family="Nunito Sans" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tY-oa-ZAh">
-                                                                            <rect key="frame" x="0.0" y="19.333333333333336" width="255" height="20"/>
+                                                                            <rect key="frame" x="0.0" y="19.333333333333329" width="255" height="19.333333333333329"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80 grams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M74-We-kLn">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="59" height="19.333333333333332"/>
@@ -964,14 +972,14 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVU-OR-V0c">
-                                                                                    <rect key="frame" x="64" y="3" width="1" height="14"/>
+                                                                                    <rect key="frame" x="64" y="3.0000000000000009" width="1" height="13.333333333333336"/>
                                                                                     <color key="backgroundColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="width" constant="1" id="FXR-DK-Vm9"/>
                                                                                     </constraints>
                                                                                 </view>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7C-8o-99f">
-                                                                                    <rect key="frame" x="70" y="-0.3333333333333357" width="49.666666666666657" height="20.333333333333332"/>
+                                                                                    <rect key="frame" x="70" y="0.0" width="49.666666666666657" height="19.333333333333332"/>
                                                                                     <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="14"/>
                                                                                     <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
@@ -1307,7 +1315,131 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PU7-ot-7GY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1589.5999999999999" y="-249.7536945812808"/>
+            <point key="canvasLocation" x="-444" y="-384"/>
+        </scene>
+        <!--Recipe Book-->
+        <scene sceneID="Gqf-Nb-fFe">
+            <objects>
+                <viewController id="wBD-zY-eMr" customClass="RecipeBookVC" customModule="SmartyPans" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aUm-r6-7YW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-BM-7u6">
+                                <rect key="frame" x="0.0" y="76" width="375" height="736"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y43-yy-r1r">
+                                    <size key="itemSize" width="145" height="100"/>
+                                    <size key="headerReferenceSize" width="50" height="64"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RBSavedCollectionCell" id="qtR-4S-w7Y" customClass="RBSavedCVCell" customModule="SmartyPans" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="186" height="234"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="186" height="234"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y19-aQ-shk">
+                                                    <rect key="frame" x="-1" y="-1" width="187" height="233"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BC1-66-bNA">
+                                                            <rect key="frame" x="7" y="8" width="171" height="102"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hyy-F4-sew">
+                                                            <rect key="frame" x="8" y="118" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alex Dinh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F9n-LC-Tw8">
+                                                            <rect key="frame" x="45" y="118" width="133" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="12"/>
+                                                            <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mush Room Soup" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjY-Dr-gVL">
+                                                            <rect key="frame" x="7" y="156" width="171" height="34"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUh-pR-0tL">
+                                                            <rect key="frame" x="151" y="197" width="28" height="28"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                            <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="13"/>
+                                                            <state key="normal" image="btnSetting"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="186" height="234"/>
+                                        <connections>
+                                            <outlet property="creatorImage" destination="hyy-F4-sew" id="dag-N6-plh"/>
+                                            <outlet property="creatorLabel" destination="hjY-Dr-gVL" id="uql-SU-faG"/>
+                                            <outlet property="nameLabel" destination="F9n-LC-Tw8" id="HAY-hL-Dwc"/>
+                                            <outlet property="recipeImage" destination="BC1-66-bNA" id="yDc-bJ-5PH"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RBCollectedBKCell" id="T5d-aV-uoh">
+                                        <rect key="frame" x="196" y="131" width="145" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="RBCollectionRegularHV" id="yfG-OE-Hu4">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="wBD-zY-eMr" id="fRu-va-ONq"/>
+                                    <outlet property="delegate" destination="wBD-zY-eMr" id="Rqn-3l-766"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="e2Z-ha-GRY">
+                                <rect key="frame" x="0.0" y="32" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="3F2-hb-bYZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Recipe Book" image="tab_recipt_r" id="drX-af-LoX"/>
+                    <connections>
+                        <outlet property="collectionView" destination="G9q-BM-7u6" id="Olt-Lf-LYU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vgB-ZS-WuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768.79999999999995" y="-198.02955665024632"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="h78-2a-foB">
+            <objects>
+                <viewController id="UAk-UA-09c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Gp-72-XWU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pN2-l6-R4W"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notifications" image="tab_bell_r" id="ZAR-0E-3OQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWI-AU-XCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="1893"/>
         </scene>
     </scenes>
     <resources>
@@ -1315,6 +1447,7 @@
         <image name="btnCamera" width="24" height="20"/>
         <image name="btnEdit" width="28" height="28"/>
         <image name="btnMore" width="28" height="28"/>
+        <image name="btnSetting" width="28" height="28"/>
         <image name="close-icon" width="28" height="28"/>
         <image name="gr" width="375" height="192"/>
         <image name="imageView:gPC-mo-aV9:image" width="187" height="333">
@@ -1322,7 +1455,7 @@
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
 c1dOU0NvbG9ygAKADRIgwAAAgAOAC1p7MTg3LCAzMzN90hUKFhhaTlMub2JqZWN0c6EXgASACtIVChod
-ohscgAWABoAJEADSIAohIl8QFE5TVElGRlJlcHJlc2VudGF0aW9ugAeACE8SAAPVqk1NACoAA80Etg9P
+ohscgAWABoAJEADSIAohIl8QFE5TVElGRlJlcHJlc2VudGF0aW9ugAeACE8SAAPVwk1NACoAA80Etg9P
 /7YOT/+3DU//tw1P/7cNT/+4DVD/uA1Q/7gNUP+4DVD/uQ1Q/7kNUP+5DVD/uQ1P/7sNT/+7DU//uw1P
 /7wNT/+8DU//vA1P/70NT/+9DU//vQ1P/70NT/++DE//vgxP/74LTv+/DE//vwtO/78LTv+/C07/wApO
 /8AKTv/ACk7/wApO/8IKTv/CCk7/wgpO/8MKTv/DCk7/wwpO/8QKTf/ECk3/xApN/8UKTf/FCk3/xQpN
@@ -5474,59 +5607,60 @@ eTEMLnkwCy55MQsueTELLnkxCy15MQsteTELLXkyCy15MQsteTILLXkyCy15MgsteTILLXkyCy15Mgst
 eTILLXkyCy15MgsteTILLXkyCy15MgsteTQLLXk0Cy15NAsteTQLLXk0Cy15NAsteTQLLXk0Cy15NAst
 eTULLXk1Cy15NQsteTULLXk1Cy15NQsteTULLXk1Cy15NQsteTULLXk1Cy15NgsteTYLLXk2Cy15Nwss
 eTcLLHk3Cyx5NwsseTcLLHk3Cyx5NwsseTcLLHk3Cyx5NwsseTcLKnk4Cyp5OAsqeTgLKnk4Cyp5OAop
-eDcLKnc1Cip2NAspdTcLK3QXBBI0AA4BAAADAAAAAQC7AAABAQADAAAAAQFNAAABAgADAAAABAADzbIB
-AwADAAAAAQABAAABBgADAAAAAQACAAABEQAEAAAAAgADzcIBEgADAAAAAQABAAABFQADAAAAAQAEAAAB
-FgADAAAAAQCvAAABFwAEAAAAAgADzboBHAADAAAAAQABAAABUgADAAAAAQABAAABUwADAAAABAADzcqH
-cwAHAAAH2AADzdIAAAAAAAgACAAIAAgAAf9UAAHNqAAAAAgAAf9cAAEAAQABAAEAAAfYYXBwbAIgAABt
-bnRyUkdCIFhZWiAH2QACABkACwAaAAthY3NwQVBQTAAAAABhcHBsAAAAAAAAAAAAAAAAAAAAAAAA9tYA
-AQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtk
-ZXNjAAABCAAAAG9kc2NtAAABeAAABZxjcHJ0AAAHFAAAADh3dHB0AAAHTAAAABRyWFlaAAAHYAAAABRn
-WFlaAAAHdAAAABRiWFlaAAAHiAAAABRyVFJDAAAHnAAAAA5jaGFkAAAHrAAAACxiVFJDAAAHnAAAAA5n
-VFJDAAAHnAAAAA5kZXNjAAAAAAAAABRHZW5lcmljIFJHQiBQcm9maWxlAAAAAAAAAAAAAAAUR2VuZXJp
-YyBSR0IgUHJvZmlsZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAbWx1YwAAAAAAAAAfAAAADHNrU0sAAAAoAAABhGRhREsAAAAuAAABrGNhRVMAAAAkAAAB2nZpVk4A
-AAAkAAAB/nB0QlIAAAAmAAACInVrVUEAAAAqAAACSGZyRlUAAAAoAAACcmh1SFUAAAAoAAACmnpoVFcA
-AAAWAAACwm5iTk8AAAAmAAAC2GNzQ1oAAAAiAAAC/mhlSUwAAAAeAAADIGl0SVQAAAAoAAADPnJvUk8A
-AAAkAAADZmRlREUAAAAsAAADimtvS1IAAAAWAAADtnN2U0UAAAAmAAAC2HpoQ04AAAAWAAADzGphSlAA
-AAAaAAAD4mVsR1IAAAAiAAAD/HB0UE8AAAAmAAAEHm5sTkwAAAAoAAAERGVzRVMAAAAmAAAEHnRoVEgA
-AAAkAAAEbHRyVFIAAAAiAAAEkGZpRkkAAAAoAAAEsmhySFIAAAAoAAAE2nBsUEwAAAAsAAAFAnJ1UlUA
-AAAiAAAFLmFyRUcAAAAmAAAFUGVuVVMAAAAmAAAFdgBWAWEAZQBvAGIAZQBjAG4A/QAgAFIARwBCACAA
-cAByAG8AZgBpAGwARwBlAG4AZQByAGUAbAAgAFIARwBCAC0AYgBlAHMAawByAGkAdgBlAGwAcwBlAFAA
-ZQByAGYAaQBsACAAUgBHAEIAIABnAGUAbgDoAHIAaQBjAEMepQB1ACAAaADsAG4AaAAgAFIARwBCACAA
-QwBoAHUAbgBnAFAAZQByAGYAaQBsACAAUgBHAEIAIABHAGUAbgDpAHIAaQBjAG8EFwQwBDMEMAQ7BEwE
-PQQ4BDkAIAQ/BEAEPgREBDAEOQQ7ACAAUgBHAEIAUAByAG8AZgBpAGwAIABnAOkAbgDpAHIAaQBxAHUA
-ZQAgAFIAVgBCAMEAbAB0AGEAbADhAG4AbwBzACAAUgBHAEIAIABwAHIAbwBmAGkAbJAadSgAIABSAEcA
-QgAggnJfaWPPj/AARwBlAG4AZQByAGkAcwBrACAAUgBHAEIALQBwAHIAbwBmAGkAbABPAGIAZQBjAG4A
-/QAgAFIARwBCACAAcAByAG8AZgBpAGwF5AXoBdUF5AXZBdwAIABSAEcAQgAgBdsF3AXcBdkAUAByAG8A
-ZgBpAGwAbwAgAFIARwBCACAAZwBlAG4AZQByAGkAYwBvAFAAcgBvAGYAaQBsACAAUgBHAEIAIABnAGUA
-bgBlAHIAaQBjAEEAbABsAGcAZQBtAGUAaQBuAGUAcwAgAFIARwBCAC0AUAByAG8AZgBpAGzHfLwYACAA
-UgBHAEIAINUEuFzTDMd8Zm6QGgAgAFIARwBCACBjz4/wZYdO9k4AgiwAIABSAEcAQgAgMNcw7TDVMKEw
-pDDrA5MDtQO9A7kDugPMACADwAPBA78DxgOvA7sAIABSAEcAQgBQAGUAcgBmAGkAbAAgAFIARwBCACAA
-ZwBlAG4A6QByAGkAYwBvAEEAbABnAGUAbQBlAGUAbgAgAFIARwBCAC0AcAByAG8AZgBpAGUAbA5CDhsO
-Iw5EDh8OJQ5MACAAUgBHAEIAIA4XDjEOSA4nDkQOGwBHAGUAbgBlAGwAIABSAEcAQgAgAFAAcgBvAGYA
-aQBsAGkAWQBsAGUAaQBuAGUAbgAgAFIARwBCAC0AcAByAG8AZgBpAGkAbABpAEcAZQBuAGUAcgBpAQ0A
-awBpACAAUgBHAEIAIABwAHIAbwBmAGkAbABVAG4AaQB3AGUAcgBzAGEAbABuAHkAIABwAHIAbwBmAGkA
-bAAgAFIARwBCBB4EMQRJBDgEOQAgBD8EQAQ+BEQEOAQ7BEwAIABSAEcAQgZFBkQGQQAgBioGOQYxBkoG
-QQAgAFIARwBCACAGJwZEBjkGJwZFAEcAZQBuAGUAcgBpAGMAIABSAEcAQgAgAFAAcgBvAGYAaQBsAGV0
-ZXh0AAAAAENvcHlyaWdodCAyMDA3IEFwcGxlIEluYy4sIGFsbCByaWdodHMgcmVzZXJ2ZWQuAFhZWiAA
-AAAAAADzUgABAAAAARbPWFlaIAAAAAAAAHRNAAA97gAAA9BYWVogAAAAAAAAWnUAAKxzAAAXNFhZWiAA
-AAAAAAAoGgAAFZ8AALg2Y3VydgAAAAAAAAABAc0AAHNmMzIAAAAAAAEMQgAABd7///MmAAAHkgAA/ZH/
-//ui///9owAAA9wAAMBs0iUmJyhaJGNsYXNzbmFtZVgkY2xhc3Nlc18QEE5TQml0bWFwSW1hZ2VSZXCj
-JykqWk5TSW1hZ2VSZXBYTlNPYmplY3TSJSYsLVdOU0FycmF5oiwq0iUmLzBeTlNNdXRhYmxlQXJyYXmj
-Lywq0zIzCjQ1NldOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAAEAOADNIlJjg5V05TQ29sb3KiOCrSJSY7
-PFdOU0ltYWdlojsqXxAPTlNLZXllZEFyY2hpdmVy0T9AVHJvb3SAAQAAAAgAAAARAAAAGgAAACMAAAAt
-AAAAMgAAADcAAABGAAAATAAAAFcAAABeAAAAZQAAAHIAAAB5AAAAgQAAAIMAAACFAAAAigAAAIwAAACO
-AAAAmQAAAJ4AAACpAAAAqwAAAK0AAACvAAAAtAAAALcAAAC5AAAAuwAAAL0AAAC/AAAAxAAAANsAAADd
-AAAA3wAD1o8AA9aUAAPWnwAD1qgAA9a7AAPWvwAD1soAA9bTAAPW2AAD1uAAA9bjAAPW6AAD1vcAA9b7
-AAPXAgAD1woAA9cXAAPXHAAD1x4AA9cgAAPXJQAD1y0AA9cwAAPXNQAD1z0AA9dAAAPXUgAD11UAA9da
-AAAAAAAABAEAAAAAAAAAQQAAAAAAAAAAAAAAAAAD11w
+eDcLKnc1Cip2NAspdTcLK3QXBBI0ABABAAADAAAAAQC7AAABAQADAAAAAQFNAAABAgADAAAABAADzcoB
+AwADAAAAAQABAAABBgADAAAAAQACAAABCgADAAAAAQABAAABEQAEAAAAAgADzdoBEgADAAAAAQABAAAB
+FQADAAAAAQAEAAABFgADAAAAAQCvAAABFwAEAAAAAgADzdIBHAADAAAAAQABAAABKAADAAAAAQACAAAB
+UgADAAAAAQABAAABUwADAAAABAADzeKHcwAHAAAH2AADzeoAAAAAAAgACAAIAAgAAf9UAAHNqAAAAAgA
+Af9cAAEAAQABAAEAAAfYYXBwbAIgAABtbnRyUkdCIFhZWiAH2QACABkACwAaAAthY3NwQVBQTAAAAABh
+cHBsAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtkZXNjAAABCAAAAG9kc2NtAAABeAAABZxjcHJ0AAAHFAAAADh3
+dHB0AAAHTAAAABRyWFlaAAAHYAAAABRnWFlaAAAHdAAAABRiWFlaAAAHiAAAABRyVFJDAAAHnAAAAA5j
+aGFkAAAHrAAAACxiVFJDAAAHnAAAAA5nVFJDAAAHnAAAAA5kZXNjAAAAAAAAABRHZW5lcmljIFJHQiBQ
+cm9maWxlAAAAAAAAAAAAAAAUR2VuZXJpYyBSR0IgUHJvZmlsZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbWx1YwAAAAAAAAAfAAAADHNrU0sAAAAoAAABhGRhREsA
+AAAuAAABrGNhRVMAAAAkAAAB2nZpVk4AAAAkAAAB/nB0QlIAAAAmAAACInVrVUEAAAAqAAACSGZyRlUA
+AAAoAAACcmh1SFUAAAAoAAACmnpoVFcAAAAWAAACwm5iTk8AAAAmAAAC2GNzQ1oAAAAiAAAC/mhlSUwA
+AAAeAAADIGl0SVQAAAAoAAADPnJvUk8AAAAkAAADZmRlREUAAAAsAAADimtvS1IAAAAWAAADtnN2U0UA
+AAAmAAAC2HpoQ04AAAAWAAADzGphSlAAAAAaAAAD4mVsR1IAAAAiAAAD/HB0UE8AAAAmAAAEHm5sTkwA
+AAAoAAAERGVzRVMAAAAmAAAEHnRoVEgAAAAkAAAEbHRyVFIAAAAiAAAEkGZpRkkAAAAoAAAEsmhySFIA
+AAAoAAAE2nBsUEwAAAAsAAAFAnJ1UlUAAAAiAAAFLmFyRUcAAAAmAAAFUGVuVVMAAAAmAAAFdgBWAWEA
+ZQBvAGIAZQBjAG4A/QAgAFIARwBCACAAcAByAG8AZgBpAGwARwBlAG4AZQByAGUAbAAgAFIARwBCAC0A
+YgBlAHMAawByAGkAdgBlAGwAcwBlAFAAZQByAGYAaQBsACAAUgBHAEIAIABnAGUAbgDoAHIAaQBjAEMe
+pQB1ACAAaADsAG4AaAAgAFIARwBCACAAQwBoAHUAbgBnAFAAZQByAGYAaQBsACAAUgBHAEIAIABHAGUA
+bgDpAHIAaQBjAG8EFwQwBDMEMAQ7BEwEPQQ4BDkAIAQ/BEAEPgREBDAEOQQ7ACAAUgBHAEIAUAByAG8A
+ZgBpAGwAIABnAOkAbgDpAHIAaQBxAHUAZQAgAFIAVgBCAMEAbAB0AGEAbADhAG4AbwBzACAAUgBHAEIA
+IABwAHIAbwBmAGkAbJAadSgAIABSAEcAQgAggnJfaWPPj/AARwBlAG4AZQByAGkAcwBrACAAUgBHAEIA
+LQBwAHIAbwBmAGkAbABPAGIAZQBjAG4A/QAgAFIARwBCACAAcAByAG8AZgBpAGwF5AXoBdUF5AXZBdwA
+IABSAEcAQgAgBdsF3AXcBdkAUAByAG8AZgBpAGwAbwAgAFIARwBCACAAZwBlAG4AZQByAGkAYwBvAFAA
+cgBvAGYAaQBsACAAUgBHAEIAIABnAGUAbgBlAHIAaQBjAEEAbABsAGcAZQBtAGUAaQBuAGUAcwAgAFIA
+RwBCAC0AUAByAG8AZgBpAGzHfLwYACAAUgBHAEIAINUEuFzTDMd8Zm6QGgAgAFIARwBCACBjz4/wZYdO
+9k4AgiwAIABSAEcAQgAgMNcw7TDVMKEwpDDrA5MDtQO9A7kDugPMACADwAPBA78DxgOvA7sAIABSAEcA
+QgBQAGUAcgBmAGkAbAAgAFIARwBCACAAZwBlAG4A6QByAGkAYwBvAEEAbABnAGUAbQBlAGUAbgAgAFIA
+RwBCAC0AcAByAG8AZgBpAGUAbA5CDhsOIw5EDh8OJQ5MACAAUgBHAEIAIA4XDjEOSA4nDkQOGwBHAGUA
+bgBlAGwAIABSAEcAQgAgAFAAcgBvAGYAaQBsAGkAWQBsAGUAaQBuAGUAbgAgAFIARwBCAC0AcAByAG8A
+ZgBpAGkAbABpAEcAZQBuAGUAcgBpAQ0AawBpACAAUgBHAEIAIABwAHIAbwBmAGkAbABVAG4AaQB3AGUA
+cgBzAGEAbABuAHkAIABwAHIAbwBmAGkAbAAgAFIARwBCBB4EMQRJBDgEOQAgBD8EQAQ+BEQEOAQ7BEwA
+IABSAEcAQgZFBkQGQQAgBioGOQYxBkoGQQAgAFIARwBCACAGJwZEBjkGJwZFAEcAZQBuAGUAcgBpAGMA
+IABSAEcAQgAgAFAAcgBvAGYAaQBsAGV0ZXh0AAAAAENvcHlyaWdodCAyMDA3IEFwcGxlIEluYy4sIGFs
+bCByaWdodHMgcmVzZXJ2ZWQuAFhZWiAAAAAAAADzUgABAAAAARbPWFlaIAAAAAAAAHRNAAA97gAAA9BY
+WVogAAAAAAAAWnUAAKxzAAAXNFhZWiAAAAAAAAAoGgAAFZ8AALg2Y3VydgAAAAAAAAABAc0AAHNmMzIA
+AAAAAAEMQgAABd7///MmAAAHkgAA/ZH///ui///9owAAA9wAAMBs0iUmJyhaJGNsYXNzbmFtZVgkY2xh
+c3Nlc18QEE5TQml0bWFwSW1hZ2VSZXCjJykqWk5TSW1hZ2VSZXBYTlNPYmplY3TSJSYsLVdOU0FycmF5
+oiwq0iUmLzBeTlNNdXRhYmxlQXJyYXmjLywq0zIzCjQ1NldOU1doaXRlXE5TQ29sb3JTcGFjZUQwIDAA
+EAOADNIlJjg5V05TQ29sb3KiOCrSJSY7PFdOU0ltYWdlojsqXxAPTlNLZXllZEFyY2hpdmVy0T9AVHJv
+b3SAAQAAAAgAAAARAAAAGgAAACMAAAAtAAAAMgAAADcAAABGAAAATAAAAFcAAABeAAAAZQAAAHIAAAB5
+AAAAgQAAAIMAAACFAAAAigAAAIwAAACOAAAAmQAAAJ4AAACpAAAAqwAAAK0AAACvAAAAtAAAALcAAAC5
+AAAAuwAAAL0AAAC/AAAAxAAAANsAAADdAAAA3wAD1qcAA9asAAPWtwAD1sAAA9bTAAPW1wAD1uIAA9br
+AAPW8AAD1vgAA9b7AAPXAAAD1w8AA9cTAAPXGgAD1yIAA9cvAAPXNAAD1zYAA9c4AAPXPQAD10UAA9dI
+AAPXTQAD11UAA9dYAAPXagAD120AA9dyAAAAAAAABAEAAAAAAAAAQQAAAAAAAAAAAAAAAAAD13Q
 </mutableData>
         </image>
         <image name="logo_Iw" width="156" height="158"/>
         <image name="nopan" width="102" height="23"/>
         <image name="nopost" width="72" height="68"/>
-        <image name="tab_add" width="21" height="21"/>
+        <image name="tab_bell_r" width="27" height="26"/>
         <image name="tab_home_g" width="27" height="26"/>
         <image name="tab_profile_g" width="28" height="27"/>
+        <image name="tab_recipt_r" width="27" height="26"/>
     </resources>
 </document>
