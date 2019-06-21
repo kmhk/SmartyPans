@@ -12,11 +12,12 @@ class RBActionSheetView: UIView, UIGestureRecognizerDelegate {
     
     var parentVC: UIViewController?
     var handler: ((_ index: Int)->())?
+    var shareHandler: (() ->())?
     var images: [UIImage]?
     var btnNames: [String]?
     var box: UIView?
 
-    static func show(parent: UIViewController, title: String, images: [UIImage], btnNames: [String], flag: Bool, handler: ((_ index: Int)->())?) {
+    static func show(parent: UIViewController, title: String, images: [UIImage], btnNames: [String], flag: Bool, handler: ((_ index: Int)->())?) -> RBActionSheetView {
         let container = RBActionSheetView(frame: parent.view.bounds)
         container.parentVC = parent
         container.handler = handler
@@ -28,7 +29,7 @@ class RBActionSheetView: UIView, UIGestureRecognizerDelegate {
         gesture.delegate = container
         container.addGestureRecognizer(gesture)
         
-        let h: CGFloat = (flag == true) ? 300 : 180
+        let h: CGFloat = (flag == true) ? 320 : 180
         
         container.box = UIView(frame: CGRect(x: 0, y: container.frame.size.height - h + 10, width: container.frame.size.width, height: h))
         container.box!.backgroundColor = UIColor.white
@@ -36,7 +37,7 @@ class RBActionSheetView: UIView, UIGestureRecognizerDelegate {
         container.box!.clipsToBounds = true
         container.addSubview(container.box!)
         
-        let lbl = UILabel(frame: CGRect(x: 0, y: 20, width: container.frame.size.width, height: 20))
+        var lbl = UILabel(frame: CGRect(x: 0, y: 20, width: container.frame.size.width, height: 20))
         lbl.font = UIFont(name: "NunitoSans-Bold", size: 15)
         lbl.textAlignment = .center
         lbl.textColor = UIColor.black
@@ -54,12 +55,63 @@ class RBActionSheetView: UIView, UIGestureRecognizerDelegate {
         }
         container.box!.addSubview(tableView)
         
+        if flag == true { // show social sharing buttons
+            lbl = UILabel(frame: CGRect(x: 30, y: 180, width: container.frame.size.width - 50, height: 20))
+            lbl.font = UIFont(name: "NunitoSans-Bold", size: 15)
+            lbl.textColor = UIColor.black
+            lbl.text = "Share"
+            container.box!.addSubview(lbl)
+            
+            var btn = UIButton(frame: CGRect(x: 30, y: 220, width: 50, height: 50))
+            btn.setImage(UIImage(named: "shareMessage"), for: .normal)
+            container.box?.addSubview(btn)
+            
+            lbl = UILabel(frame: CGRect(x: btn.frame.minX, y: btn.frame.maxY + 5, width: btn.frame.size.width, height: 10))
+            lbl.font = UIFont(name: "NunitoSans-Regular", size: 11)
+            lbl.textColor = UIColor.black
+            lbl.textAlignment = .center
+            lbl.text = "Message"
+            container.box!.addSubview(lbl)
+            
+            btn = UIButton(frame: CGRect(x: 120, y: 220, width: 50, height: 50))
+            btn.setImage(UIImage(named: "shareMail"), for: .normal)
+            container.box?.addSubview(btn)
+            
+            lbl = UILabel(frame: CGRect(x: btn.frame.minX, y: btn.frame.maxY + 5, width: btn.frame.size.width, height: 10))
+            lbl.font = UIFont(name: "NunitoSans-Regular", size: 11)
+            lbl.textColor = UIColor.black
+            lbl.textAlignment = .center
+            lbl.text = "Mail"
+            container.box!.addSubview(lbl)
+            
+            btn = UIButton(frame: CGRect(x: 210, y: 220, width: 50, height: 50))
+            btn.setImage(UIImage(named: "btnSetting"), for: .normal)
+            btn.addTarget(container, action: #selector(moreBtnTapped(sender:)), for: .touchUpInside)
+            container.box?.addSubview(btn)
+            
+            lbl = UILabel(frame: CGRect(x: btn.frame.minX, y: btn.frame.maxY + 5, width: btn.frame.size.width, height: 10))
+            lbl.font = UIFont(name: "NunitoSans-Regular", size: 11)
+            lbl.textColor = UIColor.black
+            lbl.textAlignment = .center
+            lbl.text = "More"
+            container.box!.addSubview(lbl)
+        }
+        
         parent.view.addSubview(container)
         container.alpha = 0
         UIView.animate(withDuration: 0.3, animations: {
             container.alpha = 1
         }) { (flag) in
             
+        }
+        
+        return container
+    }
+    
+    @objc func moreBtnTapped(sender: Any) {
+        if let shareHandler = self.shareHandler {
+            onTapView(sender: self)
+            shareHandler()
         }
     }
     

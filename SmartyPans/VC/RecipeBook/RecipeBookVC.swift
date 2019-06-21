@@ -16,6 +16,7 @@ class RecipeBookVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     //var searchBar: UISearchBar?
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var savedCollectionView: UICollectionView?
     
@@ -34,6 +35,8 @@ class RecipeBookVC: UIViewController {
 //        searchBar?.isTranslucent = false
 //        searchBar?.placeholder = "Search"
 //        searchView.addSubview(searchBar!)
+        searchBar.layer.borderWidth = 1
+        searchBar.layer.borderColor = self.view.backgroundColor?.cgColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,11 +98,12 @@ class RecipeBookVC: UIViewController {
         let tag = (sender as! UIButton).tag
         let recipe = recipes[tag]
         
-        RBActionSheetView.show(parent: self.parent!,
+        let v = RBActionSheetView.show(parent: self.parent!,
                                title: "Recipe",
                                images: [UIImage(named: "icoAdd")!, UIImage(named: "icoDelete")!],
                                btnNames: ["Add To Collection", "Unsave"],
-                               flag: false) { (index) in
+                               flag: true,
+                               handler: { (index) in
                                 
                                 var imgs: [UIImage] = [UIImage]()
                                 self.collections.map { _ in
@@ -119,6 +123,13 @@ class RecipeBookVC: UIViewController {
                                 } else { // remove
                                     self.unsaveRecipe(recipeID: recipe.recipeId)
                                 }
+        })
+        
+        v.shareHandler = {
+            let vc = UIActivityViewController(activityItems: ["more"], applicationActivities: nil)
+            vc.excludedActivityTypes = [.addToReadingList, .airDrop, .assignToContact, .copyToPasteboard,
+                                        .message, .mail, .openInIBooks, .print, .saveToCameraRoll]
+            self.present(vc, animated: true, completion: nil)
         }
     }
     
@@ -291,6 +302,7 @@ extension RecipeBookVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyBoard.instantiateViewController(withIdentifier: "RecipeCollectionVC") as! RecipeCollectionVC
                 vc.collectionName = collections[indexPath.row]
+                vc.collections = collections
                 
                 let navVC: UINavigationController = UINavigationController(rootViewController: vc)
                 navVC.navigationBar.isHidden = true

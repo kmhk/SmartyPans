@@ -21,7 +21,7 @@ class RecipeCollectionVC: UIViewController {
     
     var collectionName: String = ""
     var recipes = [Recipe]()
-    //var collections = [String]()
+    var collections = [String]()
     var firRecipesRef : DatabaseReference!
     var firUser: User?
     
@@ -67,6 +67,41 @@ class RecipeCollectionVC: UIViewController {
     }
     
     @objc func addToCollection(sender: Any) {
+        let tag = (sender as! UIButton).tag
+        let recipe = recipes[tag]
+        
+        let v = RBActionSheetView.show(parent: self.parent!,
+                               title: "Recipe",
+                               images: [UIImage(named: "icoAdd")!, UIImage(named: "icoDelete")!],
+                               btnNames: ["Add To Another Collection", "Remove From This Collection"],
+                               flag: true) { (index) in
+                                
+                                var imgs: [UIImage] = [UIImage]()
+                                self.collections.map { _ in
+                                    imgs.append(UIImage(named: "bg_welcome")!) // need to be add colection image
+                                }
+                                
+                                if (index == 0) { // add
+                                    RBActionSheetView.show(parent: self.parent!,
+                                                           title: "Add To Collection",
+                                                           images: imgs,
+                                                           btnNames: self.collections,
+                                                           flag: false, handler: { (index) in
+                                                            
+                                                            self.addRecipeToCollection(recipe: recipe, collection: self.collections[index])
+                                    })
+                                    
+                                } else { // remove
+                                    self.removeRecipeFromCollection(recipeID: recipe.recipeId)
+                                }
+        }
+        
+        v.shareHandler = {
+            let vc = UIActivityViewController(activityItems: ["more"], applicationActivities: nil)
+            vc.excludedActivityTypes = [.addToReadingList, .airDrop, .assignToContact, .copyToPasteboard,
+                                        .message, .mail, .openInIBooks, .print, .saveToCameraRoll]
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     func updateCollection(name: String) {
@@ -87,10 +122,24 @@ class RecipeCollectionVC: UIViewController {
         self.backBtnTapped(self)
     }
     
+    func addRecipeToCollection(recipe: Recipe, collection: String) {
+        firRecipesRef = Database.database().reference(withPath: "collections").child(firUser!.uid).child(collection)
+        firRecipesRef.child(recipe.recipeId).setValue(recipe.toObject())
+    }
+    
+    func removeRecipeFromCollection(recipeID: String) {
+        firRecipesRef = Database.database().reference(withPath: "collections").child(firUser!.uid).child(collectionName)
+        if recipes.count == 1 {
+            firRecipesRef.setValue("")
+        } else {
+            firRecipesRef.child(recipeID).setValue(nil)
+        }
+    }
+    
     func getRecipes() {
         firUser = Api.SUser.CURRENT_USER
         firRecipesRef = Database.database().reference(withPath: "collections").child(firUser!.uid).child(collectionName)
-        firRecipesRef.observeSingleEvent(of: .value) { (snapshot) in
+        firRecipesRef.observe(.value) { (snapshot) in
             var newItems = [Recipe]()
             for item in snapshot.children {
                 if ((item as! DataSnapshot).value as? NSDictionary) != nil {
