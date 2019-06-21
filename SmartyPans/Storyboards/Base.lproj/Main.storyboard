@@ -301,6 +301,7 @@
                                             <outlet property="creatorLabel" destination="fVz-X6-P0j" id="XQg-hC-EJb"/>
                                             <outlet property="nameLabel" destination="ScR-vg-lwz" id="qPr-hG-48i"/>
                                             <outlet property="recipeImage" destination="XMv-Ij-yFp" id="Jon-V7-dHF"/>
+                                            <outlet property="saveBtn" destination="sNA-c6-r67" id="qA7-kn-z2C"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1386,6 +1387,7 @@
                                             <outlet property="creatorLabel" destination="hjY-Dr-gVL" id="uql-SU-faG"/>
                                             <outlet property="nameLabel" destination="F9n-LC-Tw8" id="HAY-hL-Dwc"/>
                                             <outlet property="recipeImage" destination="BC1-66-bNA" id="yDc-bJ-5PH"/>
+                                            <outlet property="settingBtn" destination="DUh-pR-0tL" id="BqR-0U-BRC"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RBCollectedBKCell" id="T5d-aV-uoh">
@@ -1425,6 +1427,178 @@
             </objects>
             <point key="canvasLocation" x="768.79999999999995" y="-198.02955665024632"/>
         </scene>
+        <!--Recipe CollectionVC-->
+        <scene sceneID="YcF-KU-TwP">
+            <objects>
+                <viewController storyboardIdentifier="RecipeCollectionVC" id="yQ8-XG-AjR" customClass="RecipeCollectionVC" customModule="SmartyPans" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oef-5O-l8i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DON-UB-bW5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="187"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-DG-Yf6">
+                                <rect key="frame" x="16" y="143" width="213" height="29"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nah-Uq-kq8">
+                                <rect key="frame" x="328" y="143" width="31" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btnMore"/>
+                                <connections>
+                                    <action selector="moreBtnTapped:" destination="yQ8-XG-AjR" eventType="touchUpInside" id="oSF-Ap-AKw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQs-Vl-5QR">
+                                <rect key="frame" x="285" y="143" width="29" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btnNewCollection"/>
+                                <connections>
+                                    <action selector="addBtnTapped:" destination="yQ8-XG-AjR" eventType="touchUpInside" id="V0H-Nv-KG2"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MKL-vU-zuJ">
+                                <rect key="frame" x="0.0" y="195" width="375" height="617"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JBN-gR-TC2">
+                                    <size key="itemSize" width="187" height="233"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RBSavedCollectionCell" id="DgX-HL-boG" customClass="RBSavedCVCell" customModule="SmartyPans" customModuleProvider="target">
+                                        <rect key="frame" x="94" y="0.0" width="187" height="233"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="233"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DHa-Gu-FSz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="187" height="233"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJx-t9-a8X">
+                                                            <rect key="frame" x="7" y="8" width="171" height="102"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C3w-ci-dhr">
+                                                            <rect key="frame" x="8" y="118" width="30" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alex Dinh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpy-Ra-2aW">
+                                                            <rect key="frame" x="45" y="118" width="133" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="12"/>
+                                                            <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mush Room Soup" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEp-Tg-uJl">
+                                                            <rect key="frame" x="7" y="156" width="171" height="34"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="15"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oog-VO-ni6">
+                                                            <rect key="frame" x="151" y="197" width="28" height="28"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                            <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="13"/>
+                                                            <state key="normal" image="btnSetting"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="creatorImage" destination="C3w-ci-dhr" id="MtZ-cH-Kgg"/>
+                                            <outlet property="creatorLabel" destination="Jpy-Ra-2aW" id="v4Y-65-ZPI"/>
+                                            <outlet property="nameLabel" destination="gEp-Tg-uJl" id="E3o-Rj-Klz"/>
+                                            <outlet property="recipeImage" destination="SJx-t9-a8X" id="4kh-PJ-0TH"/>
+                                            <outlet property="settingBtn" destination="Oog-VO-ni6" id="v1Z-ng-ckk"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="yQ8-XG-AjR" id="eiP-ZZ-fMO"/>
+                                    <outlet property="delegate" destination="yQ8-XG-AjR" id="wim-Kd-avb"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DyP-M2-wNy">
+                                <rect key="frame" x="0.0" y="195" width="375" height="617"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wva-Vh-vFo">
+                                        <rect key="frame" x="31" y="133" width="314" height="231"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nopost" translatesAutoresizingMaskIntoConstraints="NO" id="ixK-qc-yam">
+                                                <rect key="frame" x="111" y="0.0" width="95" height="84"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YOU HAVEN'T ANY PROPERTY YET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5A-M9-khH">
+                                                <rect key="frame" x="0.0" y="104" width="314" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-SemiBold" family="Nunito Sans" pointSize="16"/>
+                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add your first item to this collection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUh-VB-xNo">
+                                                <rect key="frame" x="0.0" y="140" width="314" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-Regular" family="Nunito Sans" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7H-8Q-Ssd">
+                                                <rect key="frame" x="76" y="184" width="162" height="47"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <color key="backgroundColor" red="0.94509803921568625" green="0.20784313725490194" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="NunitoSans-Bold" family="Nunito Sans" pointSize="16"/>
+                                                <state key="normal" title="ADD RECIPE">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="addBtnTapped:" destination="yQ8-XG-AjR" eventType="touchUpInside" id="EqN-A9-Yjf"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSS-en-3gI">
+                                <rect key="frame" x="16" y="36" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btnBackG"/>
+                                <connections>
+                                    <action selector="backBtnTapped:" destination="yQ8-XG-AjR" eventType="touchUpInside" id="HrR-Is-9hY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="mcK-c2-Ogq"/>
+                    </view>
+                    <connections>
+                        <outlet property="addRecipeBtn" destination="O7H-8Q-Ssd" id="QZC-wQ-FSV"/>
+                        <outlet property="collectedView" destination="MKL-vU-zuJ" id="kqB-aM-6Uh"/>
+                        <outlet property="collectionImage" destination="DON-UB-bW5" id="KmO-2O-tNT"/>
+                        <outlet property="nameLabel" destination="cgO-DG-Yf6" id="a1u-Cv-yoP"/>
+                        <outlet property="notifyView" destination="DyP-M2-wNy" id="12I-0b-G6h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2W-El-u5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1636" y="-198.02955665024632"/>
+        </scene>
         <!--Notifications-->
         <scene sceneID="h78-2a-foB">
             <objects>
@@ -1447,6 +1621,7 @@
         <image name="btnCamera" width="24" height="20"/>
         <image name="btnEdit" width="28" height="28"/>
         <image name="btnMore" width="28" height="28"/>
+        <image name="btnNewCollection" width="28" height="28"/>
         <image name="btnSetting" width="28" height="28"/>
         <image name="close-icon" width="28" height="28"/>
         <image name="gr" width="375" height="192"/>

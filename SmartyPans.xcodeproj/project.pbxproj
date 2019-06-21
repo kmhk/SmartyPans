@@ -90,6 +90,10 @@
 		F3129C6222BB278900A9378C /* RecipeBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C6122BB278900A9378C /* RecipeBookVC.swift */; };
 		F3129C6422BB3C0E00A9378C /* RBCollectedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C6322BB3C0E00A9378C /* RBCollectedCVCell.swift */; };
 		F3129C6622BB3C2200A9378C /* RBSavedCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C6522BB3C2200A9378C /* RBSavedCVCell.swift */; };
+		F3129C7422BC46E500A9378C /* RecipeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7322BC46E500A9378C /* RecipeCollectionVC.swift */; };
+		F3129C7622BC654D00A9378C /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7522BC654D00A9378C /* UIAlertController+Extension.swift */; };
+		F3129C7822BC672E00A9378C /* RBActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7722BC672E00A9378C /* RBActionSheetView.swift */; };
+		F3129C7A22BC8C4200A9378C /* RBAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7922BC8C4200A9378C /* RBAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +186,10 @@
 		F3129C6122BB278900A9378C /* RecipeBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookVC.swift; sourceTree = "<group>"; };
 		F3129C6322BB3C0E00A9378C /* RBCollectedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBCollectedCVCell.swift; sourceTree = "<group>"; };
 		F3129C6522BB3C2200A9378C /* RBSavedCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBSavedCVCell.swift; sourceTree = "<group>"; };
+		F3129C7322BC46E500A9378C /* RecipeCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionVC.swift; sourceTree = "<group>"; };
+		F3129C7522BC654D00A9378C /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		F3129C7722BC672E00A9378C /* RBActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBActionSheetView.swift; sourceTree = "<group>"; };
+		F3129C7922BC8C4200A9378C /* RBAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +231,8 @@
 				341E8E1B2129B9D80031B38F /* SPBottomButton.swift */,
 				F3129C6322BB3C0E00A9378C /* RBCollectedCVCell.swift */,
 				F3129C6522BB3C2200A9378C /* RBSavedCVCell.swift */,
+				F3129C7722BC672E00A9378C /* RBActionSheetView.swift */,
+				F3129C7922BC8C4200A9378C /* RBAlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -447,6 +457,7 @@
 				34029873210CBFAD00000AF8 /* Double+Extension.swift */,
 				34D5D6C7210D7F2500C260E3 /* UIButton+Extension.swift */,
 				3401C41F21179DC600D03304 /* String+Extension.swift */,
+				F3129C7522BC654D00A9378C /* UIAlertController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -487,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				F3129C6122BB278900A9378C /* RecipeBookVC.swift */,
+				F3129C7322BC46E500A9378C /* RecipeCollectionVC.swift */,
 			);
 			path = RecipeBook;
 			sourceTree = "<group>";
@@ -715,6 +727,7 @@
 				0586889121018F9200108C18 /* LoginVC.swift in Sources */,
 				3401C440211A682D00D03304 /* StepByStepViewController.swift in Sources */,
 				34D5D6C8210D7F2500C260E3 /* UIButton+Extension.swift in Sources */,
+				F3129C7822BC672E00A9378C /* RBActionSheetView.swift in Sources */,
 				F3129C6422BB3C0E00A9378C /* RBCollectedCVCell.swift in Sources */,
 				346A3597210BEA5400FC2AD3 /* StepByStepCompletedViewController.swift in Sources */,
 				058688372100F25A00108C18 /* AppDelegate.swift in Sources */,
@@ -722,12 +735,15 @@
 				34A42C802148B13A00D04044 /* UUIDKey.swift in Sources */,
 				0586888F21018F8600108C18 /* RegisterVC.swift in Sources */,
 				3401C41C211697D600D03304 /* Colors.swift in Sources */,
+				F3129C7622BC654D00A9378C /* UIAlertController+Extension.swift in Sources */,
 				0586889E21026C3700108C18 /* Post.swift in Sources */,
 				0523957C210BA72800EB21EA /* Recipe.swift in Sources */,
 				3401C41B211697D600D03304 /* Fonts.swift in Sources */,
 				05D1D89D2111640C00E20B7E /* PanFoundVC.swift in Sources */,
+				F3129C7A22BC8C4200A9378C /* RBAlertView.swift in Sources */,
 				3401C4422129A89700D03304 /* SaveRecipeViewController.swift in Sources */,
 				3401C41E211698C100D03304 /* UIColor+Extension.swift in Sources */,
+				F3129C7422BC46E500A9378C /* RecipeCollectionVC.swift in Sources */,
 				3401C42021179DC600D03304 /* String+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

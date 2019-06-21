@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vxU-AR-KTn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vxU-AR-KTn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,10 +31,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gr" translatesAutoresizingMaskIntoConstraints="NO" id="y8H-jO-IDp">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                        <rect key="frame" x="0.0" y="-16" width="375" height="350"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_Iw" translatesAutoresizingMaskIntoConstraints="NO" id="csK-4B-d4k">
-                                        <rect key="frame" x="137" y="117" width="100" height="100"/>
+                                        <rect key="frame" x="137.5" y="117" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="9V1-cR-8vM"/>
                                             <constraint firstAttribute="width" constant="100" id="F7M-BT-KCw"/>
@@ -47,7 +48,7 @@
                                     <constraint firstAttribute="trailing" secondItem="y8H-jO-IDp" secondAttribute="trailing" id="L3b-kd-FCs"/>
                                     <constraint firstItem="y8H-jO-IDp" firstAttribute="leading" secondItem="wvZ-Gx-2Ae" secondAttribute="leading" id="PJn-zG-uwA"/>
                                     <constraint firstItem="csK-4B-d4k" firstAttribute="centerX" secondItem="wvZ-Gx-2Ae" secondAttribute="centerX" id="mHu-PK-OaV"/>
-                                    <constraint firstItem="y8H-jO-IDp" firstAttribute="top" secondItem="wvZ-Gx-2Ae" secondAttribute="top" id="yYP-h0-NNd"/>
+                                    <constraint firstItem="y8H-jO-IDp" firstAttribute="top" secondItem="wvZ-Gx-2Ae" secondAttribute="top" constant="-16" id="yYP-h0-NNd"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNN-vI-qHu">
