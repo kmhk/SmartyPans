@@ -94,6 +94,7 @@
 		F3129C7622BC654D00A9378C /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7522BC654D00A9378C /* UIAlertController+Extension.swift */; };
 		F3129C7822BC672E00A9378C /* RBActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7722BC672E00A9378C /* RBActionSheetView.swift */; };
 		F3129C7A22BC8C4200A9378C /* RBAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7922BC8C4200A9378C /* RBAlertView.swift */; };
+		F3E8E8F922BEEF97007443B4 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E8E8F822BEEF97007443B4 /* NotificationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +191,7 @@
 		F3129C7522BC654D00A9378C /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		F3129C7722BC672E00A9378C /* RBActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBActionSheetView.swift; sourceTree = "<group>"; };
 		F3129C7922BC8C4200A9378C /* RBAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBAlertView.swift; sourceTree = "<group>"; };
+		F3E8E8F822BEEF97007443B4 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				F3129C6522BB3C2200A9378C /* RBSavedCVCell.swift */,
 				F3129C7722BC672E00A9378C /* RBActionSheetView.swift */,
 				F3129C7922BC8C4200A9378C /* RBAlertView.swift */,
+				F3E8E8F822BEEF97007443B4 /* NotificationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				3401C41B211697D600D03304 /* Fonts.swift in Sources */,
 				05D1D89D2111640C00E20B7E /* PanFoundVC.swift in Sources */,
 				F3129C7A22BC8C4200A9378C /* RBAlertView.swift in Sources */,
+				F3E8E8F922BEEF97007443B4 /* NotificationView.swift in Sources */,
 				3401C4422129A89700D03304 /* SaveRecipeViewController.swift in Sources */,
 				3401C41E211698C100D03304 /* UIColor+Extension.swift in Sources */,
 				F3129C7422BC46E500A9378C /* RecipeCollectionVC.swift in Sources */,

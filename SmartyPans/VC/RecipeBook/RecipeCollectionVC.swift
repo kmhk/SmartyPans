@@ -61,6 +61,17 @@ class RecipeCollectionVC: UIViewController {
                                                           msg: "This will delete your collection,\nbut its items will still be in your\nsaved list.",
                                                           okTitle: "DELETE", noTitle: "CANCEL", handler: { (result) in
                                                             self.deleteCollection()
+                                                            
+                                                            // show alert
+                                                            let string1 = NSAttributedString(string: "Removed Collection",
+                                                                                             attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                                                                          NSAttributedString.Key.foregroundColor: UIColor.black])
+                                                            let string2 = NSAttributedString(string: self.collectionName,
+                                                                                             attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                                                                          NSAttributedString.Key.foregroundColor: UIColor.redSPColor])
+                                                            let string = NSMutableAttributedString(attributedString: string1)
+                                                            string.append(string2)
+                                                            NotificationView.showNotification(parent: self, image: UIImage(named: "bg_welcome")!, string: string)
                                     })
                                 }
         }
@@ -89,10 +100,32 @@ class RecipeCollectionVC: UIViewController {
                                                            flag: false, handler: { (index) in
                                                             
                                                             self.addRecipeToCollection(recipe: recipe, collection: self.collections[index])
+                                                            
+                                                            // show alert
+                                                            let string1 = NSAttributedString(string: "Saved To ",
+                                                                                             attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                                                                          NSAttributedString.Key.foregroundColor: UIColor.black])
+                                                            let string2 = NSAttributedString(string: self.collectionName,
+                                                                                             attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                                                                          NSAttributedString.Key.foregroundColor: UIColor.redSPColor])
+                                                            let string = NSMutableAttributedString(attributedString: string1)
+                                                            string.append(string2)
+                                                            NotificationView.showNotification(parent: self, imageURL: recipe.recipeImage, string: string)
                                     })
                                     
                                 } else { // remove
                                     self.removeRecipeFromCollection(recipeID: recipe.recipeId)
+                                    
+                                    // show alert
+                                    let string1 = NSAttributedString(string: "Removed From ",
+                                                                     attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                                                  NSAttributedString.Key.foregroundColor: UIColor.black])
+                                    let string2 = NSAttributedString(string: self.collectionName,
+                                                                     attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                                                  NSAttributedString.Key.foregroundColor: UIColor.redSPColor])
+                                    let string = NSMutableAttributedString(attributedString: string1)
+                                    string.append(string2)
+                                    NotificationView.showNotification(parent: self, imageURL: recipe.recipeImage, string: string)
                                 }
         }
         

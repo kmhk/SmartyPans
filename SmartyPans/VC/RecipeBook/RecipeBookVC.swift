@@ -118,10 +118,27 @@ class RecipeBookVC: UIViewController {
                                                            flag: false, handler: { (index) in
                                                             
                                                             self.addRecipeToCollection(recipe: recipe, collection: self.collections[index])
+                                                            
+                                                            // show alert
+                                                            let string1 = NSAttributedString(string: "Saved To ",
+                                                                                            attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                                                                         NSAttributedString.Key.foregroundColor: UIColor.black])
+                                                            let string2 = NSAttributedString(string: self.collections[index],
+                                                                                             attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                                                                          NSAttributedString.Key.foregroundColor: UIColor.redSPColor])
+                                                            let string = NSMutableAttributedString(attributedString: string1)
+                                                            string.append(string2)
+                                                            NotificationView.showNotification(parent: self, imageURL: recipe.recipeImage, string: string)
                                     })
                                     
                                 } else { // remove
                                     self.unsaveRecipe(recipeID: recipe.recipeId)
+                                    
+                                    // show alert
+                                    let string = NSAttributedString(string: "Unsaved",
+                                                                     attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                                                  NSAttributedString.Key.foregroundColor: UIColor.black])
+                                    NotificationView.showNotification(parent: self, imageURL: recipe.recipeImage, string: string)
                                 }
         })
         
@@ -136,6 +153,17 @@ class RecipeBookVC: UIViewController {
     @objc func addNewCollection(sender: Any) {
         RBAlertView.showWithTextField(parent: self, title: "NAME YOUR COLLECTION", value: "") { (name) in
             self.saveNewCollection(name: name)
+            
+            // show alert
+            let string1 = NSAttributedString(string: "Created collection ",
+                                             attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                          NSAttributedString.Key.foregroundColor: UIColor.black])
+            let string2 = NSAttributedString(string: name,
+                                             attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                          NSAttributedString.Key.foregroundColor: UIColor.redSPColor])
+            let string = NSMutableAttributedString(attributedString: string1)
+            string.append(string2)
+            NotificationView.showNotification(parent: self, image: UIImage(named: "bg_welcome")!, string: string)
         }
     }
 

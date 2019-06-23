@@ -73,29 +73,13 @@ class HomeVC: UIViewController {
         let index = (sender as! UIButton).tag
         let recipe = recipes[index]
         firRecipesRef = Database.database().reference(withPath: "user-recipes")
-        firRecipesRef.child(user.key).child(recipe.recipeId).setValue(recipe.toObject())
+        firRecipesRef.child(firUser!.uid).child(recipe.recipeId).setValue(recipe.toObject())
         
         // show animation alert
-        let waiting = UIView(frame: self.view.bounds)
-        waiting.backgroundColor = UIColor.clear
-        
-        let lbl = UILabel(frame: CGRect(x: waiting.frame.size.width / 2 - 60, y: 30, width: 100, height: 20))
-        lbl.text = "Recipe Saved"
-        lbl.textColor = UIColor.white
-        lbl.font = UIFont(name: "NunitoSans-Regular", size: 12.0)
-        lbl.textAlignment = .center
-        lbl.backgroundColor = UIColor.lightGray
-        lbl.layer.cornerRadius = 3
-        lbl.clipsToBounds = true
-        waiting.addSubview(lbl)
-        
-        self.view.addSubview(waiting)
-        
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
-            waiting.alpha = 0
-        }, completion: { (flag) in
-            waiting.removeFromSuperview()
-        })
+        let string = NSAttributedString(string: "Saved To Recipe Book",
+                                        attributes: [NSAttributedString.Key.font: UIFont(name: "NunitoSans-Bold", size: 16.0)!,
+                                                     NSAttributedString.Key.foregroundColor: UIColor.black])
+        NotificationView.showNotification(parent: self, imageURL: recipe.recipeImage, string: string)
     }
     
     /*
