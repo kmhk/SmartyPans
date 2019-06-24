@@ -94,6 +94,8 @@
 		F3129C7622BC654D00A9378C /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7522BC654D00A9378C /* UIAlertController+Extension.swift */; };
 		F3129C7822BC672E00A9378C /* RBActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7722BC672E00A9378C /* RBActionSheetView.swift */; };
 		F3129C7A22BC8C4200A9378C /* RBAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3129C7922BC8C4200A9378C /* RBAlertView.swift */; };
+		F367D11422C0C1FF005B724C /* HomeDailyCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367D11322C0C1FF005B724C /* HomeDailyCVCell.swift */; };
+		F367D11622C0CA6F005B724C /* HomeRecipeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367D11522C0CA6F005B724C /* HomeRecipeTVCell.swift */; };
 		F3E8E8F922BEEF97007443B4 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E8E8F822BEEF97007443B4 /* NotificationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +193,8 @@
 		F3129C7522BC654D00A9378C /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		F3129C7722BC672E00A9378C /* RBActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBActionSheetView.swift; sourceTree = "<group>"; };
 		F3129C7922BC8C4200A9378C /* RBAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBAlertView.swift; sourceTree = "<group>"; };
+		F367D11322C0C1FF005B724C /* HomeDailyCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDailyCVCell.swift; sourceTree = "<group>"; };
+		F367D11522C0CA6F005B724C /* HomeRecipeTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecipeTVCell.swift; sourceTree = "<group>"; };
 		F3E8E8F822BEEF97007443B4 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +240,8 @@
 				F3129C7722BC672E00A9378C /* RBActionSheetView.swift */,
 				F3129C7922BC8C4200A9378C /* RBAlertView.swift */,
 				F3E8E8F822BEEF97007443B4 /* NotificationView.swift */,
+				F367D11322C0C1FF005B724C /* HomeDailyCVCell.swift */,
+				F367D11522C0CA6F005B724C /* HomeRecipeTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -681,6 +687,7 @@
 				F3129C6622BB3C2200A9378C /* RBSavedCVCell.swift in Sources */,
 				0586889F21026C3700108C18 /* MyPostsApi.swift in Sources */,
 				34A42CA72151F1FB00D04044 /* PanCVCell.swift in Sources */,
+				F367D11422C0C1FF005B724C /* HomeDailyCVCell.swift in Sources */,
 				058688942102199A00108C18 /* NewPWVC.swift in Sources */,
 				3401C4172116971B00D03304 /* SPTabButton.swift in Sources */,
 				3401C4132116688100D03304 /* IngredientsTVCell.swift in Sources */,
@@ -692,6 +699,7 @@
 				342F749B210E650B003D7053 /* StepbyStepRecipeIngredientsViewController.swift in Sources */,
 				0586888A210103E100108C18 /* WelcomeVC.swift in Sources */,
 				3401C4152116688100D03304 /* InstructionTVCell.swift in Sources */,
+				F367D11622C0CA6F005B724C /* HomeRecipeTVCell.swift in Sources */,
 				3402986E210CB65D00000AF8 /* AddIngredientViewController.swift in Sources */,
 				0554F0B621079C7A00CB97AD /* EditProfileVC.swift in Sources */,
 				0586889D21026C3700108C18 /* Config.swift in Sources */,
