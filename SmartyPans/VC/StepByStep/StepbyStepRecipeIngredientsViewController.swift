@@ -157,6 +157,10 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
         self.loadStep(step: step)
     }
     
+    @IBAction func onBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,
                                      selector: (#selector(StepbyStepRecipeIngredientsViewController.updateTimer)), userInfo: nil, repeats: true)
