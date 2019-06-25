@@ -19,6 +19,7 @@ target 'SmartyPans' do
   pod 'IQKeyboardManagerSwift'
   pod 'MaterialTextField'
   pod 'ProgressHUD'
+  pod 'AYPieChart'
   #pod 'KDCircularProgress', :git => 'https://github.com/kaandedeoglu/KDCircularProgress'
   pod 'MBCircularProgressBar'
   pod 'LGButton'

@@ -11,12 +11,19 @@ import SVProgressHUD
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import AYPieChart
 
 class NutritionViewController: UIViewController {
 
-    @IBOutlet var pieChartLeft: XYPieChart!
+    @IBOutlet weak var viewPieContainer: UIView!
+    @IBOutlet weak var pieChartView: AYPieChartView!
+    
     @IBOutlet var view_circal: UIView!
+    
     @IBOutlet weak var lbe_Dot: UILabel!
+    
+    @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var labelProteins: UILabel!
     @IBOutlet weak var labelCarbs: UILabel!
@@ -25,11 +32,14 @@ class NutritionViewController: UIViewController {
     @IBOutlet weak var labelCalories: UILabel!
     
     @IBOutlet weak var recipeImage: UIImageView!
+    
     @IBOutlet weak var labelSodium: UILabel!
     @IBOutlet weak var labelCholestrol: UILabel!
     @IBOutlet weak var labelSugar: UILabel!
     @IBOutlet weak var labelSaturatedFat: UILabel!
     @IBOutlet weak var labelTotalFat: UILabel!
+    
+    @IBOutlet weak var lblRecipeTitle: UILabel!
     
     var databaseReference: DatabaseReference?
     @objc public var recipeId: String = ""
@@ -45,6 +55,17 @@ class NutritionViewController: UIViewController {
         databaseReference = Database.database().reference()
         getNutritionInformation()
         
+        viewContainer.layer.cornerRadius = 20
+        viewContainer.clipsToBounds = true
+        if #available(iOS 11.0, *) {
+            viewContainer.layer.maskedCorners = [.layerMinXMinYCorner]
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 642)
+        
+        setupPieChart()
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,16 +81,13 @@ class NutritionViewController: UIViewController {
      */
     
     func setupPieChart() {
+        pieChartView.strokeLineWidth = 0
+        pieChartView.fillLineWidth = 18
+        pieChartView.degreesForSplit = 0
         
-        setRound(toView: view_circal, radius: view_circal.bounds.height/2)
-        //pieChartLeft.delegate = self
-        pieChartLeft.dataSource = self
-        pieChartLeft.animationSpeed = 1.0
-        pieChartLeft.showLabel = false
-        
-        pieChartLeft.showPercentage = false
-        pieChartLeft.setPieBackgroundColor(.clear)
-        pieChartLeft.reloadData()
+        pieChartView?.pieValues = [AYPieChartEntry(value: 0.6 * 360, color: pieColors[0], detailsView: nil),
+                                   AYPieChartEntry(value: 0.26 * 360, color: pieColors[1], detailsView: nil),
+                                   AYPieChartEntry(value: 0.14 * 360, color: pieColors[2], detailsView: nil)]
     }
     
     func getNutritionInformation(){
@@ -121,7 +139,7 @@ class NutritionViewController: UIViewController {
     }
     
     func computeNutrition(steps: [RecipeStep]) -> Nutrition{
-        var nutritionObject = Nutrition(cholestrol: 0.0, calories: 0.0, sugar: 0.0, protein: 0.0, saturatedFat: 0.0, totalFat: 0.0, carbohydrates: 0.0, sodium: 0.0, recipeId: "")
+        let nutritionObject = Nutrition(cholestrol: 0.0, calories: 0.0, sugar: 0.0, protein: 0.0, saturatedFat: 0.0, totalFat: 0.0, carbohydrates: 0.0, sodium: 0.0, recipeId: "")
         for step in steps{
             let params = ["query": "\(step.weight) oz \(step.ingredient)"] as Dictionary<String, String>
             
@@ -169,39 +187,13 @@ class NutritionViewController: UIViewController {
         labelSodium.text = "\(nutrition.sodium.format(f: ".2")) g"
         
         pieValues = [CGFloat(nutrition.protein), CGFloat(nutrition.carbohydrates), CGFloat(nutrition.totalFat)]
-        setupPieChart()
+        //setupPieChart()
     }
     
     
     //MARK: Set recipe image from URL
     func setRecipeImage(){
-        recipeImage.layer.borderWidth = 1
-        recipeImage.layer.masksToBounds = false
-        recipeImage.layer.borderColor = UIColor.black.cgColor
-        recipeImage.layer.cornerRadius = recipeImage.frame.height/2
-        recipeImage.clipsToBounds = true
-        
-        print(recipeImageURL)
-        
-        downloadImage(url: URL(string: recipeImageURL)!)
-    }
-    
-    func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            completion(data, response, error)
-            }.resume()
-    }
-    
-    func downloadImage(url: URL) {
-        print("Download Started")
-        getDataFromUrl(url: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            DispatchQueue.main.async() {
-                self.recipeImage.image = UIImage(data: data)
-            }
-        }
+        recipeImage.sd_setImage(with: URL(string: recipeImageURL)!, completed: nil)
     }
     
     @IBAction func onBack(_ sender: Any) {
@@ -209,20 +201,3 @@ class NutritionViewController: UIViewController {
     }
     
 }
-
-extension NutritionViewController: XYPieChartDataSource {
-    
-    func numberOfSlices(in pieChart: XYPieChart!) -> UInt {
-        return 3
-    }
-    
-    func pieChart(_ pieChart: XYPieChart!, valueForSliceAt index: UInt) -> CGFloat {
-        return pieValues[Int(index)]
-    }
-    
-    func pieChart(_ pieChart: XYPieChart!, colorForSliceAt index: UInt) -> UIColor! {
-        return pieColors[Int(index)]
-    }
-    
-}
-

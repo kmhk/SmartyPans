@@ -1,4 +1,5 @@
 PODS:
+  - AYPieChart (1.4.1)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -64,6 +65,7 @@ PODS:
   - UIColor_Hex_Swift (4.0.1)
 
 DEPENDENCIES:
+  - AYPieChart
   - Bolts
   - FBSDKCoreKit
   - FBSDKLoginKit
@@ -83,6 +85,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AYPieChart
     - Bolts
     - FBSDKCoreKit
     - FBSDKLoginKit
@@ -108,6 +111,7 @@ SPEC REPOS:
     - UIColor_Hex_Swift
 
 SPEC CHECKSUMS:
+  AYPieChart: b3c962c526525b3b7a5ca8c650c283a39e2c4bdb
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FBSDKCoreKit: 0ff57f093b85c8c9d5aba697d3edf68a8960ce78
   FBSDKLoginKit: 8c78f57a145afb756e4755e69195ebe08a42466e
@@ -132,6 +136,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: 5c90d166e5d539ba37b83355ff90e36ff33fffcb
+PODFILE CHECKSUM: 4a0b3c56c53ae015b7948cbd926a9ff5cc7d9c70
 
 COCOAPODS: 1.6.1

@@ -65,6 +65,7 @@ class StepByStepViewController: UIViewController {
         self.tableViewIngredients.estimatedRowHeight = 80.0
         self.tableViewIngredients.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         
+        self.recipeId = "-KsFtMvl2Xc0rFn6IncS"
         initModel()
         initView()
         addHandle()
@@ -86,6 +87,7 @@ class StepByStepViewController: UIViewController {
         firUser = Api.SUser.CURRENT_USER
         
         firRecipeRef = Database.database().reference(withPath: "recipes").child(recipeId)
+        print("\(self.recipeId)")
         
         firRecipeRef?.observe(.value, with: { (snapshot) in
             if !snapshot.hasChildren() {
@@ -129,6 +131,8 @@ class StepByStepViewController: UIViewController {
             self.user = user
             self.photoImage.sd_setImage(with: URL(string: self.user?.imageURL ?? ""))
             self.nameLabel.text = self.user?.name
+            
+//            print("\(String(describing: self.user?.imageURL))")
         })
     }
     
