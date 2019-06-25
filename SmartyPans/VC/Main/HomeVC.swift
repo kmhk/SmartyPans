@@ -41,9 +41,11 @@ class HomeVC: UIViewController {
         
         viewSearchContainer.clipsToBounds = true
         viewSearchContainer.layer.cornerRadius = viewSearchContainer.frame.size.height / 2
+        viewSearchContainer.isHidden = true
         
         collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         
+        /* //hide category list
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         categoryCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 90), collectionViewLayout: layout)
@@ -52,6 +54,7 @@ class HomeVC: UIViewController {
         categoryCollectionView?.delegate = self
         categoryCollectionView?.backgroundColor = UIColor.white
         tableView.tableHeaderView = categoryCollectionView
+ */
     }
     
     override func viewWillAppear(_ animated: Bool) {

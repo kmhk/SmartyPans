@@ -6,6 +6,7 @@ PODS:
   - Bolts/AppLinks (1.9.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
+  - DYPieChartView (0.0.4)
   - FBSDKCoreKit (4.34.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.34.0):
@@ -67,6 +68,7 @@ PODS:
 DEPENDENCIES:
   - AYPieChart
   - Bolts
+  - DYPieChartView
   - FBSDKCoreKit
   - FBSDKLoginKit
   - Firebase/Auth
@@ -87,6 +89,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AYPieChart
     - Bolts
+    - DYPieChartView
     - FBSDKCoreKit
     - FBSDKLoginKit
     - Firebase
@@ -113,6 +116,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AYPieChart: b3c962c526525b3b7a5ca8c650c283a39e2c4bdb
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
+  DYPieChartView: fd81db820c9caff3a2fc0d2bd9559c01cf6d56c8
   FBSDKCoreKit: 0ff57f093b85c8c9d5aba697d3edf68a8960ce78
   FBSDKLoginKit: 8c78f57a145afb756e4755e69195ebe08a42466e
   Firebase: 68afeeb05461db02d7c9e3215cda28068670f4aa
@@ -136,6 +140,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIColor_Hex_Swift: c5ff88470499383b8fd85302d59344bb24ba9436
 
-PODFILE CHECKSUM: 4a0b3c56c53ae015b7948cbd926a9ff5cc7d9c70
+PODFILE CHECKSUM: 0d8dba3dec38406b41e7c3d12b701236ec5b13b0
 
 COCOAPODS: 1.6.1

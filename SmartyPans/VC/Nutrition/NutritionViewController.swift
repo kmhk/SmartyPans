@@ -12,11 +12,12 @@ import Firebase
 import FirebaseAuth
 import FirebaseDatabase
 import AYPieChart
+import DYPieChartView
 
 class NutritionViewController: UIViewController {
 
     @IBOutlet weak var viewPieContainer: UIView!
-    @IBOutlet weak var pieChartView: AYPieChartView!
+    @IBOutlet weak var pieChartView: DYPieChartView!
     
     @IBOutlet var view_circal: UIView!
     
@@ -81,13 +82,13 @@ class NutritionViewController: UIViewController {
      */
     
     func setupPieChart() {
-        pieChartView.strokeLineWidth = 0
-        pieChartView.fillLineWidth = 18
-        pieChartView.degreesForSplit = 0
+        pieChartView.startAngle = CGFloat(-Double.pi / 2)
+        pieChartView.clockwise = true
+        pieChartView.lineWidth = 18
+        pieChartView.sectorColors = pieColors
         
-        pieChartView?.pieValues = [AYPieChartEntry(value: 0.6 * 360, color: pieColors[0], detailsView: nil),
-                                   AYPieChartEntry(value: 0.26 * 360, color: pieColors[1], detailsView: nil),
-                                   AYPieChartEntry(value: 0.14 * 360, color: pieColors[2], detailsView: nil)]
+        pieChartView.animate(toScaleValues: [0.6, 0.14, 0.26], duration: 2)
+        pieChartView.scaleValues = [0.6, 0.14, 0.26]
     }
     
     func getNutritionInformation(){
@@ -200,4 +201,43 @@ class NutritionViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension NutritionViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) { // up scroll
+            UIView.animate(withDuration: 0.5) {
+                var rt = self.viewContainer.frame
+                rt.origin.y = 170
+                rt.size.height = self.view.frame.size.height - 70
+                self.viewContainer.frame = rt
+                
+                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: (rt.size.height > 642 ? rt.size.height : 642))
+                
+                rt = self.lblRecipeTitle.frame
+                rt.origin.x = 22
+                rt.origin.y = 122
+                self.lblRecipeTitle.frame = rt
+                
+                self.recipeImage.alpha = 1.0
+            }
+        } else { // down scroll
+            UIView.animate(withDuration: 0.5) {
+                var rt = self.viewContainer.frame
+                rt.origin.y = 70
+                rt.size.height = self.view.frame.size.height - 70
+                self.viewContainer.frame = rt
+                
+                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: (rt.size.height > 642 ? rt.size.height : 642))
+                
+                
+                rt = self.lblRecipeTitle.frame
+                rt.origin.x = 60
+                rt.origin.y = 29
+                self.lblRecipeTitle.frame = rt
+                
+                self.recipeImage.alpha = 0.0
+            }
+        }
+    }
 }

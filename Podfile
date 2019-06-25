@@ -20,6 +20,7 @@ target 'SmartyPans' do
   pod 'MaterialTextField'
   pod 'ProgressHUD'
   pod 'AYPieChart'
+  pod 'DYPieChartView'
   #pod 'KDCircularProgress', :git => 'https://github.com/kaandedeoglu/KDCircularProgress'
   pod 'MBCircularProgressBar'
   pod 'LGButton'
