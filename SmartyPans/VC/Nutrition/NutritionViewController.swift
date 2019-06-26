@@ -47,7 +47,10 @@ class NutritionViewController: UIViewController {
     @objc public var recipeImageURL: String = ""
     let apiURL = "http://api-test.smartypans.io/v1/nutrition/solo_ingredient"
     
-    let pieColors: [UIColor] = [hexStringToUIColor(hex: "912B6D"), hexStringToUIColor(hex: "D7225D"), hexStringToUIColor(hex: "2C3277")]
+    //let pieColors: [UIColor] = [hexStringToUIColor(hex: "912B6D"), hexStringToUIColor(hex: "D7225D"), hexStringToUIColor(hex: "2C3277")]
+    let pieColors: [UIColor] = [UIColor(red:0.98, green:0.78, blue:0.42, alpha:1),
+                                UIColor(red:0.54, green:0.58, blue:0.98, alpha:1),
+                                UIColor(red:0.89, green:0.14, blue:0.27, alpha:1)]
     var pieValues: [CGFloat] = [0, 0, 0]
     
     override func viewDidLoad() {
@@ -86,7 +89,7 @@ class NutritionViewController: UIViewController {
     func setupPieChart() {
         pieChartView.startAngle = CGFloat(-Double.pi / 2)
         pieChartView.clockwise = true
-        pieChartView.lineWidth = 18
+        pieChartView.lineWidth = 32
         pieChartView.sectorColors = pieColors
         
         pieChartView.animate(toScaleValues: [0.6, 0.14, 0.26], duration: 2)
@@ -214,7 +217,7 @@ extension NutritionViewController: UIScrollViewDelegate {
                 self.view_circal.alpha = 0.0
                 self.view_circal.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 170)
                 
-                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height + 200)
+                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: (self.view.frame.size.height > 670 ? self.view.frame.size.height + 20 : 670))
                 
                 self.lblRecipeTitle.frame = CGRect(x: 22, y: 122, width: self.lblRecipeTitle.frame.size.width, height: self.lblRecipeTitle.frame.size.height)
             }
@@ -225,7 +228,7 @@ extension NutritionViewController: UIScrollViewDelegate {
                 self.view_circal.alpha = 1.0
                 self.view_circal.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 70)
                 
-                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height + 200)
+                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: (self.view.frame.size.height > 670 ? self.view.frame.size.height + 20 : 670))
                 
                 self.lblRecipeTitle.frame = CGRect(x: 60, y: 29, width: self.lblRecipeTitle.frame.size.width, height: self.lblRecipeTitle.frame.size.height)
             }
