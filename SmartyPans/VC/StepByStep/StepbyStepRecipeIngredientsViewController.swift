@@ -78,7 +78,7 @@ class StepbyStepRecipeIngredientsViewController: UIViewController {
     }
     
     func getRecipeSteps() {
-        firRecipeStepsRef = Database.database().reference(withPath: "recipe-steps").child(recipeId)
+        firRecipeStepsRef = Database.database().reference(withPath: "recipe_ingredients").child(recipeId)
         
         firRecipeStepsRef?.queryOrdered(byChild: "stepNumber").observe(.value, with: { (snapshot) in
             if !snapshot.hasChildren() {

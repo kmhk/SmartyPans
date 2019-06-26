@@ -65,7 +65,7 @@ class StepByStepViewController: UIViewController {
         self.tableViewIngredients.estimatedRowHeight = 80.0
         self.tableViewIngredients.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         
-        self.recipeId = "-KsFtMvl2Xc0rFn6IncS"
+//        self.recipeId = "-KsFtMvl2Xc0rFn6IncS"
         initModel()
         initView()
         addHandle()
@@ -86,7 +86,7 @@ class StepByStepViewController: UIViewController {
     func addHandle() {
         firUser = Api.SUser.CURRENT_USER
         
-        firRecipeRef = Database.database().reference(withPath: "recipes").child(recipeId)
+        firRecipeRef = Database.database().reference(withPath: "home_recipes").child(recipeId)
         print("\(self.recipeId)")
         
         firRecipeRef?.observe(.value, with: { (snapshot) in
@@ -106,7 +106,7 @@ class StepByStepViewController: UIViewController {
             self.tableViewIngredients.reloadData()
         })
         
-        firRecipeStepsRef = Database.database().reference(withPath: "recipe-steps").child(recipeId)
+        firRecipeStepsRef = Database.database().reference(withPath: "recipe_steps").child(recipeId)
         
         firRecipeStepsRef?.queryOrdered(byChild: "stepNumber").observe(.value, with: { (snapshot) in
             if !snapshot.hasChildren() {
