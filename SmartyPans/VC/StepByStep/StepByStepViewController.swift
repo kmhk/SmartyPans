@@ -13,6 +13,7 @@ import FirebaseDatabase
 
 class StepByStepViewController: UIViewController {
     var stepsArray = [RecipeStep]()
+    var stepsIngrediant = [RecipeStep]()
     //@IBOutlet weak var navView: UIView!
     @IBOutlet weak var ratingView: UIView!
     @IBOutlet weak var playStepbyStepButton: UIButton!
@@ -116,6 +117,21 @@ class StepByStepViewController: UIViewController {
             for item in snapshot.children {
                 let step = RecipeStep(item as! DataSnapshot)
                 self.stepsArray.append(step)
+                self.tableViewInstructions.reloadData()
+                self.tableViewIngredients.reloadData()
+            }
+        })
+        
+        firRecipeStepsRef = Database.database().reference(withPath: "recipe_ingredients").child(recipeId)
+        
+        firRecipeStepsRef?.queryOrdered(byChild: "stepNumber").observe(.value, with: { (snapshot) in
+            if !snapshot.hasChildren() {
+                return
+            }
+            self.stepsIngrediant = [RecipeStep]()
+            for item in snapshot.children {
+                let step = RecipeStep(item as! DataSnapshot)
+                self.stepsIngrediant.append(step)
                 self.tableViewInstructions.reloadData()
                 self.tableViewIngredients.reloadData()
             }
@@ -329,7 +345,7 @@ extension StepByStepViewController:UITableViewDelegate, UITableViewDataSource{
         }
         else {
             
-            return stepsArray.count
+            return stepsIngrediant.count
         }
         
     }
@@ -366,8 +382,8 @@ extension StepByStepViewController:UITableViewDelegate, UITableViewDataSource{
         }
         else {
             var cell : IngredientsTVCell!
-            if indexPath.row == stepsArray.count + 1{
-                cell = tableView.dequeueReusableCell(withIdentifier: "cell2_footer") as! IngredientsTVCell
+            if indexPath.row == stepsIngrediant.count + 1{
+                cell = tableView.dequeueReusableCell(withIdentifier: "cell2_footer") as? IngredientsTVCell
                 let clearButton = cell.viewWithTag(100) as! UIButton
                 let recalculateButton = cell.viewWithTag(101) as! UIButton
                 
@@ -376,8 +392,8 @@ extension StepByStepViewController:UITableViewDelegate, UITableViewDataSource{
                 recalculateButton.layer.cornerRadius = 21.0
                 recalculateButton.clipsToBounds = true
                 recalculateButton.addTarget(self, action: #selector(recalculatePressed(_:)), for: .touchUpInside)
-            }else if(stepsArray.count > 0){
-                cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as! IngredientsTVCell
+            }else if(stepsIngrediant.count > 0){
+                cell = tableView.dequeueReusableCell(withIdentifier: "cell2") as? IngredientsTVCell
                 
                 let imgIG = cell.viewWithTag(100) as! UIImageView
                 let lblIGTitle = cell.viewWithTag(101) as! UILabel
@@ -388,7 +404,7 @@ extension StepByStepViewController:UITableViewDelegate, UITableViewDataSource{
                 imgContainerView.asCircle()
                 imgContainerView.dropSmallCircleButtonShadow()
                 
-                let step = stepsArray[indexPath.row]
+                let step = stepsIngrediant[indexPath.row]
                 imgIG.sd_setImage(with: URL(string:step.ingredientImage), completed: nil)
                 let ingredientTxt = step.ingredient
                 lblIGTitle.text = ingredientTxt.capitalizingFirstLetter()
