@@ -33,12 +33,12 @@ class RecipeStep{
         //let recipeId = dictionaryNutrition["recipeId"] as? String ?? ""
         uid = value!!["uid"] as? String ?? ""
         stepId = value!!["id"] as? String ?? ""
-        stepNumber = value!!["stepNumber"] as? Int ?? 0
+        stepNumber = value!!["number"] as? Int ?? 0
         stepDescription = value!!["description"] as? String ?? ""
-        ingredient = value!!["ingredient"] as? String ?? ""
-        ingredientImage = value!!["ingredientPicture"] as? String ?? ""
+        ingredient = value!!["consistency"] as? String ?? ""
+        ingredientImage = value!!["imageThumb"] as? String ?? ""
         unit = value!!["unit"] as? String ?? ""
-        weight = value!!["weight"] as? Double ?? 0.0
+        weight = value!!["quantity"] as? Double ?? 0.0
         startTime = value!!["startTime"] as? Double ?? 0.0
         endTime = value!!["endTime"] as? Double ?? 0.0
         recipeId = value!!["recipeId"] as? String ?? ""

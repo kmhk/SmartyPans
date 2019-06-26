@@ -109,7 +109,7 @@ class StepByStepViewController: UIViewController {
         
         firRecipeStepsRef = Database.database().reference(withPath: "recipe_steps").child(recipeId)
         
-        firRecipeStepsRef?.queryOrdered(byChild: "stepNumber").observe(.value, with: { (snapshot) in
+        firRecipeStepsRef?.queryOrdered(byChild: "number").observe(.value, with: { (snapshot) in
             if !snapshot.hasChildren() {
                 return
             }
@@ -124,7 +124,7 @@ class StepByStepViewController: UIViewController {
         
         firRecipeStepsRef = Database.database().reference(withPath: "recipe_ingredients").child(recipeId)
         
-        firRecipeStepsRef?.queryOrdered(byChild: "stepNumber").observe(.value, with: { (snapshot) in
+        firRecipeStepsRef?.queryOrdered(byChild: "name").observe(.value, with: { (snapshot) in
             if !snapshot.hasChildren() {
                 return
             }
