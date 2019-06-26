@@ -66,6 +66,8 @@ class NutritionViewController: UIViewController {
         
         scrollView.contentSize = CGSize(width: view.frame.size.width, height: 642)
         
+        view_circal.layer.shadowOffset = CGSize(width: 0, height: 1)
+        
         setupPieChart()
     }
     
@@ -207,36 +209,25 @@ extension NutritionViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (scrollView.panGestureRecognizer.translation(in: scrollView.superview).y > 0) { // up scroll
             UIView.animate(withDuration: 0.5) {
-                var rt = self.viewContainer.frame
-                rt.origin.y = 170
-                rt.size.height = self.view.frame.size.height - 70
-                self.viewContainer.frame = rt
+                self.viewContainer.frame = CGRect(x: 0, y: 170, width: self.viewContainer.frame.width, height: self.view.frame.height - 170)
                 
-                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: (rt.size.height > 642 ? rt.size.height : 642))
+                self.view_circal.alpha = 0.0
+                self.view_circal.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 170)
                 
-                rt = self.lblRecipeTitle.frame
-                rt.origin.x = 22
-                rt.origin.y = 122
-                self.lblRecipeTitle.frame = rt
+                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height + 200)
                 
-                self.recipeImage.alpha = 1.0
+                self.lblRecipeTitle.frame = CGRect(x: 22, y: 122, width: self.lblRecipeTitle.frame.size.width, height: self.lblRecipeTitle.frame.size.height)
             }
         } else { // down scroll
             UIView.animate(withDuration: 0.5) {
-                var rt = self.viewContainer.frame
-                rt.origin.y = 70
-                rt.size.height = self.view.frame.size.height - 70
-                self.viewContainer.frame = rt
+                self.viewContainer.frame = CGRect(x: 0, y: 0, width: self.viewContainer.frame.width, height: self.view.frame.height)
                 
-                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: (rt.size.height > 642 ? rt.size.height : 642))
+                self.view_circal.alpha = 1.0
+                self.view_circal.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 70)
                 
+                self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height + 200)
                 
-                rt = self.lblRecipeTitle.frame
-                rt.origin.x = 60
-                rt.origin.y = 29
-                self.lblRecipeTitle.frame = rt
-                
-                self.recipeImage.alpha = 0.0
+                self.lblRecipeTitle.frame = CGRect(x: 60, y: 29, width: self.lblRecipeTitle.frame.size.width, height: self.lblRecipeTitle.frame.size.height)
             }
         }
     }
